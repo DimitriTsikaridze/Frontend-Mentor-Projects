@@ -5,6 +5,10 @@
   padding: 0;
 }
 
+:root {
+  font-size: 16px;
+}
+
 html,
 body {
   height: 100%;
@@ -14,15 +18,21 @@ body {
 body {
   font-family: "Noto", sans-serif;
   font-weight: 300;
+  overflow-x: hidden;
 }
 
 h1 {
+  margin-top: 2rem;
   text-align: center;
+  background: linear-gradient(to right, #30cfd0 0%, #330867 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 main {
-  padding: 2rem;
+  padding: 3rem;
   display: grid;
+  justify-content: center;
   gap: 30px;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 }
@@ -35,11 +45,16 @@ main {
 }
 
 .grid-item img:hover {
-  transform: translateY(-3px) scale(1.05);
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
+    rgba(0, 0, 0, 0.22) 0px 15px 12px;
 }
 .grid-item p {
   text-align: center;
   font-weight: 500;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
   margin-bottom: 15px;
+  background: linear-gradient(to right, #30cfd0 0%, #330867 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
