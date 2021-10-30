@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100vw;
+}
+
+body {
+  font-family: "Noto", sans-serif;
+  font-weight: 300;
+}
+
+h1 {
+  text-align: center;
+}
+
+main {
+  padding: 2rem;
+  display: grid;
+  gap: 30px;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+.grid-item img {
+  max-width: 100%;
+  box-shadow: rgba(3, 8, 20, 0.1) 0px 0.15rem 0.5rem,
+    rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.grid-item img:hover {
+  transform: translateY(-3px) scale(1.05);
+}
+.grid-item p {
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+}

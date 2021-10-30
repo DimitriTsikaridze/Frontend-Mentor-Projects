@@ -1,0 +1,165 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --pale-blue: hsl(225, 100%, 98%);
+  --bright-blue: hsl(245, 75%, 52%);
+  --very-pale-blue: hsl(225, 100%, 98%);
+  --desaturated-blue: hsl(224, 23%, 55%);
+  --dark-blue: hsl(223, 47%, 23%);
+  --transition-duration: 0.3s;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100vw;
+}
+
+body {
+  background-image: url("./images/pattern-background-desktop.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: var(--pale-blue);
+  font-family: "Red Hat Display", sans-serif;
+}
+
+h1 {
+  color: var(--dark-blue);
+  font-size: 2rem;
+}
+
+button {
+  font-family: inherit;
+  border: none;
+  font-size: 1rem;
+  border-radius: 10px;
+  padding: 12px 20px;
+}
+button:hover {
+  cursor: pointer;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+img {
+  max-width: 100%;
+}
+
+.card {
+  max-width: 400px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 5px 10px 8px rgba(136, 136, 136, 0.075);
+}
+
+.hero-img {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+}
+
+article {
+  text-align: center;
+  width: 90%;
+  margin: 0 auto;
+}
+
+article h1 {
+  margin-top: 1rem;
+  color: var(--dark-blue);
+}
+
+article p {
+  margin: 1rem 0;
+  color: var(--desaturated-blue);
+  line-height: 24px;
+}
+
+.plan {
+  display: flex;
+  gap: 15px;
+  border-radius: 8px;
+  background-color: var(--pale-blue);
+  width: 90%;
+  margin: 0 auto;
+  padding: 15px;
+}
+.plan a {
+  margin: auto 0 auto auto;
+  color: var(--bright-blue);
+  transition: var(--transition-duration);
+}
+
+.plan a:hover {
+  color: var(--desaturated-blue);
+}
+
+.plan h2 {
+  font-size: 1rem;
+  font-weight: 900;
+}
+
+.plan .music-icon {
+  width: 45px;
+  height: 45px;
+}
+
+.plan p {
+  color: var(--desaturated-blue);
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: 1rem auto 0 auto;
+  gap: 10px;
+}
+
+.pay {
+  color: white;
+  background-color: var(--bright-blue);
+  transition: var(--transition-duration);
+}
+.pay:hover {
+  background-color: var(--desaturated-blue);
+}
+.cancel {
+  color: var(--desaturated-blue);
+  background-color: unset;
+  margin-bottom: 1rem;
+}
+
+@media only screen and (max-width: 375px) {
+  body {
+    background-image: unset;
+    background-color: var(--pale-blue);
+  }
+  .card {
+    width: 90%;
+  }
+
+  article h1 {
+    font-size: 1.7rem;
+  }
+
+  article p {
+    font-size: 1rem;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
