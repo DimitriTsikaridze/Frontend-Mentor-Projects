@@ -1,0 +1,156 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Lexend+Deca&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --dark-blue: hsl(233, 47%, 7%);
+  --desaturated-blue: hsl(244, 38%, 16%);
+  --soft-violet: hsl(277, 64%, 61%);
+  --transparent-white-paragraph: hsla(0, 0%, 100%, 0.75);
+  --transparent-white-stat-headings: hsla(0, 0%, 100%, 0.6);
+  font-size: 15px;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100vw;
+}
+
+body {
+  background-color: var(--dark-blue);
+  font-family: "Inter", sans-serif;
+  color: white;
+}
+
+.attribution {
+  font-size: 1rem;
+  text-align: center;
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+}
+.attribution a {
+  color: dodgerblue;
+}
+
+article {
+  border-radius: 8px;
+  background-color: var(--desaturated-blue);
+  width: 500px;
+  padding: 4rem;
+}
+
+article h1 {
+  font-size: 2rem;
+}
+
+article span {
+  color: var(--soft-violet);
+}
+
+.article-p {
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--transparent-white-paragraph);
+  margin: 2rem 0 5rem 0;
+  line-height: 24px;
+}
+
+.container {
+  display: flex;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.img,
+.img::before {
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+.img {
+  position: relative;
+  width: 500px;
+  height: auto;
+  background-image: url("./images/image-header-desktop.jpg");
+}
+
+.img::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--soft-violet);
+  opacity: 0.7;
+}
+
+.stats {
+  margin-top: 6rem;
+  display: flex;
+  gap: 3rem;
+}
+
+.stats h2 {
+  color: white;
+}
+
+.stats p {
+  color: var(--transparent-white-paragraph);
+  text-transform: uppercase;
+  font-size: 12px;
+}
+@media only screen and (max-width: 375px) {
+  .container {
+    width: 100%;
+    min-width: 375px;
+    flex-wrap: wrap-reverse;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .attribution {
+    bottom: 2%;
+    min-width: 375px;
+  }
+
+  .img,
+  .img:before {
+    border-radius: unset;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+  }
+
+  .img {
+    width: 90%;
+    height: 200px;
+    background-image: url("./images/image-header-mobile.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  article {
+    width: 90%;
+    text-align: center;
+    padding-bottom: 1rem;
+  }
+
+  .article-p {
+    margin: 1rem 0;
+  }
+
+  .stats {
+    margin: 0;
+    gap: 15px;
+    flex-direction: column;
+  }
+}
