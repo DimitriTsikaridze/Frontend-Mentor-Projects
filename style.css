@@ -20,7 +20,6 @@ body {
   font-family: "Noto", sans-serif;
   font-weight: 300;
   width: 100vw;
-  background-image: url("./bg-image.svg");
   background-repeat: no-repeat;
   background-size: cover;
 }
