@@ -3,6 +3,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  outline: none;
 }
 
 :root {
@@ -12,13 +13,16 @@
 html,
 body {
   height: 100%;
-  width: 100vw;
+  overflow: auto;
 }
 
 body {
   font-family: "Noto", sans-serif;
   font-weight: 300;
-  overflow-x: hidden;
+  width: 100vw;
+  background-image: url("./bg-image.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 h1 {
@@ -26,7 +30,7 @@ h1 {
   text-align: center;
   background: linear-gradient(to right, #30cfd0 0%, #330867 100%);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: transparent;
 }
 
 main {
@@ -34,7 +38,7 @@ main {
   display: grid;
   justify-content: center;
   gap: 30px;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 .grid-item img {
   max-width: 100%;
@@ -56,5 +60,5 @@ main {
   margin-bottom: 15px;
   background: linear-gradient(to right, #30cfd0 0%, #330867 100%);
   -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: transparent;
 }
