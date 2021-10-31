@@ -20,8 +20,6 @@ body {
   font-family: "Noto", sans-serif;
   font-weight: 300;
   width: 100vw;
-  background-repeat: no-repeat;
-  background-size: cover;
 }
 
 h1 {
@@ -29,6 +27,7 @@ h1 {
   text-align: center;
   background: linear-gradient(to right, #30cfd0 0%, #330867 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   color: transparent;
 }
 
@@ -59,5 +58,6 @@ main {
   margin-bottom: 15px;
   background: linear-gradient(to right, #30cfd0 0%, #330867 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   color: transparent;
 }
