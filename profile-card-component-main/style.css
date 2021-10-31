@@ -1,0 +1,117 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --dark-cyan: hsl(185, 75%, 39%);
+  --very-dark-desaturated-blue: hsl(229, 23%, 23%);
+  --dark-grayish-blue: hsl(227, 10%, 46%);
+  --dark-gray: hsl(0, 0%, 59%);
+}
+
+body,
+html {
+  height: 100%;
+}
+
+body {
+  width: 100vw;
+  font-family: "Kumbh Sans", sans-serif;
+  background-color: var(--dark-cyan);
+  background-image: url("./images/bg-pattern-top.svg"),
+    url("./images/bg-pattern-bottom.svg");
+  background-repeat: no-repeat;
+  background-position: right 44vw bottom 45vh, 56vw 45vh;
+}
+
+.stats {
+  display: flex;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: absolute;
+  height: 400px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border-radius: 18px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 14px 28px,
+    rgba(0, 0, 0, 0.22) 0px 10px 10px;
+}
+
+.card-bg-img img {
+  border-top-left-radius: 18px;
+  border-top-right-radius: 18px;
+}
+
+.profile img {
+  position: absolute;
+  top: 22%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  border: 5px solid white;
+}
+
+.stats {
+  padding: 1.8rem;
+  margin-top: auto;
+  border-top: 1px solid var(--dark-gray);
+  width: 100%;
+  justify-content: center;
+  gap: 4rem;
+}
+
+.stats h2 {
+  font-size: 1.2rem;
+  color: var(--very-dark-desaturated-blue);
+  text-align: center;
+}
+
+.stats p {
+  font-size: 0.9rem;
+  color: var(--dark-gray);
+  text-align: center;
+}
+
+.user-info span {
+  color: var(--dark-grayish-blue);
+  font-size: 1.3rem;
+}
+
+.user-info h1 {
+  font-size: 1.3rem;
+  color: var(--very-dark-desaturated-blue);
+}
+
+.user-info p {
+  color: var(--dark-gray);
+  margin-top: 0.7rem;
+}
+
+.user-info {
+  position: relative;
+  text-align: center;
+  top: 20%;
+}
+
+.attribution {
+  font-size: 1rem;
+  text-align: center;
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: white;
+}
+
+.attribution a {
+  color: black;
+}
