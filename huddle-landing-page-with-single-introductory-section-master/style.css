@@ -28,9 +28,9 @@ body {
 }
 
 .logo {
-  position: absolute;
+  position: relative;
   top: 5%;
-  left: 14%;
+  left: 12%;
 }
 
 .container {
@@ -124,6 +124,12 @@ footer {
 }
 .attribution a {
   color: dodgerblue;
+}
+
+@media only screen and (max-height: 725px) {
+  .socials {
+    display: none !important;
+  }
 }
 
 @media only screen and (max-width: 1000px) {

@@ -147,6 +147,12 @@ article p {
   margin-bottom: 1rem;
 }
 
+@media only screen and (max-height: 615px) {
+  .attribution {
+    display: none;
+  }
+}
+
 @media only screen and (max-width: 375px) {
   body {
     background-image: unset;

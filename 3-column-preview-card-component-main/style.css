@@ -21,6 +21,7 @@ html {
 }
 
 body {
+  overflow-x: hidden;
   width: 100vw;
   font-family: "Big Shoulders Display", cursive;
 }
@@ -128,10 +129,10 @@ p {
   color: dodgerblue;
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 920px) {
   .container {
-    top: 30%;
     flex-wrap: wrap;
+    justify-content: center;
   }
   .flex-item:nth-child(1) {
     border-radius: unset;
