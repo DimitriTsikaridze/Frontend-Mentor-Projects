@@ -1,5 +1,5 @@
 
-# Live Preview Website
+# Live Preview
 https://dimitritsikaridze.github.io/Frontend-Mentor-Projects/
 
 # Frontend Mentor Profile
