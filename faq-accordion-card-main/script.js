@@ -8,10 +8,15 @@ const attribution = document.querySelector(".attribution");
 for (let i = 0; i < questions.length; i++) {
   questions[i].addEventListener("click", () => {
     if (answers[i].classList.contains("clicked")) {
-      answers[i].classList.toggle("hide");
-      answers[i].classList.toggle("clicked");
-      listElemenets[i].classList.toggle("bold");
-      arrows[i].classList.toggle("rotate");
+      answers[i].classList.add("hide");
+      answers[i].classList.remove("clicked");
+      listElemenets[i].classList.remove("bold");
+      arrows[i].classList.remove("rotate");
+    } else {
+      answers[i].classList.remove("hide");
+      answers[i].classList.add("clicked");
+      listElemenets[i].classList.add("bold");
+      arrows[i].classList.add("rotate");
     }
   });
 }
