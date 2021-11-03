@@ -197,6 +197,19 @@ body {
   transition: all 1s ease-in;
 }
 
+.attribution {
+  font-size: 1.4rem;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.attribution a {
+  color: dodgerblue;
+  font-size: 1.4rem;
+}
+
 @media only screen and (min-width: 768px) {
   .component {
     flex-direction: row;
@@ -207,6 +220,11 @@ body {
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
     border-top-right-radius: 0;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .attribution {
+    display: none;
   }
 }
 
