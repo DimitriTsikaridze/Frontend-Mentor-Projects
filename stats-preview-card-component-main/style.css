@@ -108,12 +108,12 @@ article span {
   text-transform: uppercase;
   font-size: 12px;
 }
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 1025px) {
   .container {
     width: 100%;
     min-width: 375px;
     flex-wrap: wrap-reverse;
-    overflow: hidden;
+    overflow-x: hidden;
     align-items: center;
     justify-content: center;
   }
