@@ -1,0 +1,175 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --red: hsl(0, 78%, 62%);
+  --cyan: hsl(180, 62%, 55%);
+  --orange: hsl(34, 97%, 64%);
+  --blue: hsl(212, 86%, 64%);
+  --very-dark-blue: hsl(234, 12%, 34%);
+  --grayish-blue: hsl(229, 6%, 66%);
+  --very-light-gray: hsl(0, 0%, 98%);
+  font-size: 15px;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100vw;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--very-light-gray);
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  width: 50px;
+  height: 50px;
+  align-self: flex-end;
+  margin-top: auto;
+}
+
+.title {
+  text-align: center;
+  width: 500px;
+  margin: 3rem auto 0 auto;
+}
+
+.title h1 {
+  font-weight: 200;
+}
+
+.title span {
+  font-weight: 600;
+  color: var(--very-dark-blue);
+}
+
+.title p {
+  font-weight: 200;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+  gap: 2rem;
+}
+
+.col1,
+.col2,
+.col3,
+.card {
+  display: flex;
+}
+
+.col2,
+.card {
+  flex-direction: column;
+}
+
+.col2 {
+  gap: 2rem;
+}
+
+.card {
+  position: relative;
+  padding: 1.7rem;
+  height: 250px;
+  width: 300px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.card h2 {
+  margin-bottom: 15px;
+  color: var(--very-dark-blue);
+}
+
+.card p {
+  font-weight: 200;
+  font-size: 0.9rem;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  transition: 0.3s ease-in-out;
+}
+
+.card:hover::before {
+  height: 28%;
+  z-index: -1;
+}
+.card:hover {
+  z-index: 100;
+}
+.card:hover h2 {
+  color: white;
+}
+
+.supervisor::before {
+  background-color: var(--cyan);
+}
+
+.team-builder::before {
+  background-color: var(--red);
+}
+
+.karma::before {
+  background-color: var(--orange);
+}
+
+.calculator::before {
+  background-color: var(--blue);
+}
+.attribution {
+  font-size: 1.2rem;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.attribution a {
+  color: dodgerblue;
+}
+@media only screen and (max-width: 1000px) {
+  .attribution {
+    display: none;
+  }
+  .container {
+    flex-direction: column;
+    height: 130vh;
+    margin-top: auto;
+  }
+}
+
+@media only screen and (max-width: 525px) {
+  .title {
+    width: 90%;
+  }
+  .title h1 {
+    font-size: 1.6rem;
+  }
+  .title p {
+    font-size: 1rem;
+  }
+}
