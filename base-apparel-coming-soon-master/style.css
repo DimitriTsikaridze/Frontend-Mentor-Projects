@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --desaturated-red: hsl(0, 36%, 70%);
+  --soft-red: hsl(0, 93%, 68%);
+  --dark-grayish-red: hsl(0, 6%, 24%);
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+  width: 100vw;
+  background-image: url("./images/bg-pattern-desktop.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+img {
+  display: block;
+}
+
+.container {
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+
+.title {
+}
+.title + p {
+  color: var(--desaturated-red);
+}
+
+.title h1 {
+  font-size: 6rem;
+  color: var(--dark-grayish-red);
+  text-transform: uppercase;
+}
+
+.title span {
+  font-weight: 300;
+  color: var(--desaturated-red);
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  margin: 0 auto;
+}
+
+.logo {
+  width: 200px;
+}
+.image-div {
+  margin-left: auto;
+}
+
+form .input-div {
+  position: relative;
+  box-shadow: 0 0 2px 0 var(--dark-grayish-red);
+  display: flex;
+  border-radius: 24px;
+}
+
+form input {
+  border: none;
+  margin: 13px 0 13px 18px;
+  background-color: transparent;
+  outline: none;
+}
+
+form button {
+  background-image: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+  border: none;
+  padding: 8px 2rem;
+  border-radius: 24px;
+  margin-left: auto;
+}
+/* - Linear, 135deg, from hsl(0, 0%, 100%), to hsl(0, 100%, 98%)
+- Linear, 135deg, from hsl(0, 80%, 86%), to hsl(0, 74%, 74%) */
