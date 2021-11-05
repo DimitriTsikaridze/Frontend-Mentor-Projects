@@ -17,16 +17,9 @@
   font-size: 15px;
 }
 
-html,
-body {
-  height: 100%;
-  width: 100vw;
-}
-
 body {
   font-family: "Poppins", sans-serif;
   background-color: var(--very-light-gray);
-  overflow-x: hidden;
 }
 
 img {
@@ -57,10 +50,10 @@ img {
 }
 
 .container {
+  margin-top: 4rem;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 70vh;
   gap: 2rem;
 }
 
@@ -157,19 +150,9 @@ img {
   }
   .container {
     flex-direction: column;
-    height: 130vh;
-    margin-top: auto;
+    margin-bottom: 4rem;
   }
-}
-
-@media only screen and (max-width: 525px) {
   .title {
     width: 90%;
-  }
-  .title h1 {
-    font-size: 1.6rem;
-  }
-  .title p {
-    font-size: 1rem;
   }
 }
