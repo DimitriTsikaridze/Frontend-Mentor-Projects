@@ -138,8 +138,23 @@ button:hover {
 .hide {
   display: none;
 }
+.attribution {
+  font-size: 1.2rem;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  transform: translateY(-10%);
+}
+
+.attribution a {
+  color: dodgerblue;
+}
 
 @media only screen and (max-width: 1150px) {
+  footer {
+    display: none;
+  }
   .logo {
     position: absolute;
     top: -25px;
