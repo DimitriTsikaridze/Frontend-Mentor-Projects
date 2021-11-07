@@ -220,6 +220,10 @@ button:hover {
     width: 90vw;
   }
 
+  .form-content {
+    margin-bottom: 2rem;
+  }
+
   .subscription button {
     padding: 15px 80px;
     font-size: 1rem;
