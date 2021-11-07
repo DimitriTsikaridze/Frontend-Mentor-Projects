@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <title>Frontend Mentor | Intro component with sign up form</title>
+  </head>
+  <body>
+    <div class="container">
+      <article>
+        <h1>Learn to code by watching others</h1>
+        <p>
+          See how experienced developers solve problems in real-time. Watching
+          scripted tutorials is great, but understanding how developers think is
+          invaluable.
+        </p>
+      </article>
+      <div class="form-content">
+        <div class="subscription">
+          <button>
+            <span>Try it free 7 days</span> then $20/mo. thereafter
+          </button>
+        </div>
+        <form>
+          <div class="input-div">
+            <input type="text" placeholder="First Name" />
+            <div class="error-div hide">
+              <img src="./images/icon-error.svg" alt="error" />
+              <p>First Name cannot be empty</p>
+            </div>
+          </div>
+          <div class="input-div">
+            <input type="text" placeholder="Last Name" />
+            <div class="error-div hide">
+              <img src="./images/icon-error.svg" alt="error" />
+              <p>Last Name cannot be empty</p>
+            </div>
+          </div>
+          <div class="input-div">
+            <input class="email" type="email" placeholder="Email Address" />
+            <div class="error-div hide">
+              <img src="./images/icon-error.svg" alt="error" />
+              <p>Looks like this is not an email</p>
+            </div>
+          </div>
+          <div class="input-div">
+            <input type="password" placeholder="Password" />
+            <div class="error-div hide">
+              <img src="./images/icon-error.svg" alt="error" />
+              <p>Passowrd can not be empty</p>
+            </div>
+          </div>
+
+          <button class="register" type="button">Claim your free trial</button>
+          <p>
+            By clicking the button, you are agreeing to our
+            <a href="#">Terms and Services</a>
+          </p>
+        </form>
+      </div>
+    </div>
+    <footer class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by
+      <a href="https://github.com/DimitriTsikaridze">Dimitri Tsikaridze</a>.
+    </footer>
+  </body>
+</html>
