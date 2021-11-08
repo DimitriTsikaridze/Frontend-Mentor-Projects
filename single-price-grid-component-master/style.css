@@ -1,0 +1,162 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:wght@200;400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --cyan: hsl(179, 62%, 43%);
+  --bright-yellow: hsl(71, 73%, 54%);
+  --light-gray: hsl(204, 43%, 93%);
+  --grayish-blue: hsl(218, 22%, 67%);
+}
+
+body,
+html {
+  height: 100%;
+}
+
+body {
+  font-family: "Karla", sans-serif;
+  background-color: var(--light-gray);
+  color: white;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 350px);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 5px 10px 10px rgb(0 0 0 / 5%);
+  border-radius: 10px;
+  line-height: 24px;
+}
+
+.grid-item {
+  padding: 2rem;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  grid-column: 1 / 3;
+  background-color: white;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.header h1 {
+  color: var(--cyan);
+  font-size: 1.7rem;
+}
+.header h2 {
+  color: var(--bright-yellow);
+  font-size: 1.2rem;
+  margin: 1rem 0;
+}
+
+.header p {
+  color: var(--grayish-blue);
+}
+
+.sign-up-section {
+  background-color: var(--cyan);
+  border-bottom-left-radius: 10px;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.sign-up-section h2 {
+  font-size: 1.3rem;
+  font-weight: 400;
+}
+
+.sign-up-section h3 {
+  font-size: 1.8rem;
+}
+
+.sign-up-section span {
+  font-size: 1rem;
+  font-weight: 100;
+}
+
+.sign-up-section button {
+  border: none;
+  outline: none;
+  width: 100%;
+  background-color: var(--bright-yellow);
+  color: white;
+  padding: 13px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-family: "Karla", sans-serif;
+  font-size: 1rem;
+  transition: 0.1s;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px,
+    rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+}
+
+.sign-up-section button:hover {
+  cursor: pointer;
+}
+
+.sign-up-section button:active {
+  transform: translateY(3px);
+}
+
+.details-section {
+  background-color: hsl(179, 47%, 52%);
+  border-bottom-right-radius: 10px;
+}
+.details-section h2 {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  font-weight: 400;
+}
+
+.details-section ul li {
+  list-style: none;
+  font-weight: 200;
+}
+.attribution {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1rem;
+  color: black;
+}
+.attribution a {
+  color: dodgerblue;
+}
+
+@media only screen and (max-width: 720px) {
+  .attribution {
+    display: none;
+  }
+  .grid {
+    position: unset;
+    transform: unset;
+    grid-template-columns: minmax(300px, 1fr);
+    width: 90vw;
+    margin: 2rem auto;
+  }
+
+  .header {
+    grid-column: unset;
+  }
+  .sign-up-section {
+    border-radius: unset;
+  }
+  .details-section {
+    border: none;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+}
