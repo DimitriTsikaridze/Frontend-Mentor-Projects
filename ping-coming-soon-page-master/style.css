@@ -1,0 +1,176 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@100;300;600;700&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  font-size: 20px;
+}
+
+body {
+  font-family: "Libre Franklin", sans-serif;
+  overflow-x: hidden;
+}
+
+.container {
+  margin: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.hide {
+  display: none;
+}
+
+.title {
+  margin: 2rem 0 1rem 0;
+}
+.title h1 {
+  font-weight: 100;
+  letter-spacing: 1px;
+  color: #969696;
+}
+.title h1 span {
+  color: #151f29;
+  font-weight: 700;
+}
+.title h4 {
+  margin-top: 0.7rem;
+  color: #151f29;
+  font-weight: 300;
+}
+
+.dashboard img {
+  width: 70%;
+  max-width: 1000px;
+  min-width: 500px;
+}
+
+form {
+  position: relative;
+  width: 50%;
+  min-width: 600px;
+  margin-bottom: 2rem;
+}
+form input,
+form button {
+  outline: none;
+  border: none;
+  padding: 10px 20px;
+  font-size: 0.8rem;
+}
+form input {
+  border-radius: 18px;
+  width: 45%;
+  border: 1px solid #c2d3ff;
+  caret-color: #4f7df3;
+}
+form input::placeholder {
+  color: #969696;
+}
+form input.error {
+  border: 1px solid #ff5263;
+  color: #ff5263;
+  caret-color: #ff5263;
+}
+form input.error::placeholder {
+  color: #ff5263;
+}
+form button {
+  font-family: "Libre Franklin", sans-serif;
+  font-weight: 300;
+  background-color: #4f7df3;
+  color: white;
+  border-radius: 18px;
+  width: 20%;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  transition: 0.2s;
+}
+form button:hover {
+  cursor: pointer;
+}
+form button:active {
+  transform: translateY(3px);
+}
+form button.blur {
+  background-color: #7ea0f6;
+}
+form p {
+  font-style: italic;
+  font-size: 0.7rem;
+  position: absolute;
+  left: 157px;
+  top: 45px;
+  color: #ff5263;
+}
+
+footer {
+  margin-top: 2.5rem;
+}
+footer .socials {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  color: #4f7df3;
+  font-size: 1rem;
+}
+footer .socials div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #d1d1d1;
+  border-radius: 50%;
+  transition: 0.3s ease-in;
+}
+footer .socials div:hover {
+  background-color: #4f7df3;
+  cursor: pointer;
+  color: white;
+}
+footer .copyright {
+  margin-top: 1rem;
+  color: #969696;
+  font-weight: 300;
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    margin: 2rem 0;
+  }
+
+  .title h1 {
+    font-size: 1.5rem;
+  }
+
+  .dashboard img {
+    min-width: 90vw;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+  }
+  form button,
+form input {
+    width: 70vw;
+  }
+  form p {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  footer {
+    margin-top: 7rem;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

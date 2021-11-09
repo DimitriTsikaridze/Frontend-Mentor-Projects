@@ -1,0 +1,192 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@100;300;600;700&display=swap");
+
+$blue: hsl(223, 87%, 63%);
+$pale-blue: hsl(223, 100%, 88%);
+$light-red: hsl(354, 100%, 66%);
+$gray: hsl(0, 0%, 59%);
+$very-dark-blue: hsl(209, 33%, 12%);
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  font-size: 20px;
+}
+
+body {
+  font-family: "Libre Franklin", sans-serif;
+  overflow-x: hidden;
+}
+
+.container {
+  margin: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.hide {
+  display: none;
+}
+
+.title {
+  margin: 2rem 0 1rem 0;
+  h1 {
+    font-weight: 100;
+    letter-spacing: 1px;
+    color: $gray;
+    span {
+      color: $very-dark-blue;
+      font-weight: 700;
+    }
+  }
+
+  h4 {
+    margin-top: 0.7rem;
+    color: $very-dark-blue;
+    font-weight: 300;
+  }
+}
+
+.dashboard {
+  img {
+    width: 70%;
+    max-width: 1000px;
+    min-width: 500px;
+  }
+}
+
+form {
+  input,
+  button {
+    outline: none;
+    border: none;
+    padding: 10px 20px;
+    font-size: 0.8rem;
+  }
+  position: relative;
+  width: 50%;
+  min-width: 600px;
+  margin-bottom: 2rem;
+  input {
+    border-radius: 18px;
+    width: 45%;
+    border: 1px solid $pale-blue;
+    &::placeholder {
+      color: $gray;
+    }
+    caret-color: $blue;
+    &.error {
+      border: 1px solid $light-red;
+      color: $light-red;
+      caret-color: $light-red;
+      &::placeholder {
+        color: $light-red;
+      }
+    }
+  }
+
+  button {
+    font-family: "Libre Franklin", sans-serif;
+    font-weight: 300;
+    background-color: $blue;
+    color: white;
+    border-radius: 18px;
+    width: 20%;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
+      rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    transition: 0.2s;
+    &:hover {
+      cursor: pointer;
+    }
+    &:active {
+      transform: translateY(3px);
+    }
+    &.blur {
+      background-color: lighten($color: $blue, $amount: 10%);
+    }
+  }
+
+  p {
+    font-style: italic;
+    font-size: 0.7rem;
+    position: absolute;
+    left: 157px;
+    top: 45px;
+    color: $light-red;
+  }
+}
+
+footer {
+  margin-top: 2.5rem;
+  .socials {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    color: $blue;
+    font-size: 1rem;
+
+    div {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 40px;
+      border: 1px solid #d1d1d1;
+      border-radius: 50%;
+      transition: 0.3s ease-in;
+      &:hover {
+        background-color: $blue;
+        cursor: pointer;
+        color: white;
+      }
+    }
+  }
+  .copyright {
+    margin-top: 1rem;
+    color: $gray;
+    font-weight: 300;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .container {
+    margin: 2rem 0;
+  }
+
+  .title {
+    h1 {
+      font-size: 1.5rem;
+    }
+  }
+
+  .dashboard {
+    img {
+      min-width: 90vw;
+    }
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    button,
+    input {
+      width: 70vw;
+    }
+
+    p {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  footer {
+    margin-top: 7rem;
+  }
+}
