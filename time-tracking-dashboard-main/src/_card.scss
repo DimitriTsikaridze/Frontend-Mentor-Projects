@@ -1,0 +1,56 @@
+@import "./palette";
+.user {
+  grid-row: span 2;
+}
+
+.grid-item {
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  .icon {
+    width: 80px;
+    position: absolute;
+    right: 20px;
+  }
+  .amount {
+    background-color: $dark-blue;
+    position: relative;
+    border-radius: 12px;
+    margin-top: auto;
+    padding: 1rem;
+    z-index: 100;
+    transition: 0.3s;
+    &:hover {
+      background-color: $desaturated-blue;
+      cursor: pointer;
+    }
+    .elipsis {
+      position: absolute;
+      right: 1rem;
+      top: 1rem;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.work {
+  background-color: $light-orange;
+}
+.play {
+  background-color: $soft-blue;
+}
+.study {
+  background-color: $light-red;
+}
+.exercise {
+  background-color: $lime-green;
+}
+.social {
+  background-color: $violet;
+}
+.self-care {
+  background-color: $soft-orange;
+}

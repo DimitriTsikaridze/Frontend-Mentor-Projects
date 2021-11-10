@@ -1,0 +1,107 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  font-size: 18px;
+}
+
+body,
+button {
+  font-family: "Rubik", sans-serif;
+}
+
+button {
+  outline: none;
+  border: none;
+}
+
+li {
+  list-style: none;
+}
+
+button:hover,
+li:hover {
+  cursor: pointer;
+}
+
+.user {
+  grid-row: span 2;
+}
+
+.grid-item {
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.grid-item .icon {
+  width: 80px;
+  position: absolute;
+  right: 20px;
+}
+.grid-item .amount {
+  background-color: #1c1f4a;
+  position: relative;
+  border-radius: 12px;
+  margin-top: auto;
+  padding: 1rem;
+  z-index: 100;
+  transition: 0.3s;
+}
+.grid-item .amount:hover {
+  background-color: #6f76c8;
+  cursor: pointer;
+}
+.grid-item .amount .elipsis {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+}
+.grid-item .amount .elipsis:hover {
+  cursor: pointer;
+}
+
+.work {
+  background-color: #ff8c66;
+}
+
+.play {
+  background-color: #56c2e6;
+}
+
+.study {
+  background-color: #ff5c7c;
+}
+
+.exercise {
+  background-color: #4acf81;
+}
+
+.social {
+  background-color: #7536d3;
+}
+
+.self-care {
+  background-color: #f1c65b;
+}
+
+body {
+  background-color: #0f1424;
+  color: white;
+}
+
+main {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  grid-template-columns: repeat(4, 300px);
+  gap: 1rem;
+}
+
+/*# sourceMappingURL=style.css.map */

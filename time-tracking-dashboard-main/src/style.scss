@@ -1,0 +1,18 @@
+@import "./reset";
+@import "./palette";
+@import "./card";
+
+body {
+  background-color: $very-dark-blue;
+  color: white;
+}
+
+main {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  grid-template-columns: repeat(4, 300px);
+  gap: 1rem;
+}
