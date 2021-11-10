@@ -47,21 +47,39 @@ li:hover {
   background-color: #1c1f4a;
   position: relative;
   border-radius: 12px;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
   margin-top: auto;
   padding: 1rem;
   z-index: 100;
   transition: 0.3s;
 }
+.grid-item .amount h4 {
+  font-weight: 500;
+}
+.grid-item .amount h1 {
+  margin-top: 2rem;
+  font-weight: 300;
+  font-size: 3rem;
+}
+.grid-item .amount p {
+  font-weight: 300;
+  color: #bdc1ff;
+  transition: 0.2s;
+}
 .grid-item .amount:hover {
   background-color: #6f76c8;
   cursor: pointer;
 }
-.grid-item .amount .elipsis {
+.grid-item .elipsis {
   position: absolute;
   right: 1rem;
   top: 1rem;
 }
-.grid-item .amount .elipsis:hover {
+.grid-item .elipsis:hover {
   cursor: pointer;
 }
 
@@ -101,7 +119,49 @@ main {
   transform: translate(-50%, -50%);
   display: grid;
   grid-template-columns: repeat(4, 300px);
+  grid-template-rows: 250px 250px;
+  gap: 2rem;
+}
+
+.user {
+  display: flex;
+  flex-direction: column;
+  background-color: #1c1f4a;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+}
+.user .top-content {
+  padding: 2rem;
+  background-color: #5847eb;
+  height: 70%;
+  border-radius: 12px;
+}
+.user .top-content img {
+  width: 40%;
+  border: 3px solid white;
+  border-radius: 50%;
+  margin-bottom: 2rem;
+}
+.user .top-content p {
+  font-weight: 300;
+  color: #bdc1ff;
+}
+.user .top-content h2 {
+  font-weight: 300;
+  font-size: 2rem;
+}
+.user .bottom-content ul {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 2rem;
   gap: 1rem;
+}
+.user .bottom-content ul li {
+  color: #bdc1ff;
+  transition: 0.2s;
+}
+.user .bottom-content ul li:hover {
+  color: white;
 }
 
 /*# sourceMappingURL=style.css.map */

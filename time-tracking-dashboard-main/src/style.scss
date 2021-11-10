@@ -14,5 +14,50 @@ main {
   transform: translate(-50%, -50%);
   display: grid;
   grid-template-columns: repeat(4, 300px);
-  gap: 1rem;
+  grid-template-rows: 250px 250px;
+  gap: 2rem;
+}
+
+.user {
+  display: flex;
+  flex-direction: column;
+  background-color: $dark-blue;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  .top-content {
+    img {
+      width: 40%;
+      border: 3px solid white;
+      border-radius: 50%;
+      margin-bottom: 2rem;
+    }
+    p {
+      font-weight: 300;
+      color: $pale-blue;
+    }
+    h2 {
+      font-weight: 300;
+      font-size: 2rem;
+    }
+    padding: 2rem;
+    background-color: $blue;
+    height: 70%;
+    border-radius: 12px;
+  }
+
+  .bottom-content {
+    ul {
+      display: flex;
+      flex-direction: column;
+      padding: 2rem 2rem;
+      gap: 1rem;
+      li {
+        color: $pale-blue;
+        transition: 0.2s;
+        &:hover {
+          color: white;
+        }
+      }
+    }
+  }
 }
