@@ -1,0 +1,27 @@
+@media only screen and (max-width: 1400px) {
+  main {
+    width: 900px;
+    grid-template-columns: repeat(3, 300px);
+    grid-template-rows: repeat(2, 1fr);
+  }
+  .user {
+    .top-content {
+      height: unset;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      img {
+        width: 100px;
+        margin-bottom: 0;
+      }
+    }
+    .bottom-content {
+      ul {
+        flex-direction: row;
+        justify-content: space-evenly;
+      }
+    }
+    grid-column: 1 / 4;
+  }
+}

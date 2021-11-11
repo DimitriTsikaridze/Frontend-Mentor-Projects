@@ -10,6 +10,11 @@
 }
 
 body,
+html {
+  height: 100%;
+}
+
+body,
 button {
   font-family: "Rubik", sans-serif;
 }
@@ -113,12 +118,10 @@ body {
 }
 
 main {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  width: 1200px;
+  margin: 20vh auto 20vh auto;
   display: grid;
-  grid-template-columns: repeat(4, 300px);
+  grid-template-columns: 300px 900px;
   grid-template-rows: 250px 250px;
   gap: 2rem;
 }
@@ -162,6 +165,40 @@ main {
 }
 .user .bottom-content ul li:hover {
   color: white;
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 300px);
+  grid-template-rows: 250px 250px;
+  gap: 2rem;
+}
+
+@media only screen and (max-width: 1400px) {
+  main {
+    width: 900px;
+    grid-template-columns: repeat(3, 300px);
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  .user {
+    grid-column: 1/4;
+  }
+  .user .top-content {
+    height: unset;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+  }
+  .user .top-content img {
+    width: 100px;
+    margin-bottom: 0;
+  }
+  .user .bottom-content ul {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

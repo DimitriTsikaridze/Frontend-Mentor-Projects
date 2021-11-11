@@ -8,12 +8,10 @@ body {
 }
 
 main {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  width: 1200px;
+  margin: 20vh auto 20vh auto;
   display: grid;
-  grid-template-columns: repeat(4, 300px);
+  grid-template-columns: 300px 900px;
   grid-template-rows: 250px 250px;
   gap: 2rem;
 }
@@ -61,3 +59,12 @@ main {
     }
   }
 }
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 300px);
+  grid-template-rows: 250px 250px;
+  gap: 2rem;
+}
+
+@import "./tablet.scss";
