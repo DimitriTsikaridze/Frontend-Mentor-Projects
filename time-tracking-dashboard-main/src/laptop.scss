@@ -1,11 +1,13 @@
 @media only screen and (max-width: 1400px) {
   main {
     grid-template-columns: repeat(3, 300px);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-rows: 1fr 1fr;
   }
+
   .user {
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
     .top-content {
-      height: unset;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -16,9 +18,13 @@
       }
     }
     .bottom-content {
+      height: 100%;
       ul {
+        height: 100%;
         flex-direction: row;
         justify-content: space-evenly;
+        align-items: center;
+        font-size: 1.2rem;
       }
     }
     grid-column: 1 / 4;
