@@ -8,10 +8,12 @@ body {
 }
 
 main {
-  width: 1200px;
-  margin: 20vh auto 20vh auto;
+  margin: 2rem;
+  min-height: 100vh;
+  align-content: center;
   display: grid;
-  grid-template-columns: 300px 900px;
+  justify-content: center;
+  grid-template-columns: 300px calc(900px + 4rem);
   grid-template-rows: 250px 250px;
   gap: 2rem;
 }
