@@ -1,0 +1,61 @@
+@media only screen and (max-width: 1010px) {
+  main {
+    grid-template-columns: minmax(300px, 350px);
+    .user {
+      grid-column: unset;
+      .top-content {
+        padding: 1rem;
+        gap: 1rem;
+
+        img {
+          width: 70px;
+          height: 70px;
+        }
+        flex-direction: row;
+        h2 {
+          font-size: 1.2rem;
+        }
+        p {
+          font-size: 1rem;
+        }
+      }
+
+      .bottom-content {
+        ul {
+          padding: 1.4rem;
+          font-size: 0.9rem;
+          gap: 2rem;
+        }
+      }
+    }
+  }
+
+  .stats {
+    grid-template-columns: minmax(300px, 350px);
+    grid-template-rows: repeat(6, 180px);
+
+    .grid-item {
+      .time {
+        margin-top: 0.8rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .icon {
+        top: 0;
+      }
+      .amount {
+        height: 70%;
+
+        h1 {
+          margin: 0;
+          font-size: 2rem;
+        }
+        p {
+          margin: 0;
+        }
+        gap: 5px;
+      }
+    }
+  }
+}

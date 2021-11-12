@@ -203,5 +203,58 @@ main {
     font-size: 1.2rem;
   }
 }
+@media only screen and (max-width: 1010px) {
+  main {
+    grid-template-columns: minmax(300px, 350px);
+  }
+  main .user {
+    grid-column: unset;
+  }
+  main .user .top-content {
+    padding: 1rem;
+    gap: 1rem;
+    flex-direction: row;
+  }
+  main .user .top-content img {
+    width: 70px;
+    height: 70px;
+  }
+  main .user .top-content h2 {
+    font-size: 1.2rem;
+  }
+  main .user .top-content p {
+    font-size: 1rem;
+  }
+  main .user .bottom-content ul {
+    padding: 1.4rem;
+    font-size: 0.9rem;
+    gap: 2rem;
+  }
+
+  .stats {
+    grid-template-columns: minmax(300px, 350px);
+    grid-template-rows: repeat(6, 180px);
+  }
+  .stats .grid-item .time {
+    margin-top: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .stats .grid-item .icon {
+    top: 0;
+  }
+  .stats .grid-item .amount {
+    height: 70%;
+    gap: 5px;
+  }
+  .stats .grid-item .amount h1 {
+    margin: 0;
+    font-size: 2rem;
+  }
+  .stats .grid-item .amount p {
+    margin: 0;
+  }
+}
 
 /*# sourceMappingURL=style.css.map */
