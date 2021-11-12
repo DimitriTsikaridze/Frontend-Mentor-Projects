@@ -10,8 +10,6 @@ const currentTime = document.querySelectorAll(".current-time");
 //previous Time
 const previousTime = document.querySelectorAll(".previous-time");
 
-Document.addEventListener("onDOm");
-
 dailyBtn.addEventListener("click", () => {
   daily();
 });
@@ -50,6 +48,6 @@ async function monthly() {
     currentTime[i].textContent = `${response[i].timeframes.monthly.current}hrs`;
     previousTime[
       i
-    ].textContent = `Last Month - ${response[i].timeframes.monthly.previous}`;
+    ].textContent = `Last Month - ${response[i].timeframes.monthly.previous}hrs`;
   }
 }
