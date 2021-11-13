@@ -54,6 +54,9 @@ main {
       li {
         color: $pale-blue;
         transition: 0.2s;
+        &.active {
+          color: white;
+        }
         &:hover {
           color: white;
         }

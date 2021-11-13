@@ -29,6 +29,9 @@ async function daily() {
       i
     ].textContent = `Last Day - ${response[i].timeframes.daily.previous}hrs`;
   }
+  dailyBtn.classList.add("active");
+  weeklyBtn.classList.remove("active");
+  monthlyBtn.classList.remove("active");
 }
 
 async function weekly() {
@@ -40,6 +43,9 @@ async function weekly() {
       i
     ].textContent = `Last Week - ${response[i].timeframes.weekly.previous}hrs`;
   }
+  weeklyBtn.classList.add("active");
+  dailyBtn.classList.remove("active");
+  monthlyBtn.classList.remove("active");
 }
 async function monthly() {
   const response = await (await fetch("../data.json")).json();
@@ -50,4 +56,7 @@ async function monthly() {
       i
     ].textContent = `Last Month - ${response[i].timeframes.monthly.previous}hrs`;
   }
+  monthlyBtn.classList.add("active");
+  dailyBtn.classList.remove("active");
+  weeklyBtn.classList.remove("active");
 }

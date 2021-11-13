@@ -160,6 +160,9 @@ main {
   color: #bdc1ff;
   transition: 0.2s;
 }
+.user .bottom-content ul li.active {
+  color: white;
+}
 .user .bottom-content ul li:hover {
   color: white;
 }
@@ -254,6 +257,7 @@ main {
   }
   .stats .grid-item .amount p {
     margin: 0;
+    text-align: center;
   }
 }
 
