@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body,
+button {
+  font-family: "Space Mono", monospace;
+}
+
+button,
+input {
+  outline: none;
+  border: none;
+}
+
+button {
+  &:hover {
+    cursor: pointer;
+  }
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
