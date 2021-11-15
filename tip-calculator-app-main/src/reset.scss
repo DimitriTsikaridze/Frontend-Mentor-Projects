@@ -16,6 +16,7 @@ input {
 }
 
 button {
+  transition: 0.2s;
   &:hover {
     cursor: pointer;
   }

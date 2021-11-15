@@ -9,6 +9,7 @@
       sizes="32x32"
       href="./images/favicon-32x32.png"
     />
+    <script src="./script.js" defer></script>
     <link rel="stylesheet" href="style.css" />
     <title>Frontend Mentor | Tip calculator app</title>
   </head>
@@ -20,9 +21,9 @@
       <div class="flex-container">
         <div class="left-content">
           <h2 class="title">Bill</h2>
-          <div class="input-div">
+          <div class="input-div hover-green">
             <img src="../images/icon-dollar.svg" alt="icon" />
-            <input class="input-amount" type="number" placeholder="0" />
+            <input class="input-amount bill" type="number" placeholder="0" />
           </div>
           <h2 class="title">Select Tip %</h2>
           <div class="tip-amount">
@@ -31,13 +32,13 @@
             <div class="grid-item"><button>15%</button></div>
             <div class="grid-item"><button>25%</button></div>
             <div class="grid-item"><button>50%</button></div>
-            <div class="grid-item"><input class="custom" type="number" placeholder="Custom"></input></div>
+            <div class="grid-item"><input class="custom hover-green" type="number" placeholder="Custom"></input></div>
           </div>
           <h2 class="title">Number of People</h2>
           <div class="people-amount">
-            <div class="input-div">
+            <div class="input-div hover-green">
               <img src="../images/icon-person.svg" alt="icon" />
-              <input class="input-amount" type="number" placeholder="0" />
+              <input class="input-amount people" type="number" placeholder="0" />
             </div>
           </div>
         </div>
@@ -47,14 +48,14 @@
               <h5>Tip Amount</h5>
               <h6>/ person</h6>
             </div>
-            <span>$0.00</span>
+            <span class="tip-value">$0.00</span>
           </div>
           <div class="tip-amount-flex">
             <div class="total">
               <h5>Total</h5>
               <h6>/ person</h6>
             </div>
-            <span>$0.00</span>
+            <span class="total-value">$0.00</span>
           </div>
           <button class="reset">RESET</button>
         </div>
