@@ -54,6 +54,7 @@ body {
         font-size: 1.5rem;
         color: $Very-dark-cyan;
         font-weight: 700;
+
         &::placeholder {
           color: $Dark-grayish-cyan;
         }
@@ -164,4 +165,19 @@ body {
       caret-color: $Strong-cyan;
     }
   }
+}
+
+.people-amount {
+  position: relative;
+}
+.error {
+  color: red;
+  z-index: 10;
+  font-weight: 700;
+  position: absolute;
+  right: 5px;
+  top: -40px;
+}
+.hide {
+  display: none;
 }

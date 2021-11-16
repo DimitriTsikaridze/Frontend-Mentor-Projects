@@ -182,4 +182,21 @@ body {
   caret-color: #26c0ab;
 }
 
+.people-amount {
+  position: relative;
+}
+
+.error {
+  color: red;
+  z-index: 10;
+  font-weight: 700;
+  position: absolute;
+  right: 5px;
+  top: -40px;
+}
+
+.hide {
+  display: none;
+}
+
 /*# sourceMappingURL=style.css.map */
