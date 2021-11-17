@@ -119,8 +119,7 @@ article span {
   }
 
   .attribution {
-    bottom: 2%;
-    min-width: 375px;
+    display: none;
   }
 
   .img,
@@ -149,8 +148,17 @@ article span {
   }
 
   .stats {
-    margin: 0;
+    margin: 2rem 0;
     gap: 15px;
+    justify-content: space-evenly;
+  }
+}
+
+@media only screen and (max-width: 490px) {
+  body {
+    overflow-x: hidden;
+  }
+  .stats {
     flex-direction: column;
   }
 }
