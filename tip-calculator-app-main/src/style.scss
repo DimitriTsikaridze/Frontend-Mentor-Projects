@@ -100,7 +100,7 @@ body {
           color: white;
           font-weight: 700;
 
-          &.clicked,
+          &.currently-active,
           &:hover {
             background-color: lighten($color: $Strong-cyan, $amount: 30%);
             color: $Very-dark-cyan;

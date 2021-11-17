@@ -23,16 +23,15 @@ html {
 body {
   overflow-x: hidden;
   width: 100vw;
+  min-height: 100vh;
   font-family: "Big Shoulders Display", cursive;
 }
 
 .container {
   display: flex;
-  height: 500px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  min-height: 100%;
+  justify-content: center;
+  align-items: center;
 }
 
 .container h1,
@@ -131,8 +130,8 @@ p {
 
 @media only screen and (max-width: 920px) {
   .container {
-    flex-wrap: wrap;
-    justify-content: center;
+    margin: 5rem 0;
+    flex-direction: column;
   }
   .flex-item:nth-child(1) {
     border-radius: unset;

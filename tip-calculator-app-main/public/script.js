@@ -1,22 +1,22 @@
-const tipButtons = document.querySelectorAll(".grid-item>button");
 const bill = document.querySelector(".bill");
+const tipButtons = document.querySelectorAll(".grid-item>button");
 const people = document.querySelector(".people");
 const tipAmount = document.querySelector(".tip-value");
 const totalAmount = document.querySelector(".total-value");
 const resetBtn = document.querySelector(".reset");
 const error = document.querySelector(".error");
 
-function tipValues() {
+function tipValue() {
   tipButtons.forEach((btn) => {
     btn.addEventListener("click", () => {
-      console.log(parseInt(btn.textContent));
       return parseInt(btn.textContent);
     });
   });
 }
 
-function calculateBill(num) {
-  tipAmount.textContent = `\$${num}`;
+function calculateBill(bill) {
+  tipAmount.textContent = `\$${bill}`;
+  console.log((bill * tipValue()) / 100 / people);
 }
 
 function calculateTotal(amount) {
@@ -24,13 +24,12 @@ function calculateTotal(amount) {
 }
 
 function billValue() {
-  bill.addEventListener("input", (num) => {
-    calculateBill(num.target.value);
+  bill.addEventListener("input", (bill) => {
+    calculateBill(bill.target.value);
   });
 }
 
 function peopleValue() {
-  let zeroAmount = 0;
   people.addEventListener("input", (amount) => {
     if (amount.target.value == "0") {
       addError();
@@ -58,8 +57,6 @@ function reset() {
   totalAmount.textContent = "$0.00";
 }
 
-billValue();
-peopleValue();
 resetBtn.addEventListener("click", () => {
   reset();
 });

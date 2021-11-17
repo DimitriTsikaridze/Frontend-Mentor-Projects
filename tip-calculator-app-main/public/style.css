@@ -129,7 +129,7 @@ body {
   color: white;
   font-weight: 700;
 }
-.flex-container .left-content .tip-amount .grid-item button.clicked, .flex-container .left-content .tip-amount .grid-item button:hover {
+.flex-container .left-content .tip-amount .grid-item button.currently-active, .flex-container .left-content .tip-amount .grid-item button:hover {
   background-color: #95eadf;
   color: #00494d;
 }
