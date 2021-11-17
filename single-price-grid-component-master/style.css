@@ -24,13 +24,16 @@ body {
   color: white;
 }
 
+main {
+  min-height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(2, 350px);
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
   box-shadow: 0 5px 10px 10px rgb(0 0 0 / 5%);
   border-radius: 10px;
   line-height: 24px;
@@ -125,10 +128,8 @@ body {
   font-weight: 200;
 }
 .attribution {
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  margin-top: auto;
+  text-align: center;
   font-size: 1rem;
   color: black;
 }
