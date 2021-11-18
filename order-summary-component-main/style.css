@@ -13,18 +13,18 @@
   --transition-duration: 0.3s;
 }
 
-html,
-body {
-  height: 100%;
-  width: 100vw;
-}
-
 body {
   background-image: url("./images/pattern-background-desktop.svg");
   background-repeat: no-repeat;
   background-size: contain;
   background-color: var(--pale-blue);
   font-family: "Red Hat Display", sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
 }
 
 h1 {
@@ -46,10 +46,7 @@ button:hover {
 .attribution {
   font-size: 1rem;
   text-align: center;
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  margin-top: auto;
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
@@ -60,11 +57,8 @@ img {
 }
 
 .card {
+  margin-top: auto;
   max-width: 400px;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
   background-color: #fff;
   border-radius: 15px;
   box-shadow: 5px 10px 8px rgba(136, 136, 136, 0.075);
@@ -147,13 +141,7 @@ article p {
   margin-bottom: 1rem;
 }
 
-@media only screen and (max-height: 615px) {
-  .attribution {
-    display: none;
-  }
-}
-
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 450px) {
   body {
     background-image: unset;
     background-color: var(--pale-blue);
