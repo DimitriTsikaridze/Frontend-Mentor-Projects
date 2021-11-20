@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap");
-
 * {
   margin: 0;
   padding: 0;
@@ -7,25 +5,21 @@
   font-size: 13px;
 }
 
-// Color Variables.
-:root {
-  --dark-gray-blue: hsl(217, 19%, 35%);
-  --desat-dark-blue: hsl(214, 17%, 51%);
-  --gray-blue: hsl(212, 23%, 69%);
-  --light-gray-blue: hsl(210, 46%, 95%);
-}
+$dark-gray-blue: hsl(217, 19%, 35%);
+$desat-dark-blue: hsl(214, 17%, 51%);
+$gray-blue: hsl(212, 23%, 69%);
+$light-gray-blue: hsl(210, 46%, 95%);
 
 body {
   font-family: "Manrope", sans-serif;
-  background: var(--light-gray-blue);
+  background: $light-gray-blue;
 }
 
-//Utilites
 .container {
   max-width: 1000px;
   margin: 0 auto;
   width: 95%;
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -40,11 +34,11 @@ body {
 }
 
 .d-color {
-  color: var(--dark-gray-blue);
+  color: $dark-gray-blue;
 }
 
 .l-color {
-  color: var(--gray-blue);
+  color: $gray-blue;
 }
 
 .component {
@@ -100,13 +94,13 @@ body {
     }
 
     .name {
-      color: var(--dark-gray-blue);
+      color: $dark-gray-blue;
       font-weight: 700;
       margin-bottom: 0.2rem;
     }
 
     .date {
-      color: var(--gray-blue);
+      color: $gray-blue;
     }
 
     .share {
@@ -121,7 +115,7 @@ body {
         flex: 10%;
         padding: 0.7rem;
         border-radius: 50%;
-        background-color: var(--light-gray-blue);
+        background-color: $light-gray-blue;
       }
     }
   }
@@ -135,7 +129,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--dark-gray-blue);
+  background-color: $dark-gray-blue;
   padding: 1rem 2rem 1rem 2rem;
   border-radius: 10px;
   display: none;
@@ -147,7 +141,7 @@ body {
   .share-name {
     font-weight: 700;
     letter-spacing: 5px;
-    color: var(--gray-blue);
+    color: $gray-blue;
     flex: 40%;
   }
 
@@ -160,7 +154,7 @@ body {
   &::after {
     position: absolute;
     content: "";
-    background: var(--dark-gray-blue);
+    background: $dark-gray-blue;
     top: 45px;
     right: 105px;
     height: 10px;
@@ -173,7 +167,7 @@ body {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  background-color: var(--dark-gray-blue);
+  background-color: $dark-gray-blue;
   padding: 1.5rem 2.5rem 1.5rem 2.5rem;
   width: 100%;
   border-bottom-left-radius: 10px;
@@ -188,7 +182,7 @@ body {
     flex: 33%;
     font-weight: 700;
     letter-spacing: 5px;
-    color: var(--gray-blue);
+    color: $gray-blue;
   }
 
   .logos {
@@ -211,7 +205,7 @@ body {
       align-items: center;
       padding: 0.7rem;
       border-radius: 50%;
-      background-color: var(--light-gray-blue);
+      background-color: $light-gray-blue;
     }
   }
 }
@@ -219,19 +213,6 @@ body {
 .show {
   display: flex;
   transition: all 1s ease-in;
-}
-.attribution {
-  font-size: 1.4rem;
-  text-align: center;
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-
-  a {
-    color: dodgerblue;
-    font-size: 1.4rem;
-  }
 }
 
 @media only screen and (min-width: 768px) {
@@ -245,10 +226,5 @@ body {
       border-bottom-left-radius: 10px;
       border-top-right-radius: 0;
     }
-  }
-}
-@media only screen and (max-width: 1000px) {
-  .attribution {
-    display: none;
   }
 }
