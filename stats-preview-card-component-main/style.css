@@ -27,17 +27,12 @@ body {
   color: white;
 }
 
-.attribution {
-  font-size: 1rem;
-  text-align: center;
-  position: absolute;
-  bottom: 5%;
-  left: 50%;
-  transform: translateX(-50%);
-  color: white;
-}
-.attribution a {
-  color: dodgerblue;
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
 article {
@@ -65,10 +60,6 @@ article span {
 
 .container {
   display: flex;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
 }
 
 .img,
@@ -114,13 +105,8 @@ article span {
     width: 100%;
     min-width: 375px;
     flex-wrap: wrap-reverse;
-    overflow-x: hidden;
     align-items: center;
     justify-content: center;
-  }
-
-  .attribution {
-    display: none;
   }
 
   .img,
@@ -156,6 +142,9 @@ article span {
 }
 
 @media only screen and (max-width: 420px) {
+  .container {
+    margin: 0 auto;
+  }
   .stats {
     flex-direction: column;
   }
