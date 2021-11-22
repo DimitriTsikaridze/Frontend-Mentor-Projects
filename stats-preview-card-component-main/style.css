@@ -108,6 +108,7 @@ article span {
   text-transform: uppercase;
   font-size: 12px;
 }
+
 @media only screen and (max-width: 1025px) {
   .container {
     width: 100%;
@@ -154,11 +155,21 @@ article span {
   }
 }
 
-@media only screen and (max-width: 490px) {
-  body {
-    overflow-x: hidden;
-  }
+@media only screen and (max-width: 420px) {
   .stats {
     flex-direction: column;
+  }
+
+  article h1 {
+    font-size: 1.8rem;
+  }
+
+  article {
+    padding: 2rem;
+  }
+  .article-p {
+    width: 92%;
+    margin: 10px auto;
+    text-align: center;
   }
 }
