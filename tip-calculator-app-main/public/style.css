@@ -133,6 +133,12 @@ body {
   background-color: #95eadf;
   color: #00494d;
 }
+.flex-container .left-content .tip-amount .grid-item button.active {
+  background-color: #26c0ab;
+}
+.flex-container .left-content .tip-amount .grid-item button.unactive {
+  background-color: #00494d;
+}
 .flex-container .right-content {
   background-color: #00494d;
   display: flex;

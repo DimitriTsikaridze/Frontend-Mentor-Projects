@@ -105,6 +105,12 @@ body {
             background-color: lighten($color: $Strong-cyan, $amount: 30%);
             color: $Very-dark-cyan;
           }
+          &.active {
+            background-color: $Strong-cyan;
+          }
+          &.unactive {
+            background-color: $Very-dark-cyan;
+          }
         }
       }
     }

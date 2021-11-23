@@ -6,13 +6,26 @@ const totalAmount = document.querySelector(".total-value");
 const resetBtn = document.querySelector(".reset");
 const error = document.querySelector(".error");
 
-function tipValue() {
-  tipButtons.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      return parseInt(btn.textContent);
-    });
+let tip = 0,
+  amt = 0,
+  ppl = 1;
+
+tipButtons.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    if (btn.classList.contains("active")) {
+      tip = 0;
+      btn.classList.remove("active");
+      btn.classList.add("unactive");
+    } else {
+      tipButtons.forEach((e) => {
+        e.classList.remove("active");
+      });
+      tip = btn.value;
+      btn.classList.remove("unactive");
+      btn.classList.add("active");
+    }
   });
-}
+});
 
 function calculateBill(bill) {
   tipAmount.textContent = `\$${bill}`;
