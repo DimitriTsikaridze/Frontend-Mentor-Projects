@@ -3,6 +3,7 @@
 - [Front-End Mentor Profile](https://www.frontendmentor.io/profile/DimitriTsikaridze)
 ## Projects List
 - [Time Tracking Dashboard](https://dimitritsikaridze.github.io/Frontend-Mentor-Projects/time-tracking-dashboard-main/public/index.html)
+- [Tip Calculator App](https://dimitritsikaridze.github.io/Frontend-Mentor-Projects/tip-calculator-app-main/public/index.html)
 - [FAQ Accordion Card](https://dimitritsikaridze.github.io/Frontend-Mentor-Projects/faq-accordion-card-main/index.html)
 - [Social Proof Section](https://dimitritsikaridze.github.io/Frontend-Mentor-Projects/social-proof-section-master/index.html)
 - [Sign Up Form](https://dimitritsikaridze.github.io/Frontend-Mentor-Projects/intro-component-with-signup-form-master/index.html)
