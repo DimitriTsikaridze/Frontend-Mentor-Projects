@@ -3,6 +3,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  outline: 1px solid red;
 }
 
 :root {
@@ -11,6 +12,7 @@
 
 body {
   font-family: "Libre Franklin", sans-serif;
+  overflow-x: hidden;
 }
 
 .container {
@@ -87,8 +89,7 @@ form button {
   color: white;
   border-radius: 18px;
   width: 20%;
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
-    rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
   transition: 0.2s;
 }
 form button:hover {
@@ -158,14 +159,14 @@ footer .copyright {
     flex-direction: column;
     align-items: center;
     gap: 2rem;
-    min-width: unset;
   }
   form button,
-  form input {
+form input {
     width: 70vw;
   }
   form p {
     left: 50%;
+    width: 200px;
     transform: translateX(-50%);
   }
 

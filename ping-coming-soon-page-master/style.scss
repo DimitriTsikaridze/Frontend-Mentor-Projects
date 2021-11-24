@@ -10,6 +10,7 @@ $very-dark-blue: hsl(209, 33%, 12%);
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+  outline: 1px solid red;
 }
 
 :root {
@@ -182,6 +183,7 @@ footer {
 
     p {
       left: 50%;
+      width: 200px;
       transform: translateX(-50%);
     }
   }
