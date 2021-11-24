@@ -1,0 +1,18 @@
+@media only screen and (max-width: 820px) {
+  .logo {
+    margin-top: 2rem;
+  }
+  .container {
+    min-width: 350px;
+  }
+  .flex-container {
+    flex-direction: column;
+    width: 90vw;
+    margin: 0 auto;
+    .left-content {
+      .tip-amount {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  }
+}

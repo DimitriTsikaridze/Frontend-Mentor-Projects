@@ -189,3 +189,5 @@ body {
     background-color: lighten($color: $Strong-cyan, $amount: 25%);
   }
 }
+
+@import "./tablet.scss";
