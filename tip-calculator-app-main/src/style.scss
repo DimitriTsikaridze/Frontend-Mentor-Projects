@@ -99,14 +99,10 @@ body {
           background-color: $Very-dark-cyan;
           color: white;
           font-weight: 700;
-
           &.currently-active,
-          &:hover {
+          &.active {
             background-color: lighten($color: $Strong-cyan, $amount: 30%);
             color: $Very-dark-cyan;
-          }
-          &.active {
-            background-color: $Strong-cyan;
           }
           &.inactive {
             background-color: $Very-dark-cyan;

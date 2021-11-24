@@ -7,7 +7,7 @@ const resetBtn = document.querySelector(".reset");
 const error = document.querySelector(".error");
 const calculateBtn = document.querySelector(".calcBtn");
 
-tip = 0;
+let tip = 0;
 
 tipButtons.forEach((btn) => {
   btn.addEventListener("click", () => {
@@ -26,16 +26,20 @@ tipButtons.forEach((btn) => {
 });
 
 function calculateBill() {
-  if (bill.value && people.value && tip) {
-    let res = (bill.value * tip) / 100 / people.value;
-    tipAmount.textContent = `\$${res}`;
+  if (bill.value && people.value != 0 && tip) {
+    let tipPercent = (bill.value * tip) / 100 / people.value;
+    tipAmount.textContent = `\$${tipPercent}`;
   } else {
-    alert("Fill Fields");
+    alert("All Fields Are Required");
   }
 }
 
-function calculateTotal(amount) {
-  totalAmount.textContent = `\$${amount}`;
+function calculateTotal() {
+  if (bill.value && people.value != 0 && tip) {
+    let totalPerPerson = parseInt(bill.value) + (bill.value * tip) / 100;
+    let res = parseInt(totalPerPerson) / people.value;
+    totalAmount.textContent = `\$${res}`;
+  }
 }
 
 function addError() {
@@ -58,6 +62,15 @@ resetBtn.addEventListener("click", () => {
   reset();
 });
 
+people.addEventListener("input", () => {
+  if (!people.value || people.value == 0) {
+    addError();
+  } else {
+    removeError();
+  }
+});
+
 calculateBtn.addEventListener("click", () => {
   calculateBill();
+  calculateTotal();
 });
