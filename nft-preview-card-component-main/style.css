@@ -1,0 +1,154 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
+:root {
+  --Soft-blue: hsl(215, 51%, 70%);
+  --Cyan: hsl(178, 100%, 50%);
+  --Very-dark-blue: hsl(217, 54%, 11%);
+  --Very-dark-blue1: hsl(216, 50%, 16%);
+  --Very-dark-blue2: hsl(215, 32%, 27%);
+  --White: hsl(0, 0%, 100%);
+  font-size: 18px;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+body {
+  font-family: "Outfit", sans-serif;
+  background-color: var(--Very-dark-blue);
+  color: white;
+}
+main {
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  margin: 2rem 1rem;
+  width: 370px;
+  background-color: var(--Very-dark-blue1);
+  padding: 1rem;
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.img-wrapper {
+  position: relative;
+}
+
+.overlay {
+  background-color: var(--Cyan);
+  position: absolute;
+  inset: 0 0 6px 0;
+  border-radius: 14px;
+  opacity: 0;
+  transition: 0.2s ease-in;
+}
+.img-view {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: 0.2s ease-in;
+}
+
+.overlay:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}
+.overlay:hover + .img-view {
+  opacity: 1;
+}
+
+.main-img {
+  border-radius: 14px;
+}
+
+h1 {
+  width: 180px;
+  font-size: 1.2rem;
+  transition: 0.2s;
+}
+
+h1:hover,
+span:hover {
+  color: var(--Cyan);
+  cursor: pointer;
+}
+p {
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--Soft-blue);
+}
+
+.etherium,
+.time,
+.stats {
+  display: flex;
+}
+
+.etherium,
+.time {
+  gap: 8px;
+  align-items: center;
+}
+.etherium img {
+  width: 11px;
+  height: 18px;
+}
+.time img {
+  width: 17px;
+  height: 17px;
+}
+
+h2 {
+  font-size: 1rem;
+}
+
+.etherium h2 {
+  color: var(--Cyan);
+}
+.time h2 {
+  color: var(--Soft-blue);
+  font-weight: 300;
+}
+
+.stats {
+  justify-content: space-between;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-top: 1px solid var(--Very-dark-blue2);
+  padding: 1rem 0;
+}
+.profile img {
+  width: 2.5rem;
+  border: 1px solid white;
+  border-radius: 50%;
+}
+h3 {
+  color: var(--Soft-blue);
+  font-size: 1rem;
+  font-weight: 300;
+}
+span {
+  color: white;
+  font-weight: 300;
+  transition: 0.2s;
+}
