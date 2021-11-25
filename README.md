@@ -1,7 +1,10 @@
 # Front-End Mentor Projects
+
 - [Webstie Preview](https://dimitritsikaridze.github.io/Frontend-Mentor-Projects/)
 - [Front-End Mentor Profile](https://www.frontendmentor.io/profile/DimitriTsikaridze)
+
 ## Projects List
+
 - [Time Tracking Dashboard](https://dimitritsikaridze.github.io/Frontend-Mentor-Projects/time-tracking-dashboard-main/public/index.html)
 - [Tip Calculator App](https://dimitritsikaridze.github.io/Frontend-Mentor-Projects/tip-calculator-app-main/public/index.html)
 - [FAQ Accordion Card](https://dimitritsikaridze.github.io/Frontend-Mentor-Projects/faq-accordion-card-main/index.html)
@@ -17,3 +20,4 @@
 - [3 Column Preview Card](https://dimitritsikaridze.github.io/Frontend-Mentor-Projects/3-column-preview-card-component-main/index.html)
 - [Article Preview Component](https://dimitritsikaridze.github.io/Frontend-Mentor-Projects/article-preview-component-master/index.html)
 - [Profile Card Component](https://dimitritsikaridze.github.io/Frontend-Mentor-Projects/profile-card-component-main/index.html)
+- [NFT Card Component](https://dimitritsikaridze.github.io/Frontend-Mentor-Projects/nft-preview-card-component-main/index.html)
