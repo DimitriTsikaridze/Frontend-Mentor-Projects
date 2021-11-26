@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:wght@700;900&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  font-size: 18px;
+}
+
+body {
+  font-family: "Barlow", sans-serif;
+}
+
+button {
+  outline: none;
+  border: none;
+}
+button:hover {
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=style.css.map */
