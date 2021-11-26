@@ -21,4 +21,14 @@ button:hover {
   cursor: pointer;
 }
 
+img {
+  max-width: 100%;
+}
+
+header {
+  background-image: url("../images/desktop/image-header.jpg");
+  background-size: cover;
+  background-position: right;
+}
+
 /*# sourceMappingURL=style.css.map */
