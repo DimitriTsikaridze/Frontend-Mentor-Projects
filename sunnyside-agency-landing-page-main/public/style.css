@@ -25,6 +25,11 @@ img {
   max-width: 100%;
 }
 
+a {
+  text-decoration: none;
+  color: white;
+}
+
 header {
   background-image: url("../images/desktop/image-header.jpg");
   background-size: cover;
