@@ -162,10 +162,54 @@ header {
         color: $Dark-grayish-blue;
         margin: 2rem 0;
       }
-      h4 {
-      }
       h5 {
         color: $Dark-grayish-blue;
+      }
+    }
+  }
+}
+
+.image-section {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+footer {
+  padding: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  img {
+    display: block;
+  }
+  background-color: lighten($color: $Dark-moderate-cyan, $amount: 20%);
+  color: $Dark-desaturated-cyan;
+
+  ul {
+    display: flex;
+    gap: 1.5rem;
+    li {
+      transition: 0.2s;
+      &:hover {
+        color: white;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .icons {
+    margin-top: 4rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    width: 300px;
+    i {
+      transition: 0.2s;
+      font-size: 1.2rem;
+      &:hover {
+        cursor: pointer;
+        color: white;
       }
     }
   }

@@ -191,4 +191,48 @@ header .arrow:hover {
   color: #818498;
 }
 
+.image-section {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+footer {
+  padding: 2rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  background-color: #7abdb0;
+  color: #25564b;
+}
+footer img {
+  display: block;
+}
+footer ul {
+  display: flex;
+  gap: 1.5rem;
+}
+footer ul li {
+  transition: 0.2s;
+}
+footer ul li:hover {
+  color: white;
+  cursor: pointer;
+}
+footer .icons {
+  margin-top: 4rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  width: 300px;
+}
+footer .icons i {
+  transition: 0.2s;
+  font-size: 1.2rem;
+}
+footer .icons i:hover {
+  cursor: pointer;
+  color: white;
+}
+
 /*# sourceMappingURL=style.css.map */
