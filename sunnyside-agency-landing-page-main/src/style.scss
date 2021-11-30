@@ -132,3 +132,41 @@ header {
     }
   }
 }
+
+.users-section {
+  h2 {
+    text-align: center;
+    color: $Grayish-blue;
+    font-family: "Fraunces", serif;
+    text-transform: uppercase;
+    margin: 6rem 0 4rem 0;
+  }
+
+  .users {
+    display: flex;
+    margin-bottom: 5rem;
+    justify-content: center;
+    gap: 1rem;
+    .user {
+      width: 350px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 1rem;
+      img {
+        width: 4rem;
+        border-radius: 50%;
+      }
+      p {
+        color: $Dark-grayish-blue;
+        margin: 2rem 0;
+      }
+      h4 {
+      }
+      h5 {
+        color: $Dark-grayish-blue;
+      }
+    }
+  }
+}

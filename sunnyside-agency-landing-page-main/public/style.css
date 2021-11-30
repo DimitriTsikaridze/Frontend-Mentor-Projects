@@ -158,4 +158,37 @@ header .arrow:hover {
   background-size: cover;
 }
 
+.users-section h2 {
+  text-align: center;
+  color: #a7abae;
+  font-family: "Fraunces", serif;
+  text-transform: uppercase;
+  margin: 6rem 0 4rem 0;
+}
+.users-section .users {
+  display: flex;
+  margin-bottom: 5rem;
+  justify-content: center;
+  gap: 1rem;
+}
+.users-section .users .user {
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+}
+.users-section .users .user img {
+  width: 4rem;
+  border-radius: 50%;
+}
+.users-section .users .user p {
+  color: #818498;
+  margin: 2rem 0;
+}
+.users-section .users .user h5 {
+  color: #818498;
+}
+
 /*# sourceMappingURL=style.css.map */
