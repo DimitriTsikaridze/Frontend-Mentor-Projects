@@ -4,4 +4,64 @@ header {
   background-image: url("../images/desktop/image-header.jpg");
   background-size: cover;
   background-position: right;
+  height: 600px;
+  ul {
+    padding: 2rem 1.5rem;
+    display: flex;
+    gap: 2rem;
+    img {
+      margin-right: auto;
+    }
+  }
+  h1 {
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    font-family: "Fraunces", serif;
+    letter-spacing: 4px;
+    margin: 5rem;
+  }
+
+  .arrow {
+    display: block;
+    margin: 0 auto;
+    transition: 0.3s;
+    &:hover {
+      cursor: pointer;
+      transform: translateY(5px);
+    }
+  }
+}
+
+.section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  img {
+    width: 100%;
+  }
+  article {
+    justify-content: center;
+    width: 62%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    h2 {
+      font-size: 2rem;
+      color: $Very-dark-desaturated-blue;
+      font-family: "Fraunces", serif;
+      width: 300px;
+    }
+    p {
+      color: $Dark-grayish-blue;
+    }
+    h3 {
+      font-size: 1rem;
+      font-family: "Fraunces", serif;
+      text-transform: uppercase;
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
 }

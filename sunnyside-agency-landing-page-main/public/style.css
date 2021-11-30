@@ -9,6 +9,10 @@
   font-size: 18px;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Barlow", sans-serif;
 }
@@ -30,10 +34,73 @@ a {
   color: white;
 }
 
+li {
+  list-style: none;
+}
+
 header {
   background-image: url("../images/desktop/image-header.jpg");
   background-size: cover;
   background-position: right;
+  height: 600px;
+}
+header ul {
+  padding: 2rem 1.5rem;
+  display: flex;
+  gap: 2rem;
+}
+header ul img {
+  margin-right: auto;
+}
+header h1 {
+  text-align: center;
+  color: white;
+  text-transform: uppercase;
+  font-family: "Fraunces", serif;
+  letter-spacing: 4px;
+  margin: 5rem;
+}
+header .arrow {
+  display: block;
+  margin: 0 auto;
+  transition: 0.3s;
+}
+header .arrow:hover {
+  cursor: pointer;
+  transform: translateY(5px);
+}
+
+.section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.section img {
+  width: 100%;
+}
+.section article {
+  justify-content: center;
+  width: 62%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.section article h2 {
+  font-size: 2rem;
+  color: #23303e;
+  font-family: "Fraunces", serif;
+  width: 300px;
+}
+.section article p {
+  color: #818498;
+}
+.section article h3 {
+  font-size: 1rem;
+  font-family: "Fraunces", serif;
+  text-transform: uppercase;
+}
+.section article h3:hover {
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=style.css.map */
