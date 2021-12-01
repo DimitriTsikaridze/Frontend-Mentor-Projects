@@ -1,5 +1,8 @@
 @import "./palette";
 @import "./reset.scss";
+.hide {
+  display: none;
+}
 header {
   background-image: url("../images/desktop/image-header.jpg");
   background-size: cover;
@@ -254,3 +257,5 @@ footer {
     color: white;
   }
 }
+
+@import "./mobile.scss";

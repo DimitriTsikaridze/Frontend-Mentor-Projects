@@ -38,6 +38,10 @@ li {
   list-style: none;
 }
 
+.hide {
+  display: none;
+}
+
 header {
   background-image: url("../images/desktop/image-header.jpg");
   background-size: cover;
@@ -273,6 +277,82 @@ footer .icons i:hover {
 }
 .contact:hover a {
   color: white;
+}
+
+@media only screen and (max-width: 900px) {
+  .hide {
+    display: unset;
+  }
+
+  .show {
+    display: none;
+  }
+
+  .mobile-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .mobile-images img {
+    width: 100%;
+  }
+
+  .section {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  .section article {
+    padding: 2rem;
+    width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+  .section article h2 {
+    font-size: 1.5rem;
+  }
+
+  .users-section h2 {
+    font-size: 1rem;
+    letter-spacing: 5px;
+    margin: 3rem 0;
+  }
+  .users-section .users {
+    flex-direction: column;
+    gap: 3rem;
+  }
+  .users-section .users .user {
+    margin: 0 auto;
+    gap: 0.5rem;
+  }
+  .users-section .users .user:hover {
+    transform: none;
+  }
+  .users-section .users .user p {
+    margin: 1rem 0;
+  }
+
+  .image-section {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+
+  #main-section article {
+    grid-row: 2;
+  }
+
+  .section-3 article {
+    padding: 1rem;
+  }
+  .section-3 article .content {
+    width: 100%;
+    padding: 10px;
+  }
+  .section-3 article .content p {
+    margin: 0;
+  }
+
+  footer .icons {
+    margin-top: 1.5rem;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
