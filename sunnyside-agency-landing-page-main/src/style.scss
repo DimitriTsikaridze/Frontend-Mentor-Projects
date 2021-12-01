@@ -3,11 +3,12 @@
 header {
   background-image: url("../images/desktop/image-header.jpg");
   background-size: cover;
-  background-position: right;
+  background-position: center;
   height: 600px;
   ul {
     padding: 2rem 1.5rem;
     display: flex;
+    align-items: center;
     gap: 2rem;
     img {
       margin-right: auto;
@@ -40,6 +41,9 @@ header {
     width: 100%;
   }
   article {
+    a {
+      color: unset;
+    }
     justify-content: center;
     width: 62%;
     margin: 0 auto;
@@ -58,9 +62,8 @@ header {
       font-size: 1rem;
       font-family: "Fraunces", serif;
       text-transform: uppercase;
-      &:hover {
-        cursor: pointer;
-      }
+      display: inline-block;
+      width: 130px;
     }
   }
 }
@@ -81,13 +84,21 @@ header {
       opacity: 0.7;
       transition: 0.2s;
     }
+    &:hover::after {
+      bottom: -2px;
+      height: 10px;
+    }
   }
 }
 
 .section-1 {
   h3 {
+    &:hover {
+      cursor: unset;
+    }
+
     &::after {
-      background-color: yellow;
+      background-color: $Yellow;
     }
   }
 }
@@ -124,11 +135,13 @@ header {
       background-image: url("../images/desktop/image-graphic-design.jpg");
       background-repeat: no-repeat;
       background-size: cover;
+      background-position: center;
     }
     &-2 {
       background-image: url("../images/desktop/image-photography.jpg");
       background-repeat: no-repeat;
       background-size: cover;
+      background-position: center;
     }
   }
 }
@@ -148,6 +161,10 @@ header {
     justify-content: center;
     gap: 1rem;
     .user {
+      transition: 0.3s ease-out;
+      &:hover {
+        transform: translateY(-5px);
+      }
       width: 350px;
       display: flex;
       flex-direction: column;
@@ -212,5 +229,28 @@ footer {
         color: white;
       }
     }
+  }
+}
+
+.contact {
+  background-color: white;
+  padding: 15px 25px;
+  border-radius: 24px;
+  align-self: center;
+  font-size: 0.8rem;
+  font-family: "Fraunces", serif;
+  transition: 0.2s;
+  text-transform: uppercase;
+  &:hover {
+    cursor: pointer;
+  }
+  a {
+    color: $Dark-blue;
+  }
+  &:hover {
+    background-color: rgba($color: #fff, $alpha: 0.2);
+  }
+  &:hover a {
+    color: white;
   }
 }

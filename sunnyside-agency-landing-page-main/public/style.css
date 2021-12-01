@@ -41,12 +41,13 @@ li {
 header {
   background-image: url("../images/desktop/image-header.jpg");
   background-size: cover;
-  background-position: right;
+  background-position: center;
   height: 600px;
 }
 header ul {
   padding: 2rem 1.5rem;
   display: flex;
+  align-items: center;
   gap: 2rem;
 }
 header ul img {
@@ -85,6 +86,9 @@ header .arrow:hover {
   flex-direction: column;
   gap: 2rem;
 }
+.section article a {
+  color: unset;
+}
 .section article h2 {
   font-size: 2rem;
   color: #23303e;
@@ -97,9 +101,8 @@ header .arrow:hover {
   font-size: 1rem;
   font-family: "Fraunces", serif;
   text-transform: uppercase;
-}
-.section article h3:hover {
-  cursor: pointer;
+  display: inline-block;
+  width: 130px;
 }
 
 .section-1 h3,
@@ -119,9 +122,17 @@ header .arrow:hover {
   opacity: 0.7;
   transition: 0.2s;
 }
+.section-1 h3:hover::after,
+.section-2 h3:hover::after {
+  bottom: -2px;
+  height: 10px;
+}
 
+.section-1 h3:hover {
+  cursor: unset;
+}
 .section-1 h3::after {
-  background-color: yellow;
+  background-color: #fad400;
 }
 
 .section-2 h3::after {
@@ -151,11 +162,13 @@ header .arrow:hover {
   background-image: url("../images/desktop/image-graphic-design.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
 }
 .section-3 .article-2 {
   background-image: url("../images/desktop/image-photography.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
 }
 
 .users-section h2 {
@@ -172,12 +185,16 @@ header .arrow:hover {
   gap: 1rem;
 }
 .users-section .users .user {
+  transition: 0.3s ease-out;
   width: 350px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   gap: 1rem;
+}
+.users-section .users .user:hover {
+  transform: translateY(-5px);
 }
 .users-section .users .user img {
   width: 4rem;
@@ -232,6 +249,29 @@ footer .icons i {
 }
 footer .icons i:hover {
   cursor: pointer;
+  color: white;
+}
+
+.contact {
+  background-color: white;
+  padding: 15px 25px;
+  border-radius: 24px;
+  align-self: center;
+  font-size: 0.8rem;
+  font-family: "Fraunces", serif;
+  transition: 0.2s;
+  text-transform: uppercase;
+}
+.contact:hover {
+  cursor: pointer;
+}
+.contact a {
+  color: #19536b;
+}
+.contact:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.contact:hover a {
   color: white;
 }
 
