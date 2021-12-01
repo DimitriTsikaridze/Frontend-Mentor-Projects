@@ -1,10 +1,5 @@
+@import "../src/palette";
 @media only screen and (max-width: 900px) {
-  .hide {
-    display: unset;
-  }
-  .show {
-    display: none;
-  }
   .mobile-images {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -49,6 +44,12 @@
   }
 
   .image-section {
+    .show {
+      display: none;
+    }
+    .hide {
+      display: unset;
+    }
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
   }
@@ -77,5 +78,40 @@
   }
 }
 
-@media only screen and (max-width: 620px) {
+@media only screen and (max-width: 640px) {
+  header {
+    h1 {
+      margin: 3rem;
+    }
+  }
+  .hide {
+    display: unset;
+  }
+  .links {
+    display: none;
+  }
+  .showModal {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 4rem;
+    width: 90%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    li {
+      a {
+        color: $Very-dark-grayish-blue;
+      }
+    }
+    .contact {
+      background-color: $Yellow;
+    }
+  }
+  .hamburger-img {
+    &:hover {
+      cursor: pointer;
+    }
+  }
 }

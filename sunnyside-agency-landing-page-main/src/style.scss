@@ -12,7 +12,6 @@ header {
     padding: 2rem 1.5rem;
     display: flex;
     align-items: center;
-    gap: 2rem;
     img {
       margin-right: auto;
     }
@@ -35,6 +34,12 @@ header {
       transform: translateY(5px);
     }
   }
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
 }
 
 .section {
@@ -168,7 +173,7 @@ header {
       &:hover {
         transform: translateY(-5px);
       }
-      width: 350px;
+      max-width: 350px;
       display: flex;
       flex-direction: column;
       align-items: center;

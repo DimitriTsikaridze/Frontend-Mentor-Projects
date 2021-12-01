@@ -52,7 +52,6 @@ header ul {
   padding: 2rem 1.5rem;
   display: flex;
   align-items: center;
-  gap: 2rem;
 }
 header ul img {
   margin-right: auto;
@@ -73,6 +72,12 @@ header .arrow {
 header .arrow:hover {
   cursor: pointer;
   transform: translateY(5px);
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
 }
 
 .section {
@@ -190,7 +195,7 @@ header .arrow:hover {
 }
 .users-section .users .user {
   transition: 0.3s ease-out;
-  width: 350px;
+  max-width: 350px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -280,14 +285,6 @@ footer .icons i:hover {
 }
 
 @media only screen and (max-width: 900px) {
-  .hide {
-    display: unset;
-  }
-
-  .show {
-    display: none;
-  }
-
   .mobile-images {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -334,6 +331,12 @@ footer .icons i:hover {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
   }
+  .image-section .show {
+    display: none;
+  }
+  .image-section .hide {
+    display: unset;
+  }
 
   #main-section article {
     grid-row: 2;
@@ -352,6 +355,41 @@ footer .icons i:hover {
 
   footer .icons {
     margin-top: 1.5rem;
+  }
+}
+@media only screen and (max-width: 640px) {
+  header h1 {
+    margin: 3rem;
+  }
+
+  .hide {
+    display: unset;
+  }
+
+  .links {
+    display: none;
+  }
+
+  .showModal {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 4rem;
+    width: 90%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+  }
+  .showModal li a {
+    color: #5a636c;
+  }
+  .showModal .contact {
+    background-color: #fad400;
+  }
+
+  .hamburger-img:hover {
+    cursor: pointer;
   }
 }
 
