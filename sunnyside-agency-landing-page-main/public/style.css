@@ -293,6 +293,10 @@ footer .icons i:hover {
     width: 100%;
   }
 
+  .desktop-images {
+    display: none;
+  }
+
   .section {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
@@ -327,17 +331,6 @@ footer .icons i:hover {
     margin: 1rem 0;
   }
 
-  .image-section {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-  }
-  .image-section .show {
-    display: none;
-  }
-  .image-section .hide {
-    display: unset;
-  }
-
   #main-section article {
     grid-row: 2;
   }
@@ -362,10 +355,6 @@ footer .icons i:hover {
     margin: 3rem;
   }
 
-  .hide {
-    display: unset;
-  }
-
   .links {
     display: none;
   }
@@ -388,6 +377,9 @@ footer .icons i:hover {
     background-color: #fad400;
   }
 
+  .hamburger-img {
+    display: unset;
+  }
   .hamburger-img:hover {
     cursor: pointer;
   }

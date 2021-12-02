@@ -1,11 +1,15 @@
 @import "../src/palette";
 @media only screen and (max-width: 900px) {
   .mobile-images {
+    // display: unset;
     display: grid;
     grid-template-columns: 1fr 1fr;
     img {
       width: 100%;
     }
+  }
+  .desktop-images {
+    display: none;
   }
   .section {
     grid-template-columns: 1fr;
@@ -43,16 +47,6 @@
     }
   }
 
-  .image-section {
-    .show {
-      display: none;
-    }
-    .hide {
-      display: unset;
-    }
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-  }
   #main-section {
     article {
       grid-row: 2;
@@ -84,12 +78,10 @@
       margin: 3rem;
     }
   }
-  .hide {
-    display: unset;
-  }
   .links {
     display: none;
   }
+
   .showModal {
     position: absolute;
     left: 50%;
@@ -110,6 +102,7 @@
     }
   }
   .hamburger-img {
+    display: unset;
     &:hover {
       cursor: pointer;
     }
