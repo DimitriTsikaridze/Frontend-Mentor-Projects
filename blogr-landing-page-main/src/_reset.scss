@@ -9,7 +9,8 @@
 }
 
 button {
-  outline: 0;
+  outline: none;
+  color: white;
   border: none;
   &:hover {
     cursor: pointer;

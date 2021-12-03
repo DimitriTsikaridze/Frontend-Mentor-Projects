@@ -1,6 +1,50 @@
-@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&family=Ubuntu:ital,wght@0,500;0,700;1,400&display=swap");
 @import "./reset";
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&family=Ubuntu:ital,wght@0,500;0,700;1,400&display=swap");
+@import "./palette";
 body {
   font-family: "Overpass", sans-serif;
   // font-family: "Ubuntu", sans-serif;
+}
+
+header {
+  color: white;
+  padding: 4rem 6rem 0 6rem;
+  background-image: linear-gradient($Verylightred1, $Verylightred),
+    url("../images/bg-pattern-intro-desktop.svg");
+  background-position: center;
+
+  ul,
+  nav {
+    display: flex;
+    align-items: center;
+  }
+  ul {
+    width: 100%;
+    .secondary {
+      margin-left: auto;
+    }
+  }
+  button {
+    font-family: "Ubuntu", sans-serif;
+    padding: 8px 20px;
+    border-radius: 18px;
+    font-size: 1rem;
+  }
+  .secondary {
+    background-color: transparent;
+  }
+  .primary {
+    background-color: $White;
+    color: $Verylightred;
+  }
+  h1,
+  h4 {
+    text-align: center;
+  }
+
+  .btns {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
 }

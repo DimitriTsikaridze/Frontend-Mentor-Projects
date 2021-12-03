@@ -10,7 +10,8 @@
 }
 
 button {
-  outline: 0;
+  outline: none;
+  color: white;
   border: none;
 }
 button:hover {
@@ -31,6 +32,46 @@ img {
 
 body {
   font-family: "Overpass", sans-serif;
+}
+
+header {
+  color: white;
+  padding: 4rem 6rem 0 6rem;
+  background-image: linear-gradient(#ff8f70, #ff7a85), url("../images/bg-pattern-intro-desktop.svg");
+  background-position: center;
+}
+header ul,
+header nav {
+  display: flex;
+  align-items: center;
+}
+header ul {
+  width: 100%;
+}
+header ul .secondary {
+  margin-left: auto;
+}
+header button {
+  font-family: "Ubuntu", sans-serif;
+  padding: 8px 20px;
+  border-radius: 18px;
+  font-size: 1rem;
+}
+header .secondary {
+  background-color: transparent;
+}
+header .primary {
+  background-color: white;
+  color: #ff7a85;
+}
+header h1,
+header h4 {
+  text-align: center;
+}
+header .btns {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
 }
 
 /*# sourceMappingURL=style.css.map */
