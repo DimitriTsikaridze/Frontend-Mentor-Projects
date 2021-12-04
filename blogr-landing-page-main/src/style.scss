@@ -179,3 +179,27 @@ header {
     }
   }
 }
+
+footer {
+  color: white;
+  display: flex;
+  justify-content: space-evenly;
+  border-top-right-radius: $background-border-radius;
+  background-color: $Verydarkgrayblue;
+  nav {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    li {
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    span {
+      display: inline-block;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+  }
+  padding: 5rem 0 10rem 0;
+}

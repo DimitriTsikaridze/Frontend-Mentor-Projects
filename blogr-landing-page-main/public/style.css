@@ -194,4 +194,26 @@ header .btns {
   color: #4b5862;
 }
 
+footer {
+  color: white;
+  display: flex;
+  justify-content: space-evenly;
+  border-top-right-radius: 120px;
+  background-color: #2c2d3f;
+  padding: 5rem 0 10rem 0;
+}
+footer nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+footer nav li:hover {
+  cursor: pointer;
+}
+footer nav span {
+  display: inline-block;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
 /*# sourceMappingURL=style.css.map */
