@@ -4,47 +4,115 @@
 body {
   font-family: "Overpass", sans-serif;
   // font-family: "Ubuntu", sans-serif;
+  overflow-x: hidden;
+}
+
+.secondary {
+  background-color: transparent;
+}
+.primary {
+  background-color: $White;
+  color: $Verylightred;
+  font-weight: 600;
+}
+.outline {
+  border: 1px solid $White;
+}
+button {
+  font-family: "Ubuntu", sans-serif;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 1rem;
+  transition: 0.1s;
+  &:active {
+    transform: scale(0.98);
+  }
 }
 
 header {
   color: white;
   padding: 4rem 6rem 0 6rem;
-  background-image: linear-gradient($Verylightred1, $Verylightred),
-    url("../images/bg-pattern-intro-desktop.svg");
+  background-image: url("../images/bg-pattern-intro-desktop.svg"),
+    linear-gradient(to right, $Verylightred, $Verylightred1);
   background-position: center;
-
+  border-bottom-left-radius: 80px;
+  padding-bottom: 6rem;
+  background-repeat: no-repeat;
   ul,
   nav {
     display: flex;
     align-items: center;
   }
+
   ul {
     width: 100%;
+    gap: 2rem;
+    margin-left: 4rem;
     .secondary {
       margin-left: auto;
     }
+    li {
+      &:hover {
+        cursor: pointer;
+      }
+    }
   }
-  button {
-    font-family: "Ubuntu", sans-serif;
-    padding: 8px 20px;
-    border-radius: 18px;
-    font-size: 1rem;
-  }
-  .secondary {
-    background-color: transparent;
-  }
-  .primary {
-    background-color: $White;
-    color: $Verylightred;
-  }
+
   h1,
   h4 {
     text-align: center;
+  }
+  h1 {
+    margin-top: 6rem;
+    font-size: 3rem;
+  }
+  h4 {
+    font-weight: 300;
+    margin: 1.5rem 0 4rem 0;
   }
 
   .btns {
     display: flex;
     justify-content: center;
     gap: 1rem;
+  }
+}
+
+.section-1 {
+  h2 {
+    text-align: center;
+    color: $Verydarkdesaturatedblue;
+    margin-top: 5rem;
+    font-size: 2rem;
+  }
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .description {
+    max-width: 505px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    transform: translateX(30%);
+  }
+  article {
+    h3 {
+      color: $Verydarkdesaturatedblue;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    p {
+      color: $Verydarkgrayishblue;
+      line-height: 28px;
+    }
+  }
+  aside {
+    img {
+      max-width: unset;
+      transform: translateX(30%);
+      height: 900px;
+    }
   }
 }
