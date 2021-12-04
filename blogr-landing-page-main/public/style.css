@@ -105,7 +105,7 @@ header .btns {
 
 .section-1 h2 {
   text-align: center;
-  color: #3f4164;
+  color: #1f3f5b;
   margin-top: 5rem;
   font-size: 2.5rem;
 }
@@ -123,7 +123,7 @@ header .btns {
   transform: translateX(30%);
 }
 .section-1 article h3 {
-  color: #3f4164;
+  color: #1f3f5b;
   font-size: 1.8rem;
   margin-bottom: 1rem;
 }
@@ -170,6 +170,28 @@ header .btns {
   position: absolute;
   left: -130px;
   top: -257px;
+}
+
+.section-3 {
+  margin-top: 4rem;
+  display: flex;
+  align-items: center;
+}
+.section-3 .description {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+.section-3 .description h3 {
+  color: #1f3f5b;
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+.section-3 .description p {
+  max-width: 500px;
+  line-height: 28px;
+  color: #4b5862;
 }
 
 /*# sourceMappingURL=style.css.map */

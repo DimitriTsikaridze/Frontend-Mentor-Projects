@@ -2,6 +2,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&family=Ubuntu:ital,wght@0,500;0,700;1,400&display=swap");
 @import "./palette";
 $background-border-radius: 120px;
+
 body {
   font-family: "Overpass", sans-serif;
   // font-family: "Ubuntu", sans-serif;
@@ -82,7 +83,7 @@ header {
 .section-1 {
   h2 {
     text-align: center;
-    color: $Verydarkdesaturatedblue;
+    color: $Verydarkblue;
     margin-top: 5rem;
     font-size: 2.5rem;
   }
@@ -101,7 +102,8 @@ header {
   }
   article {
     h3 {
-      color: $Verydarkdesaturatedblue;
+      color: $Verydarkblue;
+
       font-size: 1.8rem;
       margin-bottom: 1rem;
     }
@@ -152,6 +154,28 @@ header {
       position: absolute;
       left: -130px;
       top: -257px;
+    }
+  }
+}
+
+.section-3 {
+  margin-top: 4rem;
+  display: flex;
+  align-items: center;
+  .description {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    h3 {
+      color: $Verydarkblue;
+      font-weight: 600;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    p {
+      max-width: 500px;
+      line-height: 28px;
+      color: $Verydarkgrayishblue;
     }
   }
 }
