@@ -1,6 +1,7 @@
 @import "./reset";
 @import url("https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&family=Ubuntu:ital,wght@0,500;0,700;1,400&display=swap");
 @import "./palette";
+$background-border-radius: 120px;
 body {
   font-family: "Overpass", sans-serif;
   // font-family: "Ubuntu", sans-serif;
@@ -35,7 +36,7 @@ header {
   background-image: url("../images/bg-pattern-intro-desktop.svg"),
     linear-gradient(to right, $Verylightred, $Verylightred1);
   background-position: center;
-  border-bottom-left-radius: 80px;
+  border-bottom-left-radius: $background-border-radius;
   padding-bottom: 6rem;
   background-repeat: no-repeat;
   ul,
@@ -115,6 +116,42 @@ header {
       max-width: unset;
       transform: translateX(30%);
       height: 900px;
+    }
+  }
+}
+
+.section-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-image: url("../images/bg-pattern-circles.svg"),
+    linear-gradient($Verydarkgrayblue, $Verydarkdesaturatedblue);
+  background-repeat: no-repeat;
+  border-top-right-radius: $background-border-radius;
+  border-bottom-left-radius: $background-border-radius;
+  background-position: bottom left;
+  gap: 4rem;
+  article {
+    margin: 8rem 0;
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    p {
+      max-width: 500px;
+      font-weight: 300;
+      line-height: 28px;
+    }
+  }
+  aside {
+    width: 570px;
+
+    position: relative;
+    img {
+      position: absolute;
+      left: -130px;
+      top: -257px;
     }
   }
 }

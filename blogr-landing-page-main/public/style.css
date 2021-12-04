@@ -65,7 +65,7 @@ header {
   padding: 4rem 6rem 0 6rem;
   background-image: url("../images/bg-pattern-intro-desktop.svg"), linear-gradient(to right, #ff7a85, #ff8f70);
   background-position: center;
-  border-bottom-left-radius: 80px;
+  border-bottom-left-radius: 120px;
   padding-bottom: 6rem;
   background-repeat: no-repeat;
 }
@@ -136,6 +136,40 @@ header .btns {
   max-width: unset;
   transform: translateX(30%);
   height: 900px;
+}
+
+.section-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-image: url("../images/bg-pattern-circles.svg"), linear-gradient(#2c2d3f, #3f4164);
+  background-repeat: no-repeat;
+  border-top-right-radius: 120px;
+  border-bottom-left-radius: 120px;
+  background-position: bottom left;
+  gap: 4rem;
+}
+.section-2 article {
+  margin: 8rem 0;
+}
+.section-2 article h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+.section-2 article p {
+  max-width: 500px;
+  font-weight: 300;
+  line-height: 28px;
+}
+.section-2 aside {
+  width: 570px;
+  position: relative;
+}
+.section-2 aside img {
+  position: absolute;
+  left: -130px;
+  top: -257px;
 }
 
 /*# sourceMappingURL=style.css.map */
