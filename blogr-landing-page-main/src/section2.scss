@@ -1,0 +1,35 @@
+.section-2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  background-image: url("../images/bg-pattern-circles.svg"),
+    linear-gradient(90deg, $Verydarkgrayblue, $Verydarkdesaturatedblue);
+  background-repeat: no-repeat;
+  border-top-right-radius: $background-border-radius;
+  border-bottom-left-radius: $background-border-radius;
+  background-position: bottom left;
+  gap: 4rem;
+  article {
+    margin: 8rem 0;
+    h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    p {
+      max-width: 500px;
+      font-weight: 300;
+      line-height: 28px;
+    }
+  }
+  aside {
+    width: 570px;
+
+    position: relative;
+    img {
+      position: absolute;
+      left: -130px;
+      top: -257px;
+    }
+  }
+}

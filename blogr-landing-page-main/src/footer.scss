@@ -1,0 +1,39 @@
+footer {
+  margin-top: 6rem;
+  color: white;
+  display: flex;
+  justify-content: space-evenly;
+  border-top-right-radius: $background-border-radius;
+  background-color: $Verydarkgrayblue;
+  nav {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    li {
+      position: relative;
+      &:hover {
+        cursor: pointer;
+      }
+      &::before {
+        transition: 0.2s;
+
+        content: "";
+        position: absolute;
+        top: 20px;
+        left: 0;
+        width: 0;
+        height: 3px;
+        background-color: $Grayishblue;
+      }
+      &:hover::before {
+        width: 88px;
+      }
+    }
+    span {
+      display: inline-block;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+  }
+  padding: 5rem 0 10rem 0;
+}

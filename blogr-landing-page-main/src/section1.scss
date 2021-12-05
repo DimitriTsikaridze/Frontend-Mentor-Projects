@@ -1,0 +1,41 @@
+.section-1 {
+  h2 {
+    text-align: center;
+    color: $Verydarkblue;
+    margin-top: 5rem;
+    font-size: 2.5rem;
+  }
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .description {
+    max-width: 505px;
+    min-width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    transform: translateX(30%);
+  }
+  article {
+    h3 {
+      color: $Verydarkblue;
+
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+    p {
+      color: $Verydarkgrayishblue;
+      line-height: 28px;
+      font-size: 1.1rem;
+    }
+  }
+  aside {
+    img {
+      max-width: unset;
+      transform: translateX(30%);
+      height: 900px;
+    }
+  }
+}

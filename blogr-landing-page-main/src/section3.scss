@@ -1,0 +1,21 @@
+.section-3 {
+  margin-top: 8rem;
+  display: flex;
+  align-items: center;
+  .description {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    h3 {
+      color: $Verydarkblue;
+      font-weight: 600;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    p {
+      max-width: 500px;
+      line-height: 28px;
+      color: $Verydarkgrayishblue;
+    }
+  }
+}
