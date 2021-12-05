@@ -150,11 +150,14 @@ header .btns {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   opacity: 0;
   left: -50%;
-  top: 35px;
+  top: 25px;
   width: 150px;
   background-color: white;
   margin: 5px;
   transition: 0.2s;
+}
+.li-wrapper .hover-menu:hover {
+  opacity: 1;
 }
 .li-wrapper .hover-menu ul {
   display: flex;
@@ -164,9 +167,11 @@ header .btns {
 }
 .li-wrapper .hover-menu li {
   color: #4b5862;
+  transition: 0.2s;
 }
 .li-wrapper .hover-menu li:hover {
   color: #25252d;
+  transform: scale(1.09);
 }
 
 .section-1 h2 {

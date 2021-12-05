@@ -113,11 +113,14 @@ header {
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     opacity: 0;
     left: -50%;
-    top: 35px;
+    top: 25px;
     width: 150px;
     background-color: white;
     margin: 5px;
     transition: 0.2s;
+    &:hover {
+      opacity: 1;
+    }
     ul {
       display: flex;
       flex-direction: column;
@@ -126,8 +129,10 @@ header {
     }
     li {
       color: $Verydarkgrayishblue;
+      transition: 0.2s;
       &:hover {
         color: $Verydarkblackblue;
+        transform: scale(1.09);
       }
     }
   }
