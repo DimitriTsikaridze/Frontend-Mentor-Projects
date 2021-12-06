@@ -1,0 +1,33 @@
+@media only screen and (max-width: 1360px) {
+  .hide {
+    display: unset;
+  }
+  .show {
+    display: none;
+  }
+  .section-1 {
+    h2 {
+      margin: 5rem 0 3rem 0;
+    }
+    .container {
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      .description {
+        transform: none;
+        text-align: center;
+        order: 2;
+        margin-bottom: 2rem;
+      }
+    }
+
+    aside {
+      img {
+        transform: none;
+        width: 80vw;
+        height: auto;
+      }
+    }
+  }
+}

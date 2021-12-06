@@ -7,9 +7,13 @@ body {
   font-family: "Overpass", sans-serif;
   overflow-x: hidden;
 }
+.hide {
+  display: none;
+}
 
 @import "header.scss";
 @import "section1.scss";
 @import "section2.scss";
 @import "section3.scss";
 @import "footer.scss";
+@import "laptop.scss";
