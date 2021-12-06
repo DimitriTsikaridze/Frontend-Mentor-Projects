@@ -337,6 +337,22 @@ footer nav span {
     width: 80vw;
     height: auto;
   }
+
+  .section-2 {
+    margin-top: 10rem;
+    min-height: 700px;
+    flex-direction: column;
+  }
+  .section-2 aside img {
+    left: 0;
+    top: -382px;
+  }
+  .section-2 article {
+    text-align: center;
+    margin: 0;
+    position: relative;
+    top: 100px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
