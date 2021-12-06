@@ -65,12 +65,14 @@ main {
   transition: 0.2s ease-in;
 }
 
-.overlay:hover {
+.img-wrapper:hover {
   cursor: pointer;
-  opacity: 0.6;
 }
-.overlay:hover + .img-view {
+.img-wrapper:hover .img-view {
   opacity: 1;
+}
+.img-wrapper:hover .overlay {
+  opacity: 0.6;
 }
 
 .main-img {
