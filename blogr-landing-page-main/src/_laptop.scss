@@ -48,4 +48,12 @@
       top: 100px;
     }
   }
+
+  .section-3 {
+    margin-top: 3rem;
+    flex-direction: column;
+    article {
+      text-align: center;
+    }
+  }
 }
