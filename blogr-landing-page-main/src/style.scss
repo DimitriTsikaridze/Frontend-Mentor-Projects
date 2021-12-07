@@ -10,6 +10,13 @@ body {
 .hide {
   display: none;
 }
+.show-hamburger {
+  display: none;
+}
+
+.dropdown-btns {
+  margin-left: auto;
+}
 
 @import "header.scss";
 @import "section1.scss";
@@ -17,3 +24,4 @@ body {
 @import "section3.scss";
 @import "footer.scss";
 @import "laptop.scss";
+@import "tablet.scss";

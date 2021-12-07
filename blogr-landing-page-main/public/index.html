@@ -16,11 +16,27 @@
   <body>
     <header>
       <nav>
-        <img src="../images/logo.svg" alt="img" />
-        <ul class="header-ul">
+        <img src="../images/logo.svg" class="header-logo" alt="img" />
+        <img
+          src="../images/icon-close.svg"
+          class="close-icon hide-close-btn"
+          alt="img"
+        />
+        <img
+          src="../images/icon-hamburger.svg"
+          class="show-hamburger"
+          alt="img"
+        />
+        <ul class="header-ul show-ul dropdown">
           <div class="li-wrapper">
             <li>
-              Product <img src="../images/icon-arrow-light.svg" alt="img" />
+              Product
+              <img
+                src="../images/icon-arrow-light.svg"
+                class="show-ul"
+                alt="img"
+              />
+              <img src="../images/icon-arrow-dark.svg" alt="img" />
             </li>
             <div class="hover-menu">
               <ul>
@@ -32,7 +48,13 @@
           </div>
           <div class="li-wrapper">
             <li>
-              Company <img src="../images/icon-arrow-light.svg" alt="img" />
+              Company
+              <img
+                src="../images/icon-arrow-light.svg"
+                class="show-ul"
+                alt="img"
+              />
+              <img src="../images/icon-arrow-dark.svg" alt="img" />
             </li>
             <div class="hover-menu">
               <ul>
@@ -44,7 +66,13 @@
           </div>
           <div class="li-wrapper">
             <li>
-              Connect <img src="../images/icon-arrow-light.svg" alt="img" />
+              Connect
+              <img
+                src="../images/icon-arrow-light.svg"
+                class="show-ul"
+                alt="img"
+              />
+              <img src="../images/icon-arrow-dark.svg" alt="img" />
             </li>
             <div class="hover-menu">
               <ul>
@@ -54,8 +82,10 @@
               </ul>
             </div>
           </div>
-          <button class="secondary">Login</button>
-          <button class="primary">Sign Up</button>
+          <div class="dropdown-btns">
+            <button class="secondary first-btn">Login</button>
+            <button class="primary second-btn">Sign Up</button>
+          </div>
         </ul>
       </nav>
       <h1>A modern publishing platform</h1>

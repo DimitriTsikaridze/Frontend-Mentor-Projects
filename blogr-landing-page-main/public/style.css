@@ -39,6 +39,14 @@ body {
   display: none;
 }
 
+.show-hamburger {
+  display: none;
+}
+
+.dropdown-btns {
+  margin-left: auto;
+}
+
 .secondary {
   background-color: transparent;
 }
@@ -317,6 +325,71 @@ footer nav span {
     display: none;
   }
 
+  .hide-close-btn {
+    display: none !important;
+  }
+
+  .close-icon {
+    margin-left: auto;
+  }
+  .close-icon:hover {
+    cursor: pointer;
+  }
+
+  .li-wrapper .hover-menu {
+    background-color: #cbcbcd;
+    color: #4b5862;
+    z-index: 100;
+    width: 70vw;
+    position: absolute;
+    left: -250%;
+  }
+  .li-wrapper .hover-menu ul {
+    align-items: center;
+  }
+
+  .show-hamburger {
+    display: unset;
+    margin-left: auto;
+  }
+  .show-hamburger:hover {
+    cursor: pointer;
+  }
+
+  .dropdown {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 90vw !important;
+    margin: 0 auto !important;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 150px;
+    align-items: center;
+    background-color: white;
+    border-radius: 12px;
+    padding: 1rem;
+    color: black;
+  }
+  .dropdown .dropdown-btns {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .dropdown .dropdown-btns .first-btn {
+    color: #4b5862;
+    margin-left: 0;
+  }
+  .dropdown .dropdown-btns .second-btn {
+    background-image: linear-gradient(#ff525d, #ff7a85);
+    color: white;
+  }
+
+  header nav .show-ul {
+    display: none;
+  }
+
   .section-1 h2 {
     margin: 5rem 0 3rem 0;
   }
@@ -358,6 +431,9 @@ footer nav span {
     margin-top: 3rem;
     flex-direction: column;
   }
+  .section-3 aside img {
+    width: 90vw;
+  }
   .section-3 article {
     text-align: center;
   }
@@ -378,6 +454,56 @@ footer nav span {
   }
   footer nav li:first-child {
     font-size: 1.2rem;
+  }
+}
+@media only screen and (max-width: 620px) {
+  header {
+    padding: 2rem 1rem 1rem 0.8rem;
+  }
+  header h1 {
+    font-size: 2.3rem;
+    margin-top: 2rem;
+  }
+  header .header-logo {
+    max-width: 80px;
+  }
+  header .btns {
+    margin-bottom: 6rem;
+  }
+
+  .section-1 h2 {
+    font-size: 1.8rem;
+  }
+  .section-1 aside img {
+    width: 100vw;
+  }
+  .section-1 .description article {
+    width: 90vw;
+    margin: 0 auto;
+  }
+  .section-1 .description article h3 {
+    font-size: 2rem;
+  }
+
+  .section-2 {
+    background-size: cover;
+  }
+  .section-2 aside img {
+    width: 100vw;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -300px;
+  }
+
+  .section-3 aside img {
+    width: 100vw;
+  }
+  .section-3 article {
+    width: 90vw;
+    margin: 0 auto;
+  }
+  .section-3 article h3 {
+    font-size: 2rem;
   }
 }
 
