@@ -361,6 +361,24 @@ footer nav span {
   .section-3 article {
     text-align: center;
   }
+
+  footer {
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+  }
+  footer nav {
+    align-items: center;
+  }
+  footer nav span {
+    margin: 0;
+  }
+  footer nav li::before {
+    content: none;
+  }
+  footer nav li:first-child {
+    font-size: 1.2rem;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -56,4 +56,24 @@
       text-align: center;
     }
   }
+
+  footer {
+    flex-direction: column;
+    align-items: center;
+    gap: 4rem;
+    nav {
+      align-items: center;
+      span {
+        margin: 0;
+      }
+      li {
+        &::before {
+          content: none;
+        }
+        &:first-child {
+          font-size: 1.2rem;
+        }
+      }
+    }
+  }
 }
