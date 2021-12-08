@@ -10,16 +10,9 @@
   font-size: 16px;
 }
 
-html,
-body {
-  height: 100%;
-  overflow: auto;
-}
-
 body {
   font-family: "Noto", sans-serif;
   font-weight: 300;
-  width: 100vw;
 }
 
 h1 {
@@ -37,6 +30,7 @@ main {
   justify-content: center;
   gap: 30px;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  align-items: flex-end;
 }
 .grid-item img {
   max-width: 100%;
