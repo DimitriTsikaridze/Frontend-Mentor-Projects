@@ -47,6 +47,10 @@ body {
   margin-left: auto;
 }
 
+.hide-close-button {
+  display: none;
+}
+
 .secondary {
   background-color: transparent;
 }
@@ -325,6 +329,10 @@ footer nav span {
     display: none;
   }
 
+  .hide-close-button {
+    display: unset;
+  }
+
   .hide-close-btn {
     display: none !important;
   }
@@ -442,6 +450,7 @@ footer nav span {
     flex-direction: column;
     align-items: center;
     gap: 4rem;
+    padding-bottom: 2rem;
   }
   footer nav {
     align-items: center;

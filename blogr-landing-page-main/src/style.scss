@@ -17,6 +17,9 @@ body {
 .dropdown-btns {
   margin-left: auto;
 }
+.hide-close-button {
+  display: none;
+}
 
 @import "header.scss";
 @import "section1.scss";
