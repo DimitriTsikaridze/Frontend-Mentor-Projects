@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Commissioner:wght@400;500;700&display=swap");
+@import "./palette";
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -7,4 +10,52 @@
 :root {
   font-size: 16px;
   font-family: "Commissioner", sans-serif;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+button {
+  font-family: "Commissioner", sans-serif;
+  outline: none;
+  border: none;
+  border-radius: 18px;
+
+  &:hover {
+    cursor: pointer;
+  }
+  &:active {
+    transform: scale(0.98);
+  }
+}
+
+.primary {
+  background-color: $Moderate-cyan;
+  color: white;
+  padding: 10px 20px;
+}
+
+section,
+article {
+  border-radius: 8px;
+  padding: 2rem;
+}
+
+section {
+  background-color: white;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+article {
+  background-color: transparent;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
 }

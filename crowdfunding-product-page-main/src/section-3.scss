@@ -1,0 +1,37 @@
+.section-3 {
+  .title,
+  .bottom-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    h4 {
+      color: $Moderate-cyan;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+  }
+  .bottom-content {
+    h5 {
+      color: $Dark-gray;
+    }
+    span {
+      color: black;
+      font-weight: 700;
+      font-size: 1.5rem;
+    }
+  }
+  h3 {
+    margin-bottom: 1rem;
+  }
+  p {
+    line-height: 24px;
+    color: $Dark-gray;
+  }
+
+  .first {
+    margin-top: 2rem;
+  }
+  .second {
+    margin: 1.5rem 0;
+  }
+}

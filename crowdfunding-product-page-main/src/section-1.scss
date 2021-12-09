@@ -1,0 +1,42 @@
+.section-1 {
+  text-align: center;
+  position: relative;
+  .brand-logo {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  h1 {
+    margin: 1rem 0 1rem 0;
+  }
+  p {
+    margin: 0 auto 1.5rem auto;
+    color: $Dark-gray;
+    font-size: 0.9rem;
+  }
+  .btns {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    button {
+      font-size: 0.9rem;
+    }
+  }
+  .bookmark {
+    color: $Dark-gray;
+    border-radius: 20px;
+    position: relative;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 12px 20px 12px 50px;
+    img {
+      position: absolute;
+      height: 40px;
+      width: 40px;
+      left: 0;
+    }
+  }
+}

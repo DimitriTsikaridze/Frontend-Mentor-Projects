@@ -1,0 +1,16 @@
+header {
+  background-image: url("../images/image-hero-desktop.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  min-height: 500px;
+  color: white;
+}
+ul {
+  display: flex;
+  align-items: center;
+  padding: 2rem 8rem 0 1rem;
+  gap: 2rem;
+  img {
+    margin-right: auto;
+  }
+}

@@ -1,2 +1,21 @@
 @import "./reset";
-@import "./palette";
+@import "./header.scss";
+@import "section-1.scss";
+@import "section-2.scss";
+@import "section-3.scss";
+body {
+  background-color: lighten($color: $Dark-gray, $amount: 50%);
+}
+
+main {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-direction: column;
+  position: relative;
+  bottom: 100px;
+}
+
+main > * {
+  width: 580px;
+}

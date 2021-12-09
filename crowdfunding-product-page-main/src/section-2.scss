@@ -1,0 +1,42 @@
+.section-2 {
+  .pricing {
+    display: flex;
+    gap: 2.7rem;
+    h2 {
+      font-size: 1.7rem;
+    }
+    p {
+      color: $Dark-gray;
+      font-size: 0.8rem;
+    }
+    .stats:nth-child(1),
+    .stats:nth-child(2) {
+      border-right: 1px solid #a8a7a7c4;
+      padding-right: 2em;
+    }
+    .stats {
+      transition: 0.2s;
+      &:hover {
+        cursor: pointer;
+        transform: translateY(-3px);
+      }
+    }
+  }
+
+  .progress-bar {
+    margin-top: 1rem;
+    position: relative;
+    height: 10px;
+    border-radius: 12px;
+    background-color: lighten($color: $Dark-gray, $amount: 40%);
+
+    &::before {
+      content: "";
+      position: absolute;
+      background-color: $Moderate-cyan;
+      width: 75%;
+      height: 100%;
+      border-radius: 12px;
+    }
+  }
+}
