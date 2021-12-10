@@ -9,10 +9,13 @@
       color: $Dark-gray;
       font-size: 0.8rem;
     }
-    .stats:nth-child(1),
-    .stats:nth-child(2) {
+    .stats:nth-child(1) {
       border-right: 1px solid #a8a7a7c4;
       padding-right: 2em;
+    }
+    .stats:nth-child(2) {
+      border-right: 1px solid #a8a7a7c4;
+      padding-right: 4em;
     }
     .stats {
       transition: 0.2s;

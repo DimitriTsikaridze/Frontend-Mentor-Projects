@@ -26,7 +26,7 @@ button {
   font-family: "Commissioner", sans-serif;
   outline: none;
   border: none;
-  border-radius: 18px;
+  border-radius: 20px;
 }
 button:hover {
   cursor: pointer;
@@ -38,7 +38,11 @@ button:active {
 .primary {
   background-color: #3cb4ac;
   color: white;
-  padding: 10px 20px;
+  padding: 12px 20px;
+  transition: 0.2s;
+}
+.primary:hover {
+  background-color: #147b74;
 }
 
 section,
@@ -110,6 +114,13 @@ ul img {
   align-items: center;
   gap: 1rem;
   padding: 12px 20px 12px 50px;
+  transition: 0.2s;
+}
+.section-1 .bookmark:hover {
+  color: #147b74;
+}
+.section-1 .bookmark:hover img::before {
+  background-color: #147b74;
 }
 .section-1 .bookmark img {
   position: absolute;
@@ -129,10 +140,13 @@ ul img {
   color: #7a7a7a;
   font-size: 0.8rem;
 }
-.section-2 .pricing .stats:nth-child(1),
-.section-2 .pricing .stats:nth-child(2) {
+.section-2 .pricing .stats:nth-child(1) {
   border-right: 1px solid #a8a7a7c4;
   padding-right: 2em;
+}
+.section-2 .pricing .stats:nth-child(2) {
+  border-right: 1px solid #a8a7a7c4;
+  padding-right: 4em;
 }
 .section-2 .pricing .stats {
   transition: 0.2s;

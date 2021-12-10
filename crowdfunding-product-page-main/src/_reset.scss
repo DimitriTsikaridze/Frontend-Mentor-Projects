@@ -28,7 +28,7 @@ button {
   font-family: "Commissioner", sans-serif;
   outline: none;
   border: none;
-  border-radius: 18px;
+  border-radius: 20px;
 
   &:hover {
     cursor: pointer;
@@ -41,7 +41,11 @@ button {
 .primary {
   background-color: $Moderate-cyan;
   color: white;
-  padding: 10px 20px;
+  padding: 12px 20px;
+  transition: 0.2s;
+  &:hover {
+    background-color: $Dark-cyan;
+  }
 }
 
 section,

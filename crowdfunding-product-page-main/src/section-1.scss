@@ -32,6 +32,13 @@
     align-items: center;
     gap: 1rem;
     padding: 12px 20px 12px 50px;
+    transition: 0.2s;
+    &:hover {
+      color: $Dark-cyan;
+    }
+    &:hover img::before {
+      background-color: $Dark-cyan;
+    }
     img {
       position: absolute;
       height: 40px;
