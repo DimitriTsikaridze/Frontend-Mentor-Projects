@@ -47,3 +47,40 @@
     }
   }
 }
+
+.section-1-modal {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  border-radius: 8px;
+  background-color: white;
+  position: absolute;
+  z-index: 10;
+  top: 5%;
+  width: 600px;
+
+  .title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+    h4 {
+      color: $Moderate-cyan;
+      font-weight: 300;
+      margin-left: 1rem;
+    }
+    h5 {
+      margin-left: auto;
+      font-size: 1rem;
+      color: $Dark-gray;
+      font-weight: 300;
+      span {
+        font-weight: 900;
+      }
+    }
+  }
+  p {
+    line-height: 24px;
+    color: $Dark-gray;
+  }
+}

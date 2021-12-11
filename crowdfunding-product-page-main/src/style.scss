@@ -6,6 +6,15 @@
 body {
   background-color: lighten($color: $Dark-gray, $amount: 50%);
 }
+.hide {
+  display: none;
+}
+.overlay {
+  position: absolute;
+  inset: 0;
+  background-color: black;
+  opacity: 0.4;
+}
 
 main {
   display: flex;
@@ -16,6 +25,13 @@ main {
   bottom: 100px;
 }
 
+.out-of-stock {
+  opacity: 0.5;
+  button {
+    pointer-events: none;
+  }
+}
+
 main > * {
-  width: 580px;
+  width: 600px;
 }

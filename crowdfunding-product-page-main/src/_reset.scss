@@ -42,7 +42,7 @@ button {
   background-color: $Moderate-cyan;
   color: white;
   padding: 12px 20px;
-  transition: 0.2s;
+  transition: background-color 0.2s;
   &:hover {
     background-color: $Dark-cyan;
   }

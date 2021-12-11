@@ -39,7 +39,7 @@ button:active {
   background-color: #3cb4ac;
   color: white;
   padding: 12px 20px;
-  transition: 0.2s;
+  transition: background-color 0.2s;
 }
 .primary:hover {
   background-color: #147b74;
@@ -129,6 +129,42 @@ ul img {
   left: 0;
 }
 
+.section-1-modal {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  border-radius: 8px;
+  background-color: white;
+  position: absolute;
+  z-index: 10;
+  top: 5%;
+  width: 600px;
+}
+.section-1-modal .title {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.section-1-modal .title h4 {
+  color: #3cb4ac;
+  font-weight: 300;
+  margin-left: 1rem;
+}
+.section-1-modal .title h5 {
+  margin-left: auto;
+  font-size: 1rem;
+  color: #7a7a7a;
+  font-weight: 300;
+}
+.section-1-modal .title h5 span {
+  font-weight: 900;
+}
+.section-1-modal p {
+  line-height: 24px;
+  color: #7a7a7a;
+}
+
 .section-2 .pricing {
   display: flex;
   gap: 2.7rem;
@@ -209,6 +245,17 @@ body {
   background-color: #fafafa;
 }
 
+.hide {
+  display: none;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background-color: black;
+  opacity: 0.4;
+}
+
 main {
   display: flex;
   align-items: center;
@@ -218,8 +265,15 @@ main {
   bottom: 100px;
 }
 
+.out-of-stock {
+  opacity: 0.5;
+}
+.out-of-stock button {
+  pointer-events: none;
+}
+
 main > * {
-  width: 580px;
+  width: 600px;
 }
 
 /*# sourceMappingURL=style.css.map */
