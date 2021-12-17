@@ -7,6 +7,7 @@
 
 - [Time Tracking Dashboard](https://dimitritsikaridze.github.io/Frontend-Mentor-Projects/time-tracking-dashboard-main/public/index.html)
 - [Tip Calculator App](https://dimitritsikaridze.github.io/Frontend-Mentor-Projects/tip-calculator-app-main/public/index.html)
+- [Crowdfunding Landing Page](https://dimitritsikaridze.github.io/Frontend-Mentor-Projects/crowdfunding-product-page-main/public/index.html)
 - [Sunny Side Landing Page](https://dimitritsikaridze.github.io/Frontend-Mentor-Projects/sunnyside-agency-landing-page-main/public/index.html)
 - [Blogr Landing Page](https://dimitritsikaridze.github.io/Frontend-Mentor-Projects/blogr-landing-page-main/public/index.html)
 - [FAQ Accordion Card](https://dimitritsikaridze.github.io/Frontend-Mentor-Projects/faq-accordion-card-main/index.html)
