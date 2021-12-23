@@ -10,7 +10,6 @@ $very-dark-blue: hsl(209, 33%, 12%);
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  outline: 1px solid red;
 }
 
 :root {
@@ -105,7 +104,7 @@ form {
       cursor: pointer;
     }
     &:active {
-      transform: translateY(3px);
+      transform: scale(0.98);
     }
     &.blur {
       background-color: lighten($color: $blue, $amount: 10%);

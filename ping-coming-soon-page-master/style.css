@@ -3,7 +3,6 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  outline: 1px solid red;
 }
 
 :root {
@@ -96,7 +95,7 @@ form button:hover {
   cursor: pointer;
 }
 form button:active {
-  transform: translateY(3px);
+  transform: scale(0.98);
 }
 form button.blur {
   background-color: #7ea0f6;
