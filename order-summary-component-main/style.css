@@ -24,7 +24,6 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  overflow-x: hidden;
 }
 
 h1 {
@@ -57,7 +56,7 @@ img {
 }
 
 .card {
-  margin-top: auto;
+  margin: 2rem 0;
   max-width: 400px;
   background-color: #fff;
   border-radius: 15px;
