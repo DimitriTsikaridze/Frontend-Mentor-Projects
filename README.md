@@ -1,26 +1,26 @@
 # Front-End Mentor Projects
 
-- [Webstie Preview](https://dimitritsikaridze.github.io/Frontend-Mentor-Projects/)
 - [Front-End Mentor Profile](https://www.frontendmentor.io/profile/DimitriTsikaridze)
+- [Webstie Preview](https://dimitritsikaridze.github.io/Frontend-Mentor-Projects/)
 
-## Projects List
-
-- [Time Tracking Dashboard](https://dimitritsikaridze.github.io/Frontend-Mentor-Projects/time-tracking-dashboard-main/public/index.html)
-- [Tip Calculator App](https://dimitritsikaridze.github.io/Frontend-Mentor-Projects/tip-calculator-app-main/public/index.html)
-- [Crowdfunding Landing Page](https://dimitritsikaridze.github.io/Frontend-Mentor-Projects/crowdfunding-product-page-main/public/index.html)
-- [Sunny Side Landing Page](https://dimitritsikaridze.github.io/Frontend-Mentor-Projects/sunnyside-agency-landing-page-main/public/index.html)
-- [Blogr Landing Page](https://dimitritsikaridze.github.io/Frontend-Mentor-Projects/blogr-landing-page-main/public/index.html)
-- [FAQ Accordion Card](https://dimitritsikaridze.github.io/Frontend-Mentor-Projects/faq-accordion-card-main/index.html)
-- [Social Proof Section](https://dimitritsikaridze.github.io/Frontend-Mentor-Projects/social-proof-section-master/index.html)
-- [Sign Up Form](https://dimitritsikaridze.github.io/Frontend-Mentor-Projects/intro-component-with-signup-form-master/index.html)
-- [Huddle Landing Page](https://dimitritsikaridze.github.io/Frontend-Mentor-Projects/huddle-landing-page-with-single-introductory-section-master/index.html)
-- [Four Card Feature Section](https://dimitritsikaridze.github.io/Frontend-Mentor-Projects/four-card-feature-section-master/index.html)
-- [Base Apparel Coming Soon Page](https://dimitritsikaridze.github.io/Frontend-Mentor-Projects/base-apparel-coming-soon-master/index.html)
-- [Stats preview card](https://dimitritsikaridze.github.io/Frontend-Mentor-Projects/stats-preview-card-component-main/index.html)
-- [Single Price Grid Component](https://dimitritsikaridze.github.io/Frontend-Mentor-Projects/single-price-grid-component-master/index.html)
-- [Ping Coming Soon Page](https://dimitritsikaridze.github.io/Frontend-Mentor-Projects/ping-coming-soon-page-master/index.html)
-- [Order Summary Card](https://dimitritsikaridze.github.io/Frontend-Mentor-Projects/order-summary-component-main/index.html)
-- [3 Column Preview Card](https://dimitritsikaridze.github.io/Frontend-Mentor-Projects/3-column-preview-card-component-main/index.html)
-- [Article Preview Component](https://dimitritsikaridze.github.io/Frontend-Mentor-Projects/article-preview-component-master/index.html)
-- [Profile Card Component](https://dimitritsikaridze.github.io/Frontend-Mentor-Projects/profile-card-component-main/index.html)
-- [NFT Card Component](https://dimitritsikaridze.github.io/Frontend-Mentor-Projects/nft-preview-card-component-main/index.html)
+|  #  | Project                                                                                                                                                    | Live Demo                                                                                                                                        |
+| :-: | ---------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| 01  | [Time tracking dashboard](https://github.com/DimitriTsikaridze/Frontend-Mentor-Projects/tree/main/time-tracking-dashboard-main)                            | [Live Demo](https://dimitritsikaridze.github.io/Frontend-Mentor-Projects/time-tracking-dashboard-main/public/index.html)                         |
+| 02  | [Tip calculator app](https://github.com/DimitriTsikaridze/Frontend-Mentor-Projects/tree/main/tip-calculator-app-main)                                      | [Live Demo](https://dimitritsikaridze.github.io/Frontend-Mentor-Projects/tip-calculator-app-main/public/index.html)                              |
+| 03  | [Crowdfunding product page](https://github.com/DimitriTsikaridze/Frontend-Mentor-Projects/tree/main/crowdfunding-product-page-main)                        | [Live Demo](https://dimitritsikaridze.github.io/Frontend-Mentor-Projects/crowdfunding-product-page-main/public/index.html)                       |
+| 04  | [Sunnyside agency landing page](https://github.com/DimitriTsikaridze/Frontend-Mentor-Projects/tree/main/sunnyside-agency-landing-page-main)                | [Live Demo](https://dimitritsikaridze.github.io/Frontend-Mentor-Projects/sunnyside-agency-landing-page-main/public/index.html)                   |
+| 05  | [Blogr landing page](https://github.com/DimitriTsikaridze/Frontend-Mentor-Projects/tree/main/blogr-landing-page-main)                                      | [Live Demo](https://dimitritsikaridze.github.io/Frontend-Mentor-Projects/blogr-landing-page-main/public/index.html)                              |
+| 06  | [FAQ accordion card](https://github.com/DimitriTsikaridze/Frontend-Mentor-Projects/tree/main/faq-accordion-card-main)                                      | [Live Demo](https://dimitritsikaridze.github.io/Frontend-Mentor-Projects/faq-accordion-card-main/index.html)                                     |
+| 07  | [Social proof section](https://github.com/DimitriTsikaridze/Frontend-Mentor-Projects/tree/main/social-proof-section-master)                                | [Live Demo](https://dimitritsikaridze.github.io/Frontend-Mentor-Projects/social-proof-section-master/index.html)                                 |
+| 08  | [Intro component with sign up form](https://github.com/DimitriTsikaridze/Frontend-Mentor-Projects/tree/main/intro-component-with-signup-form-master)       | [Live Demo](https://dimitritsikaridze.github.io/Frontend-Mentor-Projects/intro-component-with-signup-form-master/index.html)                     |
+| 09  | [Huddle landing page](https://github.com/DimitriTsikaridze/Frontend-Mentor-Projects/tree/main/huddle-landing-page-with-single-introductory-section-master) | [Live Demo](https://dimitritsikaridze.github.io/Frontend-Mentor-Projects/huddle-landing-page-with-single-introductory-section-master/index.html) |
+| 10  | [Four card feature section](https://github.com/DimitriTsikaridze/Frontend-Mentor-Projects/tree/main/four-card-feature-section-master)                      | [Live Demo](https://dimitritsikaridze.github.io/Frontend-Mentor-Projects/four-card-feature-section-master/index.html)                            |
+| 11  | [Base Apparel coming soon page](https://github.com/DimitriTsikaridze/Frontend-Mentor-Projects/tree/main/base-apparel-coming-soon-master)                   | [Live Demo](https://dimitritsikaridze.github.io/Frontend-Mentor-Projects/base-apparel-coming-soon-master/index.html)                             |
+| 12  | [Stats preview card component](https://github.com/DimitriTsikaridze/Frontend-Mentor-Projects/tree/main/stats-preview-card-component-main)                  | [Live Demo](https://dimitritsikaridze.github.io/Frontend-Mentor-Projects/stats-preview-card-component-main/index.html)                           |
+| 13  | [Single price grid component](https://github.com/DimitriTsikaridze/Frontend-Mentor-Projects/tree/main/single-price-grid-component-master)                  | [Live Demo](https://dimitritsikaridze.github.io/Frontend-Mentor-Projects/single-price-grid-component-master/index.html)                          |
+| 14  | [Ping coming soon page](https://github.com/DimitriTsikaridze/Frontend-Mentor-Projects/tree/main/ping-coming-soon-page-master)                              | [Live Demo](https://dimitritsikaridze.github.io/Frontend-Mentor-Projects/ping-coming-soon-page-master/index.html)                                |
+| 15  | [Order summary card](https://github.com/DimitriTsikaridze/Frontend-Mentor-Projects/tree/main/order-summary-component-main)                                 | [Live Demo](https://dimitritsikaridze.github.io/Frontend-Mentor-Projects/order-summary-component-main/index.html)                                |
+| 16  | [3-column preview card component](https://github.com/DimitriTsikaridze/Frontend-Mentor-Projects/tree/main/3-column-preview-card-component-main)            | [Live Demo](https://dimitritsikaridze.github.io/Frontend-Mentor-Projects/3-column-preview-card-component-main/index.html)                        |
+| 17  | [Article preview component](https://github.com/DimitriTsikaridze/Frontend-Mentor-Projects/tree/main/article-preview-component-master)                      | [Live Demo](https://dimitritsikaridze.github.io/Frontend-Mentor-Projects/article-preview-component-master/index.html)                            |
+| 18  | [Profile card component](https://github.com/DimitriTsikaridze/Frontend-Mentor-Projects/tree/main/profile-card-component-main)                              | [Live Demo](https://dimitritsikaridze.github.io/Frontend-Mentor-Projects/profile-card-component-main/index.html)                                 |
+| 19  | [NFT preview card component](https://github.com/DimitriTsikaridze/Frontend-Mentor-Projects/tree/main/nft-preview-card-component-main)                      | [Live Demo](https://dimitritsikaridze.github.io/Frontend-Mentor-Projects/nft-preview-card-component-main/index.html)                             |
