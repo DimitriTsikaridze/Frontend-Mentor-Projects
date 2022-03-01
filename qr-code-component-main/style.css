@@ -30,6 +30,7 @@ body {
 img {
   display: block;
   max-width: 100%;
+  border-radius: 8px;
 }
 
 .card {
@@ -40,10 +41,6 @@ img {
   text-align: center;
   max-width: 330px;
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
-}
-
-.card img {
-  border-radius: 8px;
 }
 
 .card h1 {
