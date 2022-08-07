@@ -1,0 +1,131 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:wght@700&family=Montserrat:wght@500;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --dark-cyan: hsl(158, 36%, 37%);
+  --cream: hsl(30, 38%, 92%);
+  --very-dark-blue: hsl(212, 21%, 14%);
+  --dark-grayish-blue: hsl(228, 12%, 48%);
+  --white: hsl(0, 0%, 100%);
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-size: 14px;
+  font-family: "Fraunces", serif;
+  background-color: var(--cream);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+  /* font-family: 'Montserrat', sans-serif; */
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 520px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.mobile-img {
+  display: none;
+}
+
+.desktop-img {
+  height: 100%;
+  object-fit: cover;
+}
+
+aside {
+  background-color: var(--white);
+  padding: 20px;
+}
+
+.perfume {
+  color: var(--dark-grayish-blue);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+}
+
+.perfume-title {
+  font-size: 30px;
+  color: var(--very-dark-blue);
+  margin-block: 20px;
+}
+
+.perfume-description {
+  color: var(--dark-grayish-blue);
+  font-family: "Montserrat", sans-serif;
+}
+
+.discount {
+  margin-block: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.new-price {
+  color: var(--dark-cyan);
+  font-size: 24px;
+}
+
+.old-price {
+  color: var(--dark-grayish-blue);
+  text-decoration: line-through;
+}
+
+.add-btn {
+  cursor: pointer;
+  background-color: var(--dark-cyan);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  border: none;
+  outline: none;
+  padding-block: 12px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 700;
+  transition: background-color 0.2s;
+}
+
+.add-btn:hover {
+  background-color: rgb(18, 59, 44);
+}
+
+@media only screen and (max-width: 560px) {
+  .desktop-img {
+    display: none;
+  }
+
+  .mobile-img {
+    display: block;
+  }
+
+  main {
+    grid-template-columns: 1fr;
+    max-width: 350px;
+    margin-inline: 15px;
+  }
+}
