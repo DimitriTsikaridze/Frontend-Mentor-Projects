@@ -10,7 +10,9 @@ const generateRandomQuote = async () => {
   const res = await fetch(advice_api, {
     cache: "no-cache",
   })
-  const { slip } = await res.json()
-  adviceId.textContent = slip.id
-  quote.textContent = `"${slip.advice}"`
+  const {
+    slip: { id, advice },
+  } = await res.json()
+  adviceId.textContent = id
+  quote.textContent = `"${advice}"`
 }

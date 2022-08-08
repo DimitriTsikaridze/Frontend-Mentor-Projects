@@ -52,6 +52,7 @@ article {
 
 .desktop-divider {
   margin-block: 2rem 3rem;
+  user-select: none;
 }
 
 .advice-number {
