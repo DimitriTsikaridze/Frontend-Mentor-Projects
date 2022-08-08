@@ -15,17 +15,25 @@ body {
   font-weight: 300;
 }
 
-h1 {
-  margin-top: 2rem;
-  text-align: center;
+h1,
+h2 {
   background: linear-gradient(to right, #30cfd0 0%, #330867 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
+h1 {
+  margin-top: 2rem;
+  text-align: center;
+}
+h2 {
+  padding-left: 3rem;
+  margin-block: 1rem;
+}
+
 main {
-  padding: 3rem;
+  padding: 0 3rem 3rem;
   display: grid;
   justify-content: center;
   gap: 30px;
