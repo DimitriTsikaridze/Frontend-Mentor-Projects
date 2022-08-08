@@ -7,7 +7,9 @@ document.addEventListener("DOMContentLoaded", () => generateRandomQuote())
 diceButton.addEventListener("click", () => generateRandomQuote())
 
 const generateRandomQuote = async () => {
-  const res = await fetch(advice_api)
+  const res = await fetch(advice_api, {
+    cache: "no-cache",
+  })
   const { slip } = await res.json()
   adviceId.textContent = slip.id
   quote.textContent = `"${slip.advice}"`

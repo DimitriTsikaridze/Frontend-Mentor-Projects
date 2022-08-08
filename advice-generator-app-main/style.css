@@ -22,6 +22,9 @@ body {
 body {
   font-family: "Manrope", sans-serif;
   background-color: var(--dark-blue);
+}
+
+main {
   min-height: 100%;
   display: flex;
   justify-content: center;
