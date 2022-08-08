@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --white: hsl(0, 0%, 100%);
+  --light-grayish-violet: grayish violet: hsl(270, 3%, 87%);
+  --dark-grayish-violet: hsl(279, 6%, 55%);
+  --very-dark-violet: hsl(278, 68%, 11%);
+  --active-input-border: linear-gradient(hsl(249, 99%, 64%) to hsl(278, 94%, 30%));
+  --input-errors: hsl(0, 100%, 66%);
+  font-size: 18px;
+}
+
+html,body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 500;
+  display: flex;
+}
+
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+main {
+  width: 100%;
+  height: 100%;
+}
+
+button {
+  border: none;
+  outline: none;
+  background-color: var(--very-dark-violet);
+  font-family: inherit;
+  color: white;
+  cursor: pointer;
+}
+
+.bg-image {
+  position: absolute;
+  z-index: -1;
+}
+
+.card-front, .card-back {
+  background-repeat: no-repeat;
+}
+
+
+.card-front {
+  background-image: url('./images/bg-card-front.png');
+  height: 100%;
+  color: white;
+  padding: 1rem;
+  letter-spacing: 4px;
+}
+
+.card-back {
+  position: relative;
+  background-image: url('./images/bg-card-back.png');
+}
+.card-cvc-code {
+  position: absolute;
+  right: 60px;
+  top: 109px;
+  color: var(--white);
+  letter-spacing: 4px;
+  font-size: .9rem;
+}
