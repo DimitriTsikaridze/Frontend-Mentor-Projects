@@ -1,0 +1,45 @@
+footer {
+  background-color: var(--very-dark-violet);
+  padding-block: 3rem;
+  color: white;
+}
+
+.white-logo {
+  filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(303deg)
+    brightness(103%) contrast(101%);
+  margin-right: auto;
+}
+
+.footer-wrapper {
+  display: flex;
+  align-items: flex-start;
+}
+
+.links-wrapper {
+  display: flex;
+  gap: 5rem;
+}
+
+.links-wrapper h3 {
+  margin-bottom: 1rem;
+}
+
+.links-wrapper li {
+  color: var(--gray);
+  font-size: 0.9rem;
+  line-height: 30px;
+  font-weight: 500;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.links-wrapper li:hover {
+  filter: brightness(1.2);
+}
+
+.social-icons {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  margin-left: 8rem;
+}

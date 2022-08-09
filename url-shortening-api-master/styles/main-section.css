@@ -1,0 +1,41 @@
+main {
+  display: grid;
+  margin-top: 5rem;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+.main-title {
+  font-size: 4rem;
+  color: var(--very-dark-blue);
+  line-height: 85px;
+}
+
+.main-description {
+  max-width: 500px;
+  margin-top: 0.6rem;
+  color: var(--grayish-violet);
+  font-size: 1rem;
+  line-height: 24px;
+  font-weight: 500;
+}
+
+.main-description + button {
+  font-size: 1rem;
+  font-weight: 700;
+  background-color: var(--cyan);
+  color: white;
+  border-radius: 50vw;
+  padding: 7px 1.7rem;
+  margin-top: 2rem;
+  transition: 0.2s;
+}
+
+.main-description + button:hover {
+  opacity: 0.7;
+}
+
+aside img {
+  position: relative;
+  left: 8rem;
+}

@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap");
+
+@import "./reset.css";
+@import "./palette.css";
+@import "./header.css";
+@import "./main-section.css";
+@import "./link-shortener.css";
+@import "./statistics.css";
+@import "./boost.css";
+@import "./footer.css";
+
+body {
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+  margin-inline: auto;
+}
+
+.root-wrapper {
+  max-width: 1440px;
+  margin-inline: auto;
+  padding-inline: 2rem;
+}
+
+.bg-section {
+  background-color: hsl(230, 25%, 95%);
+}
