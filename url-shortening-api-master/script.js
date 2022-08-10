@@ -7,6 +7,8 @@ const shortenedLinksContainer = document.querySelector(".shortened-links")
 const textError = document.querySelector(".error")
 const inputError = document.querySelector(".shorten-link-input")
 
+alert("This project is not finished")
+
 shortenBtn.addEventListener("click", async () => {
   // shortenedLinksContainer.innerHTML = createLinkPreview(
   //   "full link",

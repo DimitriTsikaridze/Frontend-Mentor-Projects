@@ -1,5 +1,5 @@
 .statistics-container {
-  max-width: 1440px;
+  max-width: var(--max-width);
   margin-inline: auto;
   padding-inline: 2rem;
 }

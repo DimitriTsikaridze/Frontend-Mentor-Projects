@@ -2,7 +2,7 @@
   padding-inline: 4rem;
 }
 .link-shortener-container {
-  max-width: 1440px;
+  max-width: var(--max-width);
   margin-inline: auto;
   margin-top: 5rem;
   background-image: url("../images/bg-shorten-desktop.svg");
@@ -62,6 +62,7 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  margin-inline: 4rem;
   margin-bottom: 5rem;
 }
 

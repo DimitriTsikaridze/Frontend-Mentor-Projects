@@ -6,5 +6,8 @@
   --grayish-violet: hsl(257, 7%, 63%);
   --very-dark-blue: hsl(255, 11%, 22%);
   --very-dark-violet: hsl(260, 8%, 14%);
+
+  --max-width: 1240px;
+
   font-size: 18px;
 }
