@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;1,700&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+:root {
+  --soft-red: hsl(10, 79%, 65%);
+  --cyan: hsl(186, 34%, 60%);
+  --dark-brown: hsl(25, 47%, 15%);
+  --medium-brown: hsl(28, 10%, 53%);
+  --cream: hsl(27, 66%, 92%);
+  --very-pale-orange: hsl(33, 100%, 98%);
+  --max-width: 1440px;
+  font-size: 18px;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  font-family: "DM Sans", sans-serif;
+  background-color: var(--cream);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  width: 500px;
+}
+
+.spendings-section {
+  background-color: var(--very-pale-orange);
+}
+
+.spendings-section,
+.my-balance {
+  border-radius: 18px;
+  padding: 1.2rem 1.6rem;
+}
+
+.my-balance {
+  background-color: var(--soft-red);
+  color: white;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.balance-title {
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.balance-amount {
+  font-weight: 700;
+  margin-top: 10px;
+  font-size: 1.3rem;
+}
+
+.logo {
+  margin-left: auto;
+}
+
+.spending-title {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--dark-brown);
+  margin-bottom: 3rem;
+}
+
+.week-days {
+  max-height: 300px;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  align-items: flex-end;
+  gap: 1rem;
+}
+
+hr {
+  margin-block: 1rem;
+}
+
+.spent-box {
+  border-radius: 8px;
+  background-color: var(--soft-red);
+}
+
+.day-name {
+  text-align: center;
+  color: var(--medium-brown);
+  font-size: 15px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.total-title,
+.last-month {
+  color: var(--medium-brown);
+  font-weight: 400;
+}
+
+.total-title {
+  font-size: 0.9rem;
+}
+.total-spent {
+  color: var(--dark-brown);
+  font-weight: 700;
+  font-size: 2.1rem;
+}
+
+.percent {
+  text-align: end;
+  font-weight: 700;
+  color: var(--dark-brown);
+}
