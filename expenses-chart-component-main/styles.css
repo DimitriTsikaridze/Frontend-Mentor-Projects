@@ -125,7 +125,7 @@ hr {
   white-space: nowrap;
   border-radius: 4px;
   padding: 5px;
-  font-size: 16px;
+  font-size: 1rem;
   background-color: var(--dark-brown);
   color: white;
 }
@@ -133,7 +133,7 @@ hr {
 .day-name {
   text-align: center;
   color: var(--medium-brown);
-  font-size: 15px;
+  font-size: 0.9rem;
 }
 
 .footer {
@@ -161,4 +161,30 @@ hr {
   text-align: end;
   font-weight: 700;
   color: var(--dark-brown);
+}
+
+@media only screen and (max-width: 550px) {
+  :root {
+    font-size: 15px;
+  }
+
+  main {
+    width: 90vw;
+  }
+
+  .total-title {
+    font-size: 0.9rem;
+  }
+
+  .total-spent {
+    font-size: 1.8rem;
+  }
+
+  .spending-title {
+    font-size: 1.5rem;
+  }
+
+  .week-days {
+    gap: 10px;
+  }
 }
