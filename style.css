@@ -27,7 +27,7 @@ h1 {
   margin-top: 2rem;
   text-align: center;
 }
-h2 {
+.projects-count-title {
   padding-left: 3rem;
   margin-block: 1rem;
 }
@@ -62,4 +62,10 @@ main {
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+}
+
+@media only screen and (max-width: 1000px) {
+  .projects-count-title {
+    text-align: center;
+  }
 }
