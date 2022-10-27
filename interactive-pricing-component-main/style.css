@@ -54,9 +54,11 @@ body {
   align-items: center;
   flex-direction: column;
   min-height: 100%;
+  color: var(--grayish-blue);
 }
 
 main {
+  width: 500px;
   display: flex;
   background-color: var(--white);
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
@@ -64,4 +66,40 @@ main {
   padding: 2rem 1.5rem;
   display: flex;
   flex-direction: column;
+}
+
+.title {
+  color: var(--dark-desaturated-blue);
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.title-description,
+.page-views {
+  font-weight: 500;
+}
+
+.page-views {
+  font-size: 1.1rem;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.price-amount {
+  margin-bottom: 1rem;
+}
+
+.price-duration {
+  font-size: 1rem;
+}
+
+.price {
+  color: var(--dark-desaturated-blue);
+  font-size: 2.5rem;
+  font-weight: 800;
 }
