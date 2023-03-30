@@ -177,3 +177,50 @@ button:hover {
     var(--light-royal-blue)
   );
 }
+
+@media only screen and (max-width: 650px) {
+  main {
+    grid-template-columns: 290px;
+    padding: 0;
+    border-radius: 0;
+  }
+
+  .result-container {
+    border-bottom-left-radius: 24px;
+    border-top-right-radius: 0;
+  }
+
+  .score-container {
+    width: 120px;
+    height: 120px;
+  }
+
+  .result-title {
+    font-size: 1.1rem;
+  }
+
+  .score {
+    font-size: 2.4rem;
+  }
+
+  article h1 {
+    font-size: 1.3rem;
+  }
+
+  article p {
+    font-size: 0.7rem;
+  }
+
+  .summary-container {
+    padding-inline: 10px;
+  }
+
+  .summary-title {
+    font-size: 1.1rem;
+    margin-block: 0 1rem;
+  }
+
+  button {
+    margin-top: 1rem;
+  }
+}
