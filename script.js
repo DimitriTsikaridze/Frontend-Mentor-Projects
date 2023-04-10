@@ -1,3 +1,11 @@
-const projects = document.querySelectorAll(".grid-item")
-const projectsCount = document.querySelector(".projects-count")
-projectsCount.textContent = projects.length
+const blob = document.getElementById("blob")
+
+document.body.onmousemove = ({ pageX, pageY }) => {
+  blob.animate(
+    {
+      left: `${pageX}px`,
+      top: `${pageY}px`,
+    },
+    { duration: 3000, fill: "forwards" }
+  )
+}
