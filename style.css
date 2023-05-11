@@ -42,14 +42,12 @@ main {
     rgba(2, 8, 20, 0.1) 0px 0.075rem 0.175rem;
   border-radius: 8px;
   transition: 0.3s;
-  filter: blur(2px);
 }
 
 .grid-item img:hover {
   transform: translateY(-3px) scale(1.1);
   box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px,
     rgba(0, 0, 0, 0.22) 0px 15px 12px;
-  filter: blur(0);
 }
 .grid-item h2 {
   text-align: center;
@@ -61,33 +59,5 @@ main {
 @media only screen and (max-width: 1000px) {
   .projects-count-title {
     text-align: center;
-  }
-}
-
-#blob {
-  position: absolute;
-  width: 500px;
-  aspect-ratio: 1;
-  background-image: linear-gradient(to right, red, blue);
-  border-radius: 50%;
-  top: 50%;
-  left: 50%;
-  translate: -50% -50%;
-  animation: rotate 2s forwards infinite;
-  filter: blur(200px);
-  z-index: -1;
-}
-
-@keyframes rotate {
-  from {
-    rotate: 0deg;
-  }
-
-  50% {
-    scale: 1 1.05;
-  }
-
-  to {
-    rotate: 360deg;
   }
 }
