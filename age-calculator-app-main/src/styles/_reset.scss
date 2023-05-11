@@ -4,16 +4,6 @@
   box-sizing: border-box;
 }
 
-:root {
-  --purple: hsl(259, 100%, 65%);
-  --light-red: hsl(0, 100%, 67%);
-  --white: hsl(0, 0%, 100%);
-  --off-white: hsl(0, 0%, 94%);
-  --light-grey: hsl(0, 0%, 86%);
-  --smokey-grey: hsl(0, 1%, 44%);
-  --off-black: hsl(0, 0%, 8%);
-}
-
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
@@ -27,6 +17,14 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 
+html,
 body {
-  font-family: "Poppins", sans-serif;
+  height: 100%;
+}
+
+input,
+button {
+  border: none;
+  font-family: inherit;
+  outline: none;
 }

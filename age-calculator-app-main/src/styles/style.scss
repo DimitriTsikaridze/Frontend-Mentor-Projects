@@ -1,0 +1,46 @@
+@use './reset';
+@import './variables.scss';
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: $off-white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+}
+
+main {
+  background-color: $white;
+  padding: 2rem;
+  border-radius: 12px;
+  border-bottom-right-radius: 50%;
+}
+
+header {
+  display: flex;
+  gap: 1rem;
+}
+
+.form-control {
+  color: $smokey-grey;
+
+  h5 {
+    margin-bottom: 10px;
+    font-size: 14px;
+  }
+
+  input {
+    font-size: 32px;
+    outline: 1px solid $light-grey;
+    border-radius: 4px;
+    padding: 5px 15px;
+    transition: 0.2s;
+  }
+
+  input:focus {
+    outline-color: $purple;
+    caret-color: $purple;
+  }
+
+}

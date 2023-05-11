@@ -16,31 +16,36 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
-    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="public/style.css" />
   </head>
   <body>
     <main>
-      <div class="DAY">
-        <p>DAY</p>
-        <input type="number" inputmode="numeric" placeholder="DD" />
-      </div>
+      <header>
+        <div class="form-control">
+          <h5>DAY</h5>
+          <input type="number" inputmode="numeric" placeholder="DD" />
+        </div>
 
-      <div class="month">
-        <p>MONTH</p>
-        <input type="number" inputmode="numeric" placeholder="MM" />
-      </div>
+        <div class="form-control">
+          <h5>MONTH</h5>
+          <input type="number" inputmode="numeric" placeholder="MM" />
+        </div>
 
-      <div class="year">
-        <p>YEAR</p>
-        <input type="number" inputmode="numeric" placeholder="YYYY" />
+        <div class="form-control">
+          <h5>YEAR</h5>
+          <input type="number" inputmode="numeric" placeholder="YYYY" />
+        </div>
+      </header>
+
+      <div class="submit">
+        <div class="line"></div>
+        <button>
+          <img src="./assets/images/icon-arrow.svg" alt="arrow-img" />
+        </button>
       </div>
+      <p><span class="years">--</span> years</p>
+      <p><span class="months">--</span> months</p>
+      <p><span class="days">--</span> days</p>
     </main>
-    <button>
-      <img src="./assets/images/icon-arrow.svg" alt="arrow-img" />
-    </button>
-    <p><span>--</span> years</p>
-    <p><span>--</span> months</p>
-    <p><span>--</span> days</p>
   </body>
 </html>

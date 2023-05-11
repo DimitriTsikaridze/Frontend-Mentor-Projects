@@ -1,0 +1,72 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  appearance: initial;
+  -moz-appearance: textfield;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+input,
+button {
+  border: none;
+  font-family: inherit;
+  outline: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: hsl(0, 0%, 94%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+}
+
+main {
+  background-color: hsl(0, 0%, 100%);
+  padding: 2rem;
+  border-radius: 12px;
+  border-bottom-right-radius: 50%;
+}
+
+header {
+  display: flex;
+  gap: 1rem;
+}
+
+.form-control {
+  color: hsl(0, 1%, 44%);
+}
+.form-control h5 {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+.form-control input {
+  font-size: 32px;
+  outline: 1px solid hsl(0, 0%, 86%);
+  border-radius: 4px;
+  padding: 5px 15px;
+  transition: 0.2s;
+}
+.form-control input:focus {
+  outline-color: hsl(259, 100%, 65%);
+  caret-color: hsl(259, 100%, 65%);
+}
+
+/*# sourceMappingURL=style.css.map */
