@@ -1,0 +1,25 @@
+main {
+  display: flex;
+  flex-direction: column;
+  max-width: 90vw;
+  padding: 2rem;
+}
+
+header {
+  grid-template-columns: repeat(3, minmax(60px, 1fr));
+}
+
+.submit {
+  margin-block: 4rem;
+
+  button {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+}
+
+
+.result p {
+  font-size: 3rem;
+}

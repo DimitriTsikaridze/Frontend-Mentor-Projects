@@ -14,7 +14,7 @@ main {
   background-color: $white;
   padding: 2rem;
   border-radius: 24px;
-  border-bottom-right-radius: 50%;
+  border-bottom-right-radius: 35%;
   width: 900px;
   box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
 }
@@ -83,7 +83,7 @@ header {
 
   button {
     background-color: $purple;
-    border-radius: 35%;
+    border-radius: 50%;
     width: 80px;
     height: 80px;
     flex-shrink: 0;
@@ -107,4 +107,9 @@ header {
   span {
     color: $purple;
   }
+}
+
+
+@media only screen and (max-width: 950px) {
+  @import './mobile';
 }
