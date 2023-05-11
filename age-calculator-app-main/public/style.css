@@ -74,10 +74,25 @@ header {
   border-radius: 4px;
   padding: 5px 15px;
   transition: outline-color 0.2s;
+  position: relative;
 }
 .form-control input:focus {
   outline-color: hsl(259, 100%, 65%);
   caret-color: hsl(259, 100%, 65%);
+}
+.form-control input.empty {
+  outline-color: hsl(0, 100%, 67%);
+  caret-color: hsl(0, 100%, 67%);
+}
+.form-control p.error {
+  display: none;
+  color: hsl(0, 100%, 67%);
+  font-style: italic;
+  font-size: 14px;
+  margin-top: 5px;
+}
+.form-control input.error ~ p.error {
+  display: block;
 }
 
 .submit {

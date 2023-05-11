@@ -38,12 +38,34 @@ header {
     border-radius: 4px;
     padding: 5px 15px;
     transition: outline-color 0.2s;
+    position: relative;
+
+
+    &:focus {
+      outline-color: $purple;
+      caret-color: $purple;
+    }
+
+    &.empty {
+      outline-color: $light-red;
+      caret-color: $light-red;
+    }
   }
 
-  input:focus {
-    outline-color: $purple;
-    caret-color: $purple;
+  p.error {
+    display: none;
+    color: $light-red;
+    font-style: italic;
+    font-size: 14px;
+    margin-top: 5px;
   }
+
+  input.error {
+    &~p.error {
+      display: block;
+    }
+  }
+
 }
 
 

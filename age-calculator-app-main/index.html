@@ -17,23 +17,42 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="public/style.css" />
+    <script src="./public/app.js" defer></script>
   </head>
   <body>
     <main>
       <header>
         <div class="form-control">
           <h5>DAY</h5>
-          <input type="number" inputmode="numeric" placeholder="DD" />
+          <input
+            class="day"
+            type="number"
+            inputmode="numeric"
+            placeholder="DD"
+          />
+          <p class="error"></p>
         </div>
 
         <div class="form-control">
           <h5>MONTH</h5>
-          <input type="number" inputmode="numeric" placeholder="MM" />
+          <input
+            class="month"
+            type="number"
+            inputmode="numeric"
+            placeholder="MM"
+          />
+          <p class="error"></p>
         </div>
 
         <div class="form-control">
           <h5>YEAR</h5>
-          <input type="number" inputmode="numeric" placeholder="YYYY" />
+          <input
+            class="year"
+            type="number"
+            inputmode="numeric"
+            placeholder="YYYY"
+          />
+          <p class="error"></p>
         </div>
       </header>
 
