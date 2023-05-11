@@ -13,9 +13,10 @@ body {
 main {
   background-color: $white;
   padding: 2rem;
-  border-radius: 12px;
+  border-radius: 24px;
   border-bottom-right-radius: 50%;
   width: 900px;
+  box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
 }
 
 header {
@@ -82,7 +83,7 @@ header {
 
   button {
     background-color: $purple;
-    border-radius: 50%;
+    border-radius: 35%;
     width: 80px;
     height: 80px;
     flex-shrink: 0;
