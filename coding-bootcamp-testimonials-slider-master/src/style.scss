@@ -1,0 +1,76 @@
+@use './reset';
+@use './colors' as *;
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+
+  article {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 61.1ch 550px;
+  }
+
+  .info {
+    display: flex;
+    flex-direction: column;
+  }
+
+  blockquote {
+    padding-block: 3rem 1rem;
+    color: $dark-blue;
+    font-weight: 300;
+    font-size: 32px;
+    position: relative;
+
+    img {
+      position: absolute;
+      top: 0;
+      left: 10%;
+    }
+
+  }
+
+  p {
+    color: $dark-blue;
+    font-weight: 700;
+
+    span {
+      color: $grayish-blue;
+      font-weight: 500;
+    }
+  }
+
+  aside {
+    position: relative;
+    z-index: -1;
+    left: -8ch;
+
+    img {
+
+      &:first-child {
+        border-radius: 8px;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      }
+
+      &:nth-child(2) {
+        position: absolute;
+        top: -65px;
+        left: -35px;
+        z-index: -1;
+        width: 690px;
+        max-width: unset;
+      }
+    }
+  }
+}
+
+
+.curve {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
