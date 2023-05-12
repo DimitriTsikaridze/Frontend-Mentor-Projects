@@ -13,4 +13,16 @@ body {
   font-family: "Barlow", sans-serif;
 }
 
+.violet {
+  background-color: hsl(263, 55%, 52%);
+}
+
+.grayish-blue {
+  background-color: hsl(217, 19%, 35%);
+}
+
+.darkish-blue {
+  background-color: hsl(219, 29%, 14%);
+}
+
 /*# sourceMappingURL=style.css.map */

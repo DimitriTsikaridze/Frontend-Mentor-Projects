@@ -1,2 +1,14 @@
 @use './reset';
 @import './colors';
+
+.violet {
+  background-color: $moderate-violet;
+}
+
+.grayish-blue {
+  background-color: $very-dark-grayish-blue;
+}
+
+.darkish-blue {
+  background-color: $very-dark-blackish-blue;
+}
