@@ -11,5 +11,11 @@ body {
 
 body {
   font-family: 'Barlow', sans-serif;
-  // font-family: 'Fraunces', serif;
+  display: flex;
+  align-items: center;
+}
+
+img {
+  display: block;
+  max-width: 100%;
 }
