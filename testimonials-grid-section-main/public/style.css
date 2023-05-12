@@ -11,8 +11,6 @@ body {
 
 body {
   font-family: "Barlow", sans-serif;
-  display: flex;
-  align-items: center;
 }
 
 img {
@@ -22,6 +20,8 @@ img {
 
 body {
   background-color: hsl(210, 46%, 95%);
+  display: grid;
+  place-items: center;
 }
 
 main {
@@ -82,9 +82,16 @@ main {
   outline: 2px solid hsl(263, 55%, 52%);
 }
 
+.daniel {
+  background-image: url("../images/bg-pattern-quotation.svg");
+  background-repeat: no-repeat;
+  background-position: 80% top;
+}
+
 article {
   padding: 1.6rem 2.4rem;
   border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 article h2 {
   color: hsl(210, 46%, 95%);
@@ -116,6 +123,36 @@ header h5:first-child {
 }
 header h5:nth-child(2) {
   color: rgba(207, 207, 207, 0.5);
+}
+
+@media only screen and (max-width: 1500px) {
+  main {
+    padding: 5vw;
+    grid-template-columns: 1fr;
+  }
+  .daniel,
+  .jonathan,
+  .patrick {
+    grid-column: 1;
+  }
+  .kira {
+    grid-row: unset;
+  }
+  article {
+    padding-block: 2rem;
+  }
+  article img {
+    width: 40px;
+  }
+  article h5 {
+    font-size: 16px;
+  }
+  article h2 {
+    font-size: 18px;
+  }
+  article p {
+    font-size: 16px;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

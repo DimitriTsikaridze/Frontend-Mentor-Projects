@@ -3,6 +3,8 @@
 
 body {
   background-color: $light-grayish-blue;
+  display: grid;
+  place-items: center;
 }
 
 main {
@@ -69,9 +71,17 @@ main {
 }
 
 
+.daniel {
+  background-image: url('../images/bg-pattern-quotation.svg');
+  background-repeat: no-repeat;
+  background-position: 80% top;
+}
+
+
 article {
   padding: 1.6rem 2.4rem;
   border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 
   h2 {
     color: $light-grayish-blue;
@@ -108,6 +118,43 @@ header {
 
     &:nth-child(2) {
       color: rgb(207, 207, 207, .5);
+    }
+  }
+}
+
+@media only screen and (max-width: 1500px) {
+  main {
+    padding: 5vw;
+    grid-template-columns: 1fr;
+  }
+
+  .daniel,
+  .jonathan,
+  .patrick {
+    grid-column: 1;
+  }
+
+  .kira {
+    grid-row: unset;
+  }
+
+  article {
+    padding-block: 2rem;
+
+    img {
+      width: 40px;
+    }
+
+    h5 {
+      font-size: 16px;
+    }
+
+    h2 {
+      font-size: 18px;
+    }
+
+    p {
+      font-size: 16px;
     }
   }
 }
