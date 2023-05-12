@@ -65,6 +65,27 @@ main {
         max-width: unset;
       }
     }
+
+    .navigation {
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+      background-color: white;
+      display: flex;
+      width: 100px;
+      border-radius: 100vw;
+      justify-content: space-between;
+      position: absolute;
+      left: 10%;
+      bottom: 0;
+      transform: translateY(50%);
+      padding: 1rem;
+    }
+
+    button {
+      background-color: transparent;
+      border: none;
+      outline: none;
+      cursor: pointer;
+    }
   }
 }
 
