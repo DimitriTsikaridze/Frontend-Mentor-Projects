@@ -127,13 +127,6 @@ input:checked + .slider:before {
   border-bottom-right-radius: 30px;
 }
 
-body {
-  background-color: var(--very-darkblue);
-  color: var(--desaturated-blue);
-  max-width: 1440px;
-  margin-inline: auto;
-}
-
 header {
   display: flex;
   align-items: center;
@@ -153,7 +146,7 @@ h2 {
 
 .card-section {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1rem;
 }
 .card-section article {
@@ -212,7 +205,7 @@ h2 {
 
 .overview-section {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1rem;
 }
 .overview-section article {
@@ -222,12 +215,14 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 0;
   margin-bottom: 2rem;
 }
 .overview-section article .bottom-info {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 0;
 }
 .overview-section article .bottom-info p:nth-of-type(1) {
   color: var(--white);
@@ -237,8 +232,9 @@ h2 {
 .overview-section article .bottom-info p:nth-of-type(2) {
   display: flex;
   align-items: center;
-  flex-direction: row-reverse;
+  justify-content: flex-start;
   gap: 5px;
+  flex-direction: row-reverse;
   color: var(--lime-green);
 }
 .overview-section article .bottom-info p:nth-of-type(2).down {
@@ -246,6 +242,11 @@ h2 {
 }
 
 body {
+  background-color: var(--very-darkblue);
+  color: var(--desaturated-blue);
+  max-width: 1440px;
+  margin-inline: auto;
+  padding-inline: 1rem;
   transition: background 0.2s ease-in-out, color 0.4s ease-in-out;
 }
 

@@ -1,4 +1,5 @@
 @use './reset';
+@use './colors' as *;
 @use './article';
 @use './theme-toggle';
 @use './header.scss';
@@ -6,5 +7,10 @@
 @use './overview';
 
 body {
+  background-color: var(--very-darkblue);
+  color: var(--desaturated-blue);
+  max-width: 1440px;
+  margin-inline: auto;
+  padding-inline: 1rem;
   transition: background .2s ease-in-out, color .4s ease-in-out;
 }

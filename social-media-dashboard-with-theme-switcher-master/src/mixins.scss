@@ -1,0 +1,12 @@
+@mixin flex($align-items: normal, $justify-content: flex-start, $gap: 0) {
+  display: flex;
+  align-items: $align-items;
+  justify-content: $justify-content;
+  gap: $gap;
+}
+
+@mixin list-items() {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1rem;
+}

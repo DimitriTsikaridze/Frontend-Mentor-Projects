@@ -1,24 +1,19 @@
+@use './mixins.scss' as *;
 @use './colors' as *;
 
 .overview-section {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1rem;
+  @include list-items;
 
   article {
     padding: 1.5rem;
 
     .top-info {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      @include flex(center, space-between);
       margin-bottom: 2rem;
     }
 
     .bottom-info {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      @include flex(center, space-between);
 
       p:nth-of-type(1) {
         color: var(--white);
@@ -27,10 +22,8 @@
       }
 
       p:nth-of-type(2) {
-        display: flex;
-        align-items: center;
+        @include flex(center, flex-start, 5px);
         flex-direction: row-reverse;
-        gap: 5px;
         color: var(--lime-green);
 
         &.down {
