@@ -23,16 +23,19 @@ main {
   align-items: center;
   min-height: 100vh;
 }
-main article {
+
+article {
   display: grid;
   align-items: center;
   grid-template-columns: 61.1ch 550px;
 }
-main .info {
+
+.info {
   display: flex;
   flex-direction: column;
 }
-main blockquote {
+
+blockquote {
   padding-block: 3rem 1rem;
   color: hsl(240, 38%, 20%);
   font-weight: 300;
@@ -40,28 +43,30 @@ main blockquote {
   position: relative;
   z-index: 1;
 }
-main blockquote img {
+blockquote img {
   position: absolute;
   top: 0;
   left: 10%;
 }
-main p {
+
+p {
   color: hsl(240, 38%, 20%);
   font-weight: 700;
 }
-main p span {
+p span {
   color: hsl(240, 18%, 77%);
   font-weight: 500;
 }
-main aside {
+
+aside {
   position: relative;
   left: -8ch;
 }
-main aside img:first-child {
+aside img:first-child {
   border-radius: 8px;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
-main aside img:nth-child(2) {
+aside img:nth-child(2) {
   position: absolute;
   top: -65px;
   left: -35px;
@@ -69,7 +74,7 @@ main aside img:nth-child(2) {
   max-width: unset;
   z-index: -1;
 }
-main aside .navigation {
+aside .navigation {
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
   background-color: white;
   display: flex;
@@ -82,7 +87,7 @@ main aside .navigation {
   transform: translateY(50%);
   padding: 1rem;
 }
-main aside button {
+aside button {
   background-color: transparent;
   border: none;
   outline: none;
@@ -93,6 +98,39 @@ main aside button {
   position: absolute;
   left: 0;
   bottom: 0;
+}
+
+@media only screen and (max-width: 1240px) {
+  article {
+    grid-template-columns: 40ch;
+    gap: 3rem;
+    text-align: center;
+    justify-items: center;
+  }
+  article aside {
+    order: -1;
+    left: unset;
+  }
+  article aside img:nth-child(2) {
+    width: 564px;
+    top: -67px;
+    left: -83px;
+  }
+  article .navigation {
+    left: 50%;
+    transform: translateX(-50%) translateY(50%);
+  }
+  blockquote {
+    font-size: 24px;
+  }
+  blockquote img {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .curve {
+    width: 300px;
+    z-index: -1;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
