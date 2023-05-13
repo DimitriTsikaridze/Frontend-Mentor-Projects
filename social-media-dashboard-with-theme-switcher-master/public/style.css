@@ -42,6 +42,16 @@ body {
   --white: hsl(230, 17%, 14%);
 }
 
+article {
+  background-color: var(--dark-desaturated-blue);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+article:hover {
+  background-color: hsla(228, 34%, 66%, 0.5);
+}
+
 .top-bg {
   height: 300px;
   background-color: var(--very-darkblue-top);
@@ -73,14 +83,9 @@ header h1 {
   margin-bottom: 0.5rem;
 }
 
-article {
-  background-color: var(--dark-desaturated-blue);
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
-article:hover {
-  background-color: hsla(228, 34%, 66%, 0.5);
+h2 {
+  margin-block: 2rem 1rem;
+  color: var(--white);
 }
 
 .card-section {
@@ -140,11 +145,6 @@ article:hover {
 }
 .card-section article p:nth-of-type(3).down {
   color: var(--bright-red);
-}
-
-h2 {
-  margin-block: 2rem 1rem;
-  color: var(--white);
 }
 
 .overview-section {

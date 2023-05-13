@@ -1,0 +1,42 @@
+@use './colors' as *;
+
+.overview-section {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+
+  article {
+    padding: 1.5rem;
+
+    .top-info {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 2rem;
+    }
+
+    .bottom-info {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      p:nth-of-type(1) {
+        color: var(--white);
+        font-weight: 700;
+        font-size: 2rem;
+      }
+
+      p:nth-of-type(2) {
+        display: flex;
+        align-items: center;
+        flex-direction: row-reverse;
+        gap: 5px;
+        color: var(--lime-green);
+
+        &.down {
+          color: var(--bright-red);
+        }
+      }
+    }
+  }
+}

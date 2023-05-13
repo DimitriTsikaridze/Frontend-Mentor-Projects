@@ -1,0 +1,12 @@
+@use './colors.scss' as *;
+
+article {
+  background-color: var(--dark-desaturated-blue);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color .2s;
+
+  &:hover {
+    background-color: hsl(228, 34%, 66%, .5);
+  }
+}

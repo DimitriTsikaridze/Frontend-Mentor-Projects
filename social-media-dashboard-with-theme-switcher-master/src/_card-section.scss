@@ -1,0 +1,71 @@
+@use './colors' as *;
+
+
+.card-section {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+
+  article {
+    padding: 2rem 4rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+
+    &:nth-child(1) {
+      border-top: 5px solid var(--facebook);
+    }
+
+    &:nth-child(2) {
+      border-top: 5px solid var(--twitter);
+    }
+
+    &:nth-child(3)::before {
+      content: "";
+      height: 5px;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      background-image: var(--instagram);
+    }
+
+    &:nth-child(4) {
+      border-top: 5px solid var(--youtube);
+    }
+
+    .article-author {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    p:nth-of-type(1) {
+      font-weight: 700;
+      color: var(--white);
+      font-size: 3rem;
+      margin-block: 2rem 1rem;
+    }
+
+    p:nth-of-type(2) {
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 400;
+      font-size: 1rem;
+    }
+
+    p:nth-of-type(3) {
+      margin-top: 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      color: var(--lime-green);
+
+      &.down {
+        color: var(--bright-red);
+      }
+    }
+  }
+}
