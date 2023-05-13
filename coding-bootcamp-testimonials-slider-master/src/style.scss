@@ -1,6 +1,10 @@
 @use './reset';
 @use './colors' as *;
 
+.hide {
+  display: none;
+}
+
 main {
   display: flex;
   justify-content: center;
@@ -25,6 +29,7 @@ main {
     font-weight: 300;
     font-size: 32px;
     position: relative;
+    z-index: 1;
 
     img {
       position: absolute;
@@ -46,7 +51,6 @@ main {
 
   aside {
     position: relative;
-    z-index: -1;
     left: -8ch;
 
     img {
@@ -60,9 +64,9 @@ main {
         position: absolute;
         top: -65px;
         left: -35px;
-        z-index: -1;
         width: 690px;
         max-width: unset;
+        z-index: -1;
       }
     }
 

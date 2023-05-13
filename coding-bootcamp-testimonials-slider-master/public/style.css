@@ -13,6 +13,10 @@ body {
   font-family: "Inter", sans-serif;
 }
 
+.hide {
+  display: none;
+}
+
 main {
   display: flex;
   justify-content: center;
@@ -34,6 +38,7 @@ main blockquote {
   font-weight: 300;
   font-size: 32px;
   position: relative;
+  z-index: 1;
 }
 main blockquote img {
   position: absolute;
@@ -50,7 +55,6 @@ main p span {
 }
 main aside {
   position: relative;
-  z-index: -1;
   left: -8ch;
 }
 main aside img:first-child {
@@ -61,9 +65,9 @@ main aside img:nth-child(2) {
   position: absolute;
   top: -65px;
   left: -35px;
-  z-index: -1;
   width: 690px;
   max-width: unset;
+  z-index: -1;
 }
 main aside .navigation {
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
