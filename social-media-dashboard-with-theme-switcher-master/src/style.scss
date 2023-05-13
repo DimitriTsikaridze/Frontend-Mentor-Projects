@@ -1,5 +1,10 @@
 @use './reset';
 @use './article';
+@use './theme-toggle';
 @use './header.scss';
 @use './card-section';
 @use './overview';
+
+body {
+  transition: background .2s ease-in-out, color .4s ease-in-out;
+}

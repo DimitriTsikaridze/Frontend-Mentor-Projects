@@ -52,12 +52,75 @@ article:hover {
   background-color: hsla(228, 34%, 66%, 0.5);
 }
 
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 44px;
+  height: 26px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  background-image: var(--toggle);
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(18px);
+  -ms-transform: translateX(18px);
+  transform: translateX(18px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
 .top-bg {
   height: 300px;
   background-color: var(--very-darkblue-top);
   position: absolute;
   top: 0;
   left: 0;
+  transition: 0.2s;
   width: 100%;
   z-index: -1;
   border-bottom-left-radius: 30px;
@@ -180,6 +243,10 @@ h2 {
 }
 .overview-section article .bottom-info p:nth-of-type(2).down {
   color: var(--bright-red);
+}
+
+body {
+  transition: background 0.2s ease-in-out, color 0.4s ease-in-out;
 }
 
 /*# sourceMappingURL=style.css.map */
