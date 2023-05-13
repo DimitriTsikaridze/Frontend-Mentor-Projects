@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -8,6 +9,63 @@ img,
 svg {
   display: block;
   max-width: 100%;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+:root {
+  --lime-green: hsl(163, 72%, 41%);
+  --bright-red: hsl(356, 69%, 56%);
+  --facebook: hsl(208, 92%, 53%);
+  --twitter: hsl(203, 89%, 53%);
+  --instagram: linear-gradient(hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+  --youTube: hsl(348, 97%, 39%);
+}
+
+.dark {
+  --toggle: linear-gradient(hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+  --very-darkblue: hsl(230, 17%, 14%);
+  --very-darkblue-top: hsl(232, 19%, 15%);
+  --dark-desaturated-blue: hsl(228, 28%, 20%);
+  --desaturated-blue: hsl(228, 34%, 66%);
+  --white: hsl(0, 0%, 100%);
+}
+
+.light {
+  --toggle: hsl(230, 22%, 74%);
+  --very-darkblue: hsl(0, 0%, 100%);
+  --very-darkblue-top: hsl(225, 100%, 98%);
+  --dark-desaturated-blue: hsl(227, 47%, 96%);
+  --desaturated-blue: hsl(228, 12%, 44%);
+  --white: hsl(230, 17%, 14%);
+}
+
+.top-bg {
+  height: 300px;
+  background-color: var(--very-darkblue-top);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+body {
+  background-color: var(--very-darkblue);
+  color: var(--desaturated-blue);
+  max-width: 1440px;
+  margin-inline: auto;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+}
+header h1 {
+  font-size: 2rem;
+  color: var(--white);
 }
 
 /*# sourceMappingURL=style.css.map */

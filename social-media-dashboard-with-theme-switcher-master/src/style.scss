@@ -1,1 +1,33 @@
 @use './reset';
+@use './colors' as *;
+
+
+.top-bg {
+  height: 300px;
+  background-color: var(--very-darkblue-top);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+body {
+  background-color: var(--very-darkblue);
+  color: var(--desaturated-blue);
+  max-width: 1440px;
+  margin-inline: auto;
+}
+
+
+
+header {
+  display: flex;
+  justify-content: space-between;
+
+  h1 {
+    font-size: 2rem;
+    color: var(--white);
+
+  }
+}
