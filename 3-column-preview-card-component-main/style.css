@@ -21,6 +21,7 @@ html {
 }
 
 body {
+  background-color: var(--very-light-gray);
   overflow-x: hidden;
   width: 100vw;
   min-height: 100vh;
@@ -73,6 +74,7 @@ p {
   line-height: 24px;
   font-family: "Lexend Deca", sans-serif;
   width: 209px;
+  margin-bottom: 5rem;
 }
 
 .sedans {
@@ -158,5 +160,9 @@ p {
 
   .attribution {
     display: none;
+  }
+
+  p {
+    margin-bottom: 1rem;
   }
 }
