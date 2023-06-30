@@ -1,0 +1,23 @@
+:host {
+  display: block;
+  background-color: var(--dark-blue);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-inline: auto;
+  max-width: 1440px;
+  padding: 1rem 2rem;
+}
+
+h1 {
+  font-weight: 800;
+  font-size: 2rem;
+}
+
+
+p {
+  font-size: 1.2rem;
+}
