@@ -11,13 +11,12 @@
   --white: hsl(0, 0%, 100%);
 }
 
-
-
 body {
   font-family: 'Nunito Sans', sans-serif;
   font-size: 14px;
   background-color: var(--very-dark-blue);
   color: var(--white);
+  transition: 400ms;
 
 
   &.light {
