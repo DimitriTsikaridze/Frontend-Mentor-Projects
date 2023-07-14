@@ -1,7 +1,7 @@
 import { Routes } from "@angular/router"
 import { CountryDetailsComponent } from "./country-list/country-details/country-details.component"
 import { CountryListComponent } from "./country-list/country-list.component"
-import { countryNameResolver } from "./services/country-name.resolver"
+import { countryNameResolver } from "@shared/resolvers"
 
 export const routes: Routes = [
   {
