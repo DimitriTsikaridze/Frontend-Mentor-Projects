@@ -1,5 +1,6 @@
-import { ChangeDetectionStrategy, Component } from "@angular/core"
+import { ChangeDetectionStrategy, Component, inject } from "@angular/core"
 import { CommonModule } from "@angular/common"
+import { CountryService } from "../services/country.service"
 
 @Component({
   selector: "app-filter",
@@ -10,5 +11,10 @@ import { CommonModule } from "@angular/common"
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class FilterComponent {
-  ngOnInit() {}
+  private countryService = inject(CountryService)
+
+  onInput(e: Event) {
+    const text = (e.target as HTMLInputElement).value
+    this.countryService.changeSearch(text.toLowerCase())
+  }
 }

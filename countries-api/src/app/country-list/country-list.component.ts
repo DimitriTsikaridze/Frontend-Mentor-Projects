@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, inject } from "@angular/core"
 import { CommonModule, NgOptimizedImage } from "@angular/common"
+import { switchMap, map } from "rxjs"
 import { CountryService } from "../services/country.service"
 
 @Component({
@@ -13,5 +14,13 @@ import { CountryService } from "../services/country.service"
 export class CountryListComponent {
   private countryService = inject(CountryService)
 
-  countries$ = this.countryService.countries$
+  countries$ = this.countryService.currentSearch$.pipe(
+    switchMap((term) =>
+      this.countryService.countries$.pipe(
+        map((countries) =>
+          countries.filter((c) => c.name.toLowerCase().includes(term))
+        )
+      )
+    )
+  )
 }
