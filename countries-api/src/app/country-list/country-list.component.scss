@@ -1,0 +1,41 @@
+:host {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2.5rem;
+}
+
+article {
+  background-color: var(--dark-blue);
+  border-radius: 4px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+
+.description {
+  padding: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;
+}
+
+h2 {
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  font-weight: 800;
+}
+
+img {
+  width: 100%;
+  object-fit: cover;
+}
+
+p {
+  color: var(--very-light-gray);
+
+  &:nth-of-type(2) {
+    margin-block: .5rem;
+  }
+
+  span {
+    color: var(--white);
+  }
+}
