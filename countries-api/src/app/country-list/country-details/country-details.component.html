@@ -1,5 +1,5 @@
 <ng-container *ngIf="country$ | async as country">
-  <button (click)="location.back()">Back</button>
+  <button routerLink="/">Back</button>
 
   <section>
     <img [src]="country.flag" alt="" />

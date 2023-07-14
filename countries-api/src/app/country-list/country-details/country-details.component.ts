@@ -4,7 +4,7 @@ import {
   Input,
   inject,
 } from "@angular/core"
-import { CommonModule, Location } from "@angular/common"
+import { CommonModule } from "@angular/common"
 import { CountryService } from "src/app/services/country.service"
 import { Observable } from "rxjs"
 import { Country } from "src/app/models/country"
@@ -20,7 +20,6 @@ import { RouterLink } from "@angular/router"
 })
 export class CountryDetailsComponent {
   private countryService = inject(CountryService)
-  public location = inject(Location)
 
   @Input() countryName: string
 
