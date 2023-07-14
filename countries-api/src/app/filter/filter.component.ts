@@ -13,6 +13,8 @@ import { CountryService } from "../services/country.service"
 export class FilterComponent {
   private countryService = inject(CountryService)
 
+  currentSearch$ = this.countryService.currentSearch$
+
   onInput(e: Event) {
     const text = (e.target as HTMLInputElement).value
     this.countryService.changeSearch(text.toLowerCase())

@@ -1,5 +1,6 @@
 <input
   (input)="onInput($event)"
+  [value]="currentSearch$ | async"
   type="text"
   placeholder="Search for a country..."
 />
