@@ -5,9 +5,9 @@ import {
   inject,
 } from "@angular/core"
 import { CommonModule } from "@angular/common"
-import { CountryService } from "src/app/services/country.service"
 import { Observable } from "rxjs"
-import { Country } from "src/app/models/country"
+import { Country } from "@shared/models"
+import { CountryService } from "@shared/services"
 import { RouterLink } from "@angular/router"
 
 @Component({

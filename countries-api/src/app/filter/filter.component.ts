@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, inject } from "@angular/core"
 import { CommonModule } from "@angular/common"
-import { CountryService } from "../services/country.service"
+import { CountryService } from "@shared/services"
 
 @Component({
   selector: "app-filter",

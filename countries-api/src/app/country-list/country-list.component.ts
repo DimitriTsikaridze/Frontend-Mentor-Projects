@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component, inject } from "@angular/core"
 import { CommonModule, NgOptimizedImage } from "@angular/common"
 import { switchMap, map } from "rxjs"
-import { CountryService } from "../services/country.service"
+import { CountryService } from "@shared/services"
 import { RouterLink } from "@angular/router"
 import { FilterComponent } from "../filter/filter.component"
 

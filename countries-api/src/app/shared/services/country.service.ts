@@ -1,6 +1,6 @@
 import { HttpClient } from "@angular/common/http"
 import { Injectable, inject } from "@angular/core"
-import { Country } from "../models/country"
+import { Country } from "@shared/models"
 import { BehaviorSubject, of, Observable, tap, map } from "rxjs"
 
 @Injectable({
