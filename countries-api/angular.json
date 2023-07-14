@@ -24,14 +24,16 @@
           "skipTests": true
         },
         "@schematics/angular:interceptor": {
-          "skipTests": true
+          "skipTests": true,
+          "functional": true
         },
         "@schematics/angular:pipe": {
           "skipTests": true,
           "standalone": true
         },
         "@schematics/angular:resolver": {
-          "skipTests": true
+          "skipTests": true,
+          "functional": true
         },
         "@schematics/angular:service": {
           "skipTests": true

@@ -15,4 +15,8 @@ export const routes: Routes = [
     component: CountryDetailsComponent,
     title: countryNameResolver,
   },
+  {
+    path: "**",
+    redirectTo: "/",
+  },
 ]
