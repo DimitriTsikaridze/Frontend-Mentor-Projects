@@ -1,9 +1,6 @@
 <app-filter />
 <section>
-  <article
-    [routerLink]="country.name"
-    *ngFor="let country of countries$ | async"
-  >
+  <a [routerLink]="country.name" *ngFor="let country of countries$ | async">
     <img [ngSrc]="country.flag" width="300" height="200" [alt]="country.name" />
     <div class="description">
       <h2>{{ country.name }}</h2>
@@ -11,5 +8,5 @@
       <p><span>Region:</span> {{ country.region }}</p>
       <p><span>Capital:</span> {{ country.capital }}</p>
     </div>
-  </article>
+  </a>
 </section>
