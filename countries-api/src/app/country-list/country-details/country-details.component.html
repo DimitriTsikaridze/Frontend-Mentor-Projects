@@ -1,1 +1,29 @@
-<p>country-details works!</p>
+<ng-container *ngIf="country$ | async as country">
+  <button (click)="location.back()">Back</button>
+
+  <section>
+    <img [src]="country.flag" alt="" />
+    <article>
+      <h1>{{ country.name }}</h1>
+      <div class="description">
+        <p><strong>Native name:</strong> {{ country.nativeName }}</p>
+        <p><strong>Top Level Domain:</strong> {{ country.topLevelDomain }}</p>
+        <p><strong>Populaltion:</strong> {{ country.population }}</p>
+        <p><strong>Currencies:</strong> {{ country.currencies[0].name }}</p>
+        <p><strong>Region:</strong> {{ country.region }}</p>
+        <p>
+          <strong>Languages</strong>:
+          <span *ngFor="let lang of country.languages; last as last">
+            {{ lang.name }}{{ !last ? ", " : "" }}</span
+          >
+        </p>
+        <p><strong>Sub Region</strong>: {{ country.subregion }}</p>
+        <p><strong>Capital</strong>: {{ country.capital }}</p>
+      </div>
+      <!-- <div class="border-countries">
+        <p>Border Countries:</p>
+        <a *ngFor="let borderCountry of country.borders"></a>
+      </div> -->
+    </article>
+  </section>
+</ng-container>

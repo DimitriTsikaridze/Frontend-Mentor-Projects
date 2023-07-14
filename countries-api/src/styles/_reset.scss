@@ -5,10 +5,16 @@
   font: inherit;
 }
 
-
-
 img,
 svg {
   display: block;
   max-width: 100%;
+}
+
+input,
+button {
+  outline: none;
+  border: none;
+  font-family: inherit;
+  color: inherit;
 }

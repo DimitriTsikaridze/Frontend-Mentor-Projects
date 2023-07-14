@@ -17,7 +17,7 @@ export interface Country {
   nativeName: string
   numericCode: string
   flags: Flags
-  currencies?: Currency[]
+  currencies: Currency[]
   languages: Language[]
   translations: Translations
   flag: string

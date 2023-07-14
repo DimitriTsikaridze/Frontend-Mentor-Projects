@@ -1,7 +1,7 @@
 import { HttpClient } from "@angular/common/http"
 import { Injectable, inject } from "@angular/core"
 import { Country } from "../models/country"
-import { BehaviorSubject, of, Observable, tap } from "rxjs"
+import { BehaviorSubject, of, Observable, tap, map } from "rxjs"
 
 @Injectable({
   providedIn: "root",
@@ -19,7 +19,21 @@ export class CountryService {
       .pipe(tap((countries) => (this.countries = countries)))
   }
 
-  changeSearch(term: string) {
+  getCountry(countryName: string): Observable<Country> {
+    const findCountry = (countries: Country[], targetName: string) => {
+      return countries.find((c) => c.name === targetName) || ({} as Country)
+    }
+
+    if (this.countries.length) {
+      return of(findCountry(this.countries, countryName))
+    }
+
+    return this.http
+      .get<Country[]>("/assets/data.json")
+      .pipe(map((c) => findCountry(c, countryName)))
+  }
+
+  changeSearch(term: string): void {
     this.searchTermSource.next(term)
   }
 }
