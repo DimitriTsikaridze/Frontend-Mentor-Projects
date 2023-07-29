@@ -1,7 +1,8 @@
 import { ChangeDetectionStrategy, Component, inject } from "@angular/core"
 import { CommonModule, NgOptimizedImage } from "@angular/common"
-import { switchMap, map } from "rxjs"
 import { CountryService } from "@shared/services"
+import { combineLatest } from "rxjs"
+import { map, switchMap } from "rxjs/operators"
 import { RouterLink } from "@angular/router"
 import { FilterComponent } from "../filter/filter.component"
 
@@ -16,15 +17,24 @@ import { FilterComponent } from "../filter/filter.component"
 export class CountryListComponent {
   private countryService = inject(CountryService)
 
-  countries$ = this.countryService.currentSearch$.pipe(
-    switchMap((term) =>
-      this.countryService
-        .getCountries()
-        .pipe(
-          map((countries) =>
-            countries.filter((c) => c.name.toLowerCase().includes(term))
+  countries$ = combineLatest([
+    this.countryService.currentSearch$,
+    this.countryService.currentRegion$,
+  ]).pipe(
+    switchMap(([term, region]) =>
+      this.countryService.getCountries().pipe(
+        map((countries) => {
+          const filteredByTerm = countries.filter((c) =>
+            c.name.toLowerCase().includes(term)
           )
-        )
+
+          if (region) {
+            return filteredByTerm.filter((c) => c.region === region)
+          }
+
+          return filteredByTerm
+        })
+      )
     )
   )
 }

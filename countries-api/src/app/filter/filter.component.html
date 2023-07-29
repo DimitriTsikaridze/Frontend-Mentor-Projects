@@ -1,6 +1,27 @@
-<input
-  (input)="onInput($event)"
-  [value]="currentSearch$ | async"
-  type="text"
-  placeholder="Search for a country..."
-/>
+<div class="search-input">
+  <input
+    (input)="onInput($event)"
+    [value]="currentSearch$ | async"
+    type="text"
+    placeholder="Search for a country..."
+  />
+  <span @fadeIn *ngIf="currentSearch$ | async" (click)="clearSearch()">x</span>
+</div>
+
+<div
+  appOutsideClick
+  (outsideClick)="showRegions = false"
+  class="region-filter"
+  (click)="showRegions = !showRegions"
+>
+  <p>
+    {{ (currentRegion$ | async) || "Filter by region" }}
+  </p>
+  <span @fadeIn *ngIf="currentRegion$ | async" (click)="clearRegion()">x</span>
+
+  <div class="options" *ngIf="showRegions">
+    <button *ngFor="let region of regions" (click)="filterByRegion(region)">
+      {{ region }}
+    </button>
+  </div>
+</div>

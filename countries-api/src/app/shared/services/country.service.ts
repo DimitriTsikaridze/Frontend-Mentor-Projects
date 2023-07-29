@@ -10,9 +10,11 @@ import { BehaviorSubject, of, Observable, tap, map } from "rxjs"
 export class CountryService {
   private http = inject(HttpClient)
   private searchTermSource = new BehaviorSubject("")
+  private regionSource = new BehaviorSubject("")
   private router = inject(Router)
   private countries: Country[] = []
   currentSearch$ = this.searchTermSource.asObservable()
+  currentRegion$ = this.regionSource.asObservable()
 
   getCountries(): Observable<Country[]> {
     if (this.countries.length) return of(this.countries)
@@ -39,6 +41,20 @@ export class CountryService {
 
   changeSearch(term: string): void {
     this.searchTermSource.next(term)
+  }
+
+  changeRegion(region: string): void {
+    this.regionSource.next(region)
+  }
+
+  filterCountriesByRegion(region: string) {
+    const filterCountry = (countries: Country[]) =>
+      countries.filter((c) => c.region === region)
+
+    if (this.countries.length) {
+      return filterCountry(this.countries)
+    }
+    return this.fetchCountries().pipe(map(filterCountry))
   }
 
   private fetchCountries(): Observable<Country[]> {
