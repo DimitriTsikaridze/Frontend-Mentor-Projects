@@ -15,6 +15,23 @@
   box-sizing: border-box;
 }
 
+img {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+button {
+  font-family: inherit;
+  outline: none;
+  border: none;
+}
+
+html,
+body {
+  height: 100%;
+}
+
 .hide {
   display: none;
 }
@@ -24,4 +41,80 @@ body {
   margin-inline: auto;
   font-family: 'Roboto', sans-serif;
   background-color: var(--charcoal-grey);
+  display: grid;
+  place-items: center;
+  color: var(--dark-slate-grey);
+}
+
+main {
+  max-width: 950px;
+  background-color: var(--white);
+  border-radius: 2rem;
+  padding: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+article {
+  padding: 2rem;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 1rem;
+  font-weight: 400;
+  margin-block: 1.5rem;
+}
+
+article p img {
+  display: inline-block;
+  vertical-align: bottom;
+  margin-right: 1rem;
+}
+
+article p:nth-of-type(2) {
+  margin-block: 10px;
+}
+
+label {
+  display: block;
+  font-weight: 700;
+  margin-block: 3rem 0.5rem;
+  font-size: 0.8rem;
+}
+
+input {
+  border: 1px solid var(--grey);
+  color: var(--charcoal-grey);
+  transition: 0.2s;
+  font-size: 1.2rem;
+  width: 100%;
+  padding: 10px 15px;
+  border-radius: 4px;
+}
+
+input:focus {
+  border-color: var(--charcoal-grey);
+}
+
+button {
+  width: 100%;
+  background-color: var(--dark-slate-grey);
+  border-radius: 8px;
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  padding-block: 15px;
+  font-weight: 700;
+  color: var(--white);
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+button:hover {
+  background-image: linear-gradient(90deg, #ff3e83, #fd634a);
+  box-shadow: -3px 7px 10px 4px #ff3e8355;
 }
