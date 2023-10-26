@@ -51,6 +51,9 @@ main {
   background-color: var(--white);
   border-radius: 2rem;
   padding: 1.5rem;
+}
+
+section {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
@@ -117,4 +120,36 @@ button {
 button:hover {
   background-image: linear-gradient(90deg, #ff3e83, #fd634a);
   box-shadow: -3px 7px 10px 4px #ff3e8355;
+}
+
+.email-control {
+  position: relative;
+}
+
+#email.error {
+  background-color: hsla(4, 100%, 67%, 20%);
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+#email.error::placeholder {
+  color: var(--primary);
+}
+
+#error-text {
+  position: absolute;
+  color: var(--primary);
+  right: 0;
+  top: 0;
+  margin: 0;
+}
+
+#success {
+  max-width: 400px;
+  padding: 1rem;
+}
+
+#success h1 {
+  margin-block: 1rem;
+  font-size: 3rem;
 }
