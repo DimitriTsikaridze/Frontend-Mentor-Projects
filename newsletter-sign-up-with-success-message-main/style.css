@@ -15,6 +15,10 @@
   box-sizing: border-box;
 }
 
+.hide {
+  display: none;
+}
+
 body {
   max-width: 1440px;
   margin-inline: auto;
