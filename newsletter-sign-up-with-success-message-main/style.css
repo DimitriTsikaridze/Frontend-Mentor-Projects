@@ -153,3 +153,64 @@ button:hover {
   margin-block: 1rem;
   font-size: 3rem;
 }
+
+.mobile-image {
+  display: none;
+}
+
+@media only screen and (max-width: 915px) {
+  :root {
+    font-size: 12px;
+  }
+
+  .mobile-image {
+    display: block;
+    width: 100%;
+  }
+
+  main {
+    padding: 0;
+  }
+
+  article {
+    padding: 0 2rem 2rem 2rem;
+  }
+
+  aside {
+    order: -1;
+  }
+
+  .desktop-image {
+    display: none;
+  }
+
+  section {
+    grid-template-columns: 1fr;
+  }
+
+  #email {
+    padding: 1.5rem 2rem;
+  }
+
+  #subscribe {
+    font-size: 1.2rem;
+  }
+
+  #success {
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #success h1 {
+    margin-block: 2rem;
+  }
+
+  #success img {
+    max-width: 50px;
+    margin-top: auto;
+  }
+  #dismiss {
+    margin-top: 5rem;
+  }
+}
