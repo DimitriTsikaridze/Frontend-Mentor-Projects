@@ -160,7 +160,7 @@ button:hover {
 
 @media only screen and (max-width: 915px) {
   :root {
-    font-size: 12px;
+    font-size: 13px;
   }
 
   .mobile-image {
@@ -196,9 +196,9 @@ button:hover {
     font-size: 1.2rem;
   }
 
-  #success {
-    height: 50vh;
+  #success:not(.hide) {
     display: flex;
+    padding-block: 2rem;
     flex-direction: column;
   }
 
