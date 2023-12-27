@@ -1,0 +1,96 @@
+@font-face {
+  font-family: "figtree";
+  src: url(./assets/fonts/static/Figtree-ExtraBold.ttf) format("truetype");
+  font-weight: 800;
+}
+
+@font-face {
+  font-family: "figtree";
+  src: url(./assets/fonts/static/Figtree-SemiBold.ttf) format("truetype");
+  font-weight: 600;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+:root {
+  --yellow: hsl(47, 88%, 63%);
+  --white: hsl(0, 0%, 100%);
+  --grey: hsl(0, 0%, 50%);
+  --black: hsl(0, 0%, 7%);
+}
+
+body {
+  max-width: 1440px;
+  margin-inline: auto;
+  color: var(--black);
+  background-color: var(--yellow);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+  font-family: figtree;
+}
+
+article {
+  background-color: var(--white);
+  outline: 1px solid var(--black);
+  padding: 1.3rem;
+  border-radius: 12px;
+  max-width: 350px;
+  margin-inline: 1.5rem;
+}
+
+[alt="illustration svg"] {
+  width: 100%;
+  border-radius: calc(1.3rem - 12px);
+}
+
+.tag {
+  background-color: var(--yellow);
+  padding: 5px;
+  border-radius: 4px;
+  font-weight: bold;
+  margin-block: 1.4rem 1rem;
+  display: inline-block;
+}
+
+.description {
+  color: var(--grey);
+  font-weight: 300;
+}
+
+h2 {
+  font-size: 1.3rem;
+  margin-block: 0.5rem;
+}
+
+h2:hover {
+  color: var(--yellow);
+  cursor: pointer;
+}
+
+.user {
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user img {
+  max-width: 40px;
+}
