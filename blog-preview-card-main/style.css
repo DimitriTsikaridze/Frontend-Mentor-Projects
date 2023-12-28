@@ -53,6 +53,7 @@ article {
   border-radius: 12px;
   max-width: 350px;
   margin-inline: 1.5rem;
+  box-shadow: hsl(0, 0%, 7%) 15px 15px 0px;
 }
 
 [alt="illustration svg"] {
