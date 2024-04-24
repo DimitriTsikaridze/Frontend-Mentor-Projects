@@ -41,13 +41,13 @@ button:active {
 }
 
 .primary {
-  background-color: #3cb4ac;
+  background-color: hsl(176, 50%, 47%);
   color: white;
   padding: 12px 20px;
   transition: background-color 0.2s;
 }
 .primary:hover {
-  background-color: #147b74;
+  background-color: hsl(176, 72%, 28%);
 }
 
 section,
@@ -69,7 +69,7 @@ article {
 header {
   background-image: url("../images/image-hero-desktop.jpg");
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   min-height: 500px;
   color: white;
 }
@@ -99,7 +99,7 @@ ul img {
 }
 .section-1 p {
   margin: 0 auto 1.5rem auto;
-  color: #7a7a7a;
+  color: hsl(0, 0%, 48%);
   font-size: 0.9rem;
 }
 .section-1 .btns {
@@ -111,7 +111,7 @@ ul img {
   font-size: 0.9rem;
 }
 .section-1 .bookmark {
-  color: #7a7a7a;
+  color: hsl(0, 0%, 48%);
   border-radius: 20px;
   position: relative;
   font-weight: 700;
@@ -122,10 +122,10 @@ ul img {
   transition: 0.2s;
 }
 .section-1 .bookmark:hover {
-  color: #147b74;
+  color: hsl(176, 72%, 28%);
 }
 .section-1 .bookmark:hover img::before {
-  background-color: #147b74;
+  background-color: hsl(176, 72%, 28%);
 }
 .section-1 .bookmark img {
   position: absolute;
@@ -152,14 +152,14 @@ ul img {
   margin-bottom: 1rem;
 }
 .section-1-modal .title h4 {
-  color: #3cb4ac;
+  color: hsl(176, 50%, 47%);
   font-weight: 300;
   margin-left: 1rem;
 }
 .section-1-modal .title h5 {
   margin-left: auto;
   font-size: 1rem;
-  color: #7a7a7a;
+  color: hsl(0, 0%, 48%);
   font-weight: 300;
 }
 .section-1-modal .title h5 span {
@@ -167,7 +167,7 @@ ul img {
 }
 .section-1-modal p {
   line-height: 24px;
-  color: #7a7a7a;
+  color: hsl(0, 0%, 48%);
 }
 
 .section-2 .pricing {
@@ -178,15 +178,15 @@ ul img {
   font-size: 1.7rem;
 }
 .section-2 .pricing p {
-  color: #7a7a7a;
+  color: hsl(0, 0%, 48%);
   font-size: 0.8rem;
 }
 .section-2 .pricing .stats:nth-child(1) {
-  border-right: 1px solid #a8a7a7c4;
+  border-right: 1px solid rgba(168, 167, 167, 0.768627451);
   padding-right: 2em;
 }
 .section-2 .pricing .stats:nth-child(2) {
-  border-right: 1px solid #a8a7a7c4;
+  border-right: 1px solid rgba(168, 167, 167, 0.768627451);
   padding-right: 4em;
 }
 .section-2 .pricing .stats {
@@ -206,7 +206,7 @@ ul img {
 .section-2 .progress-bar::before {
   content: "";
   position: absolute;
-  background-color: #3cb4ac;
+  background-color: hsl(176, 50%, 47%);
   width: 75%;
   height: 100%;
   border-radius: 12px;
@@ -220,12 +220,12 @@ ul img {
 }
 .section-3 .title h4,
 .section-3 .bottom-content h4 {
-  color: #3cb4ac;
+  color: hsl(176, 50%, 47%);
   font-size: 0.8rem;
   font-weight: 500;
 }
 .section-3 .bottom-content h5 {
-  color: #7a7a7a;
+  color: hsl(0, 0%, 48%);
 }
 .section-3 .bottom-content span {
   color: black;
@@ -237,7 +237,7 @@ ul img {
 }
 .section-3 p {
   line-height: 24px;
-  color: #7a7a7a;
+  color: hsl(0, 0%, 48%);
 }
 .section-3 .first {
   margin-top: 2rem;
