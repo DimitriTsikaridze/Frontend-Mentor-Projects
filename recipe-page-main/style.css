@@ -143,3 +143,19 @@ hr {
   color: var(--color-nutmeg);
   margin-left: auto;
 }
+
+@media screen and (max-width: 768px) {
+  main {
+    border-radius: 0;
+    margin: 0;
+    padding: 0 0 2rem 0;
+  }
+
+  img {
+    border-radius: 0;
+  }
+
+  main > *:not(img) {
+    margin-inline: 30px;
+  }
+}
