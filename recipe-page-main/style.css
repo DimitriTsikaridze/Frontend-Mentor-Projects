@@ -1,0 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Young+Serif:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700&display=swap");
+
+:root {
+  --color-nutmeg: hsl(14, 45%, 36%);
+  --color-dark-raspberry: hsl(332, 51%, 32%);
+  --color-white: hsl(0, 0%, 100%);
+  --color-rose-white: hsl(330, 100%, 98%);
+  --color-eggshell: hsl(30, 54%, 90%);
+  --color-light-grey: hsl(30, 18%, 87%);
+  --color-wenge-brown: hsl(30, 10%, 34%);
+  --color-dark-charcoal: hsl(24, 5%, 18%);
+}
+
+body {
+  font-size: 16px;
+  max-width: 1440px;
+  margin-inline: auto;
+  background-color: var(--color-eggshell);
+  font-family: "Outfit", serif;
+}
+
+main {
+  background-color: var(--color-white);
+}
