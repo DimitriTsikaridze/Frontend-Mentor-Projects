@@ -1,7 +1,7 @@
-import { Routes } from "@angular/router"
+import { ActivatedRouteSnapshot, Routes } from "@angular/router"
 import { CountryDetailsComponent } from "./country-list/country-details/country-details.component"
 import { CountryListComponent } from "./country-list/country-list.component"
-import { countryNameResolver } from "@shared/resolvers"
+import { countryDetailsResolver } from "@shared/resolvers/country-details.resolver"
 
 export const routes: Routes = [
   {
@@ -13,7 +13,8 @@ export const routes: Routes = [
   {
     path: ":countryName",
     component: CountryDetailsComponent,
-    title: countryNameResolver,
+    title: (route: ActivatedRouteSnapshot) => route.params["countryName"],
+    resolve: { countryDetailsResolver },
   },
   {
     path: "**",

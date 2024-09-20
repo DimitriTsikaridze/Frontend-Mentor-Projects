@@ -1,6 +1,5 @@
-@use './styles/reset';
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
-
+@use "./styles/reset";
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap");
 
 :root {
   --dark-blue: hsl(209, 23%, 22%);
@@ -12,15 +11,16 @@
 }
 
 body {
-  font-family: 'Nunito Sans', sans-serif;
+  font-family: "Nunito Sans", sans-serif;
   font-size: 14px;
   background-color: var(--very-dark-blue);
   color: var(--white);
   transition: 400ms;
 
-
+  justify-content: flex-start;
   &.light {
     color: var(--very-dark-blue);
     background-color: var(--very-light-gray);
+    --dark-blue: #fff;
   }
 }

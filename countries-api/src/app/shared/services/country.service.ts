@@ -40,7 +40,7 @@ export class CountryService {
   }
 
   changeSearch(term: string): void {
-    this.searchTermSource.next(term)
+    this.searchTermSource.next(term.trim())
   }
 
   changeRegion(region: string): void {

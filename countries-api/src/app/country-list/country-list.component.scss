@@ -48,19 +48,26 @@ p {
 }
 
 @media only screen and (max-width: 1200px) {
-  :host {
+  section {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
 @media only screen and (max-width: 850px) {
-  :host {
+  section {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media only screen and (max-width: 600px) {
-  :host {
+  section {
     grid-template-columns: 1fr;
+  }
+}
+
+:host-context(body.light) {
+  p,
+  span {
+    color: var(--very-dark-blue);
   }
 }

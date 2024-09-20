@@ -30,6 +30,8 @@ input {
   font-weight: 600;
   max-width: 500px;
   width: 100%;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 }
 
 .region-filter {
@@ -43,6 +45,7 @@ input {
   font-size: 1rem;
   border-radius: 4px;
   cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
 
   .options {
     box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
@@ -71,5 +74,23 @@ input {
         color: var(--white);
       }
     }
+  }
+}
+
+@media screen and (max-width: 890px) {
+  :host {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: flex-start;
+  }
+
+  .search-input {
+    width: 100%;
+  }
+}
+
+:host-context(body.light) {
+  input {
+    color: var(--very-dark-blue);
   }
 }

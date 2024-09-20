@@ -1,32 +1,22 @@
+import { Location } from "@angular/common"
 import {
   ChangeDetectionStrategy,
   Component,
-  Input,
   inject,
-  OnInit,
+  input,
 } from "@angular/core"
-import { CommonModule } from "@angular/common"
-import { Observable } from "rxjs"
-import { Country } from "@shared/models"
-import { CountryService } from "@shared/services"
 import { RouterLink } from "@angular/router"
+import { CountryWithBorders } from "@shared/resolvers/country-details.resolver"
 
 @Component({
   selector: "app-country-details",
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [RouterLink],
   templateUrl: "./country-details.component.html",
   styleUrls: ["./country-details.component.scss"],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class CountryDetailsComponent implements OnInit {
-  private countryService = inject(CountryService)
-
-  @Input() countryName: string
-
-  country$: Observable<Country>
-
-  ngOnInit(): void {
-    this.country$ = this.countryService.getCountry(this.countryName)
-  }
+export class CountryDetailsComponent {
+  location = inject(Location)
+  countryDetailsResolver = input.required<CountryWithBorders>()
 }

@@ -12,7 +12,6 @@ button {
   font-size: 1rem;
 }
 
-
 section {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -38,4 +37,41 @@ p {
 
 strong {
   font-weight: 800;
+}
+
+.border-countries {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+
+  button {
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 890px) {
+  section,
+  .description {
+    grid-template-columns: 1fr;
+  }
+  .description {
+    gap: 8px;
+  }
+
+  button {
+    margin-block: 0 2rem;
+  }
+
+  .border-countries {
+    p {
+      width: 100%;
+    }
+  }
+}
+
+:host-context(body.light) {
+  p {
+    color: var(--very-dark-blue);
+  }
 }
