@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, inject } from "@angular/core"
-import { CommonModule } from "@angular/common"
+import { AsyncPipe } from "@angular/common"
 import { CountryService } from "@shared/services"
 import { Region } from "@shared/models"
 import { fadeInAnimation } from "./fade"
@@ -8,7 +8,7 @@ import { OutsideClickDirective } from "./outside-click.directive"
 @Component({
   selector: "app-filter",
   standalone: true,
-  imports: [CommonModule, OutsideClickDirective],
+  imports: [AsyncPipe, OutsideClickDirective],
   animations: [fadeInAnimation],
   templateUrl: "./filter.component.html",
   styleUrls: ["./filter.component.scss"],

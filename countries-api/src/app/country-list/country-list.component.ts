@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, inject } from "@angular/core"
-import { CommonModule, NgOptimizedImage } from "@angular/common"
+import { AsyncPipe, NgOptimizedImage } from "@angular/common"
 import { CountryService } from "@shared/services"
 import { combineLatest } from "rxjs"
 import { map, switchMap } from "rxjs/operators"
@@ -9,7 +9,7 @@ import { FilterComponent } from "../filter/filter.component"
 @Component({
   selector: "app-country-list",
   standalone: true,
-  imports: [CommonModule, NgOptimizedImage, RouterLink, FilterComponent],
+  imports: [AsyncPipe, NgOptimizedImage, RouterLink, FilterComponent],
   templateUrl: "./country-list.component.html",
   styleUrls: ["./country-list.component.scss"],
   changeDetection: ChangeDetectionStrategy.OnPush,

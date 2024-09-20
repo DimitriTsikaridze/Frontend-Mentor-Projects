@@ -5,7 +5,9 @@
     type="text"
     placeholder="Search for a country..."
   />
-  <span @fadeIn *ngIf="currentSearch$ | async" (click)="clearSearch()">x</span>
+  @if (currentSearch$ | async) {
+  <span @fadeIn (click)="clearSearch()">x</span>
+  }
 </div>
 
 <div
@@ -17,11 +19,15 @@
   <p>
     {{ (currentRegion$ | async) || "Filter by region" }}
   </p>
-  <span @fadeIn *ngIf="currentRegion$ | async" (click)="clearRegion()">x</span>
-
-  <div class="options" *ngIf="showRegions">
-    <button *ngFor="let region of regions" (click)="filterByRegion(region)">
+  @if (currentRegion$ | async) {
+  <span @fadeIn (click)="clearRegion()">x</span>
+  } @if (showRegions) {
+  <div class="options">
+    @for (region of regions; track region) {
+    <button (click)="filterByRegion(region)">
       {{ region }}
     </button>
+    }
   </div>
+  }
 </div>

@@ -1,6 +1,5 @@
-<ng-container *ngIf="country$ | async as country">
+@if (country$ | async; as country) {
   <button routerLink="/">Back</button>
-
   <section>
     <img [src]="country.flag" alt="" />
     <article>
@@ -13,17 +12,19 @@
         <p><strong>Region:</strong> {{ country.region }}</p>
         <p>
           <strong>Languages</strong>:
-          <span *ngFor="let lang of country.languages; last as last">
-            {{ lang.name }}{{ !last ? ", " : "" }}</span
-          >
-        </p>
-        <p><strong>Sub Region</strong>: {{ country.subregion }}</p>
-        <p><strong>Capital</strong>: {{ country.capital }}</p>
-      </div>
-      <!-- <div class="border-countries">
+          @for (lang of country.languages; track lang; let last = $last) {
+            <span>
+              {{ lang.name }}{{ !last ? ", " : "" }}</span
+              >
+            }
+          </p>
+          <p><strong>Sub Region</strong>: {{ country.subregion }}</p>
+          <p><strong>Capital</strong>: {{ country.capital }}</p>
+        </div>
+        <!-- <div class="border-countries">
         <p>Border Countries:</p>
         <a *ngFor="let borderCountry of country.borders"></a>
       </div> -->
     </article>
   </section>
-</ng-container>
+}
