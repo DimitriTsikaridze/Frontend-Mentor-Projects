@@ -1,7 +1,7 @@
 {
   "hosting": {
-    "site": "product-list-with-cart-main-fe",
-    "public": "dist/product-list-with-cart/browser",
+    "site": "countries-api-fe",
+    "public": "dist/countries-api/browser",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "rewrites": [
       {
