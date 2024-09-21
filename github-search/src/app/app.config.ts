@@ -1,4 +1,7 @@
-import { ApplicationConfig } from "@angular/core";
+import {
+  ApplicationConfig,
+  provideExperimentalZonelessChangeDetection,
+} from "@angular/core";
 
 import {
   provideClientHydration,
@@ -6,5 +9,8 @@ import {
 } from "@angular/platform-browser";
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideClientHydration(withEventReplay())],
+  providers: [
+    provideClientHydration(withEventReplay()),
+    provideExperimentalZonelessChangeDetection(),
+  ],
 };
