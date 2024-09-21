@@ -1,7 +1,7 @@
 @if (user$ | async; as user) {
-<app-header></app-header>
-<app-search-bar></app-search-bar>
-<app-user-details [user]="user"></app-user-details>
+<app-header />
+<app-search-bar />
+<app-user-details [user]="user" />
 } @else {
-<app-loading></app-loading>
+<app-loading />
 }

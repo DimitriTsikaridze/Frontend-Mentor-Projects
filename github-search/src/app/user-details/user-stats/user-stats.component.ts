@@ -2,17 +2,17 @@ import {
   ChangeDetectionStrategy,
   Component,
   OnInit,
-  Input,
-} from "@angular/core"
-import { GithubUser } from "../user.model"
+  input,
+} from "@angular/core";
+import { GithubUser } from "../user.model";
 
 @Component({
-    selector: "app-user-stats",
-    templateUrl: "./user-stats.component.html",
-    styleUrls: ["./user-stats.component.scss"],
-    changeDetection: ChangeDetectionStrategy.OnPush,
-    standalone: true,
+  selector: "app-user-stats",
+  templateUrl: "./user-stats.component.html",
+  styleUrls: ["./user-stats.component.scss"],
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  standalone: true,
 })
 export class UserStatsComponent {
-  @Input() stats: GithubUser
+  stats = input.required<GithubUser>();
 }

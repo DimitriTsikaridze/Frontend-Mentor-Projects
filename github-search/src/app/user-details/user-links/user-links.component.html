@@ -1,18 +1,18 @@
 <div class="location">
-  @if (links.location) {
-  <h3>{{ links.location }}</h3>
+  @if (links().location) {
+  <h3>{{ links().location }}</h3>
   } @else {
   <h3 class="not-available">Not Available</h3>
   }
   <img src="/assets/icon-location.svg" alt="Location Icon" />
 </div>
 <div class="twitter">
-  @if (links.twitter_username) {
+  @if (links().twitter_username) {
   <h3>
     <a
       target="_blank"
-      href="https://twitter.com/{{ links.twitter_username }}"
-      >{{ links.twitter_username }}</a
+      href="https://twitter.com/{{ links().twitter_username }}"
+      >{{ links().twitter_username }}</a
     >
   </h3>
   } @else {
@@ -21,9 +21,9 @@
   <img src="/assets/icon-twitter.svg" alt="Twitter Icon" />
 </div>
 <div class="blog">
-  @if (links.blog) {
+  @if (links().blog) {
   <h3>
-    <a target="_blank" href="{{ links.blog }}">{{ links.blog }}</a>
+    <a target="_blank" href="{{ links().blog }}">{{ links().blog }}</a>
   </h3>
   } @else {
   <h3 class="not-available">Not Available</h3>
@@ -31,10 +31,10 @@
   <img src="/assets/icon-website.svg" alt="Website Icon" />
 </div>
 <div class="company">
-  @if (links.company) {
+  @if (links().company) {
   <h3>
-    <a target="_blank" href="https://github.com/{{ links.company }}">{{
-      links.company
+    <a target="_blank" href="https://github.com/{{ links().company }}">{{
+      links().company
     }}</a>
   </h3>
   } @else {

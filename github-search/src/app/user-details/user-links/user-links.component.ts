@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, Input } from "@angular/core";
+import { ChangeDetectionStrategy, Component, input } from "@angular/core";
 import { GithubUser } from "../user.model";
 
 @Component({
@@ -10,5 +10,5 @@ import { GithubUser } from "../user.model";
   imports: [],
 })
 export class UserLinksComponent {
-  @Input() links: GithubUser;
+  links = input.required<GithubUser>();
 }
