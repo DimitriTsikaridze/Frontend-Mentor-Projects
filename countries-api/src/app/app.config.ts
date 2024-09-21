@@ -8,8 +8,9 @@ import {
   withInMemoryScrolling,
 } from "@angular/router"
 import { routes } from "./app.routes"
-import { provideHttpClient } from "@angular/common/http"
+import { provideHttpClient, withFetch } from "@angular/common/http"
 import { provideAnimationsAsync } from "@angular/platform-browser/animations/async"
+import { provideClientHydration } from "@angular/platform-browser"
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -19,7 +20,8 @@ export const appConfig: ApplicationConfig = {
       withInMemoryScrolling({ scrollPositionRestoration: "enabled" })
     ),
     provideAnimationsAsync(),
-    provideHttpClient(),
+    provideHttpClient(withFetch()),
     provideExperimentalZonelessChangeDetection(),
+    provideClientHydration(),
   ],
 }

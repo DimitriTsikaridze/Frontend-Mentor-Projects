@@ -6,7 +6,7 @@ import {
   output,
 } from '@angular/core';
 import { ProductItem } from './product-item';
-import { NgClass, NgOptimizedImage } from '@angular/common';
+import { NgClass } from '@angular/common';
 
 @Component({
   selector: 'app-product-item',
@@ -23,7 +23,7 @@ import { NgClass, NgOptimizedImage } from '@angular/common';
         width="295"
         height="282"
         priority
-        [ngSrc]="product().image.desktop"
+        [src]="product().image.desktop"
         [alt]="product().name"
       />
 
@@ -65,7 +65,7 @@ import { NgClass, NgOptimizedImage } from '@angular/common';
     <h3 class="font-bold text-rose-950">{{ product().name }}</h3>
     <p class="text-sm font-bold text-red">&#36;{{ product().price }}</p>
   `,
-  imports: [NgClass, NgOptimizedImage],
+  imports: [NgClass],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProductItemComponent {
