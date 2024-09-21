@@ -1,0 +1,13 @@
+{
+  "hosting": {
+    "site": "github-search-fe",
+    "public": "dist/github-users-search-app/browser/browser",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
