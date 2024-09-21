@@ -1,0 +1,19 @@
+:host {
+  display: block;
+  max-width: 730px;
+  width: 100%;
+  margin-inline: auto;
+  transition: .3s;
+}
+
+@media only screen and (max-width: 760px) {
+  :host {
+    max-width: 573px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  :host {
+    max-width: 327px;
+  }
+}

@@ -1,0 +1,15 @@
+<img [src]="user.avatar_url" alt="User Avatar" class="avatar" />
+<article>
+  <header>
+    <div>
+      <h2 class="user-name">{{ user.name }}</h2>
+      <h3 class="user-login">@{{ user.login }}</h3>
+    </div>
+
+    <h3 class="created-at">Joined {{ user.created_at | date | createdAt }}</h3>
+  </header>
+
+  <p class="user-bio">{{ user.bio || "This profile has no bio" }}</p>
+  <app-user-stats [stats]="user"></app-user-stats>
+  <app-user-links [links]="user"></app-user-links>
+</article>

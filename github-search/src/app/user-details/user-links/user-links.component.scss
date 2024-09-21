@@ -1,0 +1,38 @@
+:host {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.9rem 6.2rem;
+}
+
+div {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 1.9rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--gray-3);
+
+}
+
+
+h3.not-available,
+h3.not-available+img {
+  opacity: 50%;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+
+@media only screen and (max-width: 600px) {
+  :host {
+    grid-template-columns: 1fr;
+    gap: 1.6rem;
+  }
+}

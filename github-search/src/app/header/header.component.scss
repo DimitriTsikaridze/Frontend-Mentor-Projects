@@ -1,0 +1,34 @@
+:host {
+  display: block;
+  justify-content: space-between;
+}
+
+:host,
+.theme-switcher {
+  display: flex;
+  align-items: center;
+
+}
+
+h1 {
+  color: var(--gray-4);
+  font-size: 2.6rem;
+}
+
+.theme-switcher {
+  user-select: none;
+  cursor: pointer;
+
+  span {
+    font-size: 1.3rem;
+    color: var(--gray-2);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+  }
+
+  img {
+    margin-left: 1.8rem;
+    min-width: 2rem;
+  }
+}

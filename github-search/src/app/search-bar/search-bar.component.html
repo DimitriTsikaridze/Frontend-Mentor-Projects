@@ -1,0 +1,14 @@
+<img class="search-icon" src="/assets/icon-search.svg" alt="Search Icon" />
+
+<input
+  appSubmitOnEnter
+  (submitEvent)="handleSearch(inputRef.value)"
+  class="search-input"
+  type="text"
+  #inputRef
+  placeholder="Search GitHub username..."
+/>
+<p *ngIf="usersService.notFound" class="error-text">No Results</p>
+<button class="search-button" (click)="handleSearch(inputRef.value)">
+  Search
+</button>

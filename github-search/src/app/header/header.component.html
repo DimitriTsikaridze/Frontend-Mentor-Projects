@@ -1,0 +1,13 @@
+<h1>devfinder</h1>
+<div class="theme-switcher" (click)="toggleTheme()">
+  <span class="next-theme">{{ nextTheme }}</span>
+  <img
+    *ngIf="nextTheme === 'dark'; else light"
+    src="/assets/icon-moon.svg"
+    alt="Moon Icon"
+  />
+</div>
+
+<ng-template #light>
+  <img src="/assets/icon-sun.svg" alt="Sun Icn" />
+</ng-template>

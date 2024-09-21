@@ -1,0 +1,9 @@
+<ng-container *ngIf="user$ | async as user; else loading">
+  <app-header></app-header>
+  <app-search-bar></app-search-bar>
+  <app-user-details [user]="user"></app-user-details>
+</ng-container>
+
+<ng-template #loading>
+  <app-loading></app-loading>
+</ng-template>
