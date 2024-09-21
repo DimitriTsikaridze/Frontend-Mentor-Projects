@@ -1,32 +1,44 @@
 <div class="location">
-  <h3 *ngIf="links.location; else notAvailable">{{ links.location }}</h3>
+  @if (links.location) {
+  <h3>{{ links.location }}</h3>
+  } @else {
+  <h3 class="not-available">Not Available</h3>
+  }
   <img src="/assets/icon-location.svg" alt="Location Icon" />
 </div>
 <div class="twitter">
-  <h3 *ngIf="links.twitter_username; else notAvailable">
+  @if (links.twitter_username) {
+  <h3>
     <a
       target="_blank"
       href="https://twitter.com/{{ links.twitter_username }}"
       >{{ links.twitter_username }}</a
     >
   </h3>
+  } @else {
+  <h3 class="not-available">Not Available</h3>
+  }
   <img src="/assets/icon-twitter.svg" alt="Twitter Icon" />
 </div>
 <div class="blog">
-  <h3 *ngIf="links.blog; else notAvailable">
+  @if (links.blog) {
+  <h3>
     <a target="_blank" href="{{ links.blog }}">{{ links.blog }}</a>
   </h3>
+  } @else {
+  <h3 class="not-available">Not Available</h3>
+  }
   <img src="/assets/icon-website.svg" alt="Website Icon" />
 </div>
 <div class="company">
-  <h3 *ngIf="links.company; else notAvailable">
+  @if (links.company) {
+  <h3>
     <a target="_blank" href="https://github.com/{{ links.company }}">{{
       links.company
     }}</a>
   </h3>
+  } @else {
+  <h3 class="not-available">Not Available</h3>
+  }
   <img src="/assets/icon-company.svg" alt="Company Icon" />
 </div>
-
-<ng-template #notAvailable>
-  <h3 class="not-available">Not Available</h3>
-</ng-template>

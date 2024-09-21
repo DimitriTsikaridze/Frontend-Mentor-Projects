@@ -1,7 +1,8 @@
 import { Pipe, PipeTransform } from "@angular/core"
 
 @Pipe({
-  name: "createdAt",
+    name: "createdAt",
+    standalone: true,
 })
 export class CreatedAtPipe implements PipeTransform {
   transform(value: string | null): string | null {

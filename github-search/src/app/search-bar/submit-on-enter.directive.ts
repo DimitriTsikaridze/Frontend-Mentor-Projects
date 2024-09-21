@@ -1,7 +1,8 @@
 import { Directive, EventEmitter, HostListener, Output } from "@angular/core"
 
 @Directive({
-  selector: "[appSubmitOnEnter]",
+    selector: "[appSubmitOnEnter]",
+    standalone: true,
 })
 export class SubmitOnEnterDirective {
   constructor() {}

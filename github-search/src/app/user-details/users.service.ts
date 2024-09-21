@@ -1,5 +1,5 @@
-import { Injectable } from "@angular/core"
-import { HttpClient, HttpErrorResponse } from "@angular/common/http"
+import { Injectable, inject } from "@angular/core";
+import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 import {
   BehaviorSubject,
   catchError,
@@ -7,25 +7,25 @@ import {
   switchMap,
   of,
   tap,
-} from "rxjs"
-import { GithubUser } from "./user.model"
+} from "rxjs";
+import { GithubUser } from "./user.model";
 
 @Injectable({
   providedIn: "root",
 })
 export class UsersService {
-  constructor(private http: HttpClient) {}
+  private http = inject(HttpClient);
 
-  searchTerm = new BehaviorSubject<string>("octocat")
+  searchTerm = new BehaviorSubject<string>("octocat");
 
-  notFound: boolean
+  notFound: boolean;
 
   getUser(): Observable<GithubUser> {
     return this.searchTerm.pipe(
       switchMap((searchTerm) => {
-        return this.readUser(searchTerm)
+        return this.readUser(searchTerm);
       })
-    )
+    );
   }
 
   private readUser(userName: string): Observable<GithubUser> {
@@ -37,6 +37,6 @@ export class UsersService {
           error: () => (this.notFound = true),
         }),
         catchError((err: HttpErrorResponse) => of())
-      )
+      );
   }
 }

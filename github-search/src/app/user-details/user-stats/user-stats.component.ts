@@ -7,10 +7,11 @@ import {
 import { GithubUser } from "../user.model"
 
 @Component({
-  selector: "app-user-stats",
-  templateUrl: "./user-stats.component.html",
-  styleUrls: ["./user-stats.component.scss"],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+    selector: "app-user-stats",
+    templateUrl: "./user-stats.component.html",
+    styleUrls: ["./user-stats.component.scss"],
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    standalone: true,
 })
 export class UserStatsComponent {
   @Input() stats: GithubUser

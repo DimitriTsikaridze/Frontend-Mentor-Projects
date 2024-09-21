@@ -8,7 +8,9 @@
   #inputRef
   placeholder="Search GitHub username..."
 />
-<p *ngIf="usersService.notFound" class="error-text">No Results</p>
+@if (usersService.notFound) {
+<p class="error-text">No Results</p>
+}
 <button class="search-button" (click)="handleSearch(inputRef.value)">
   Search
 </button>
