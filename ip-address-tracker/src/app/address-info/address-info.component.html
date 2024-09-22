@@ -1,19 +1,19 @@
 <div>
   <p class="title">IP ADDRESS</p>
-  <p class="value">192.212.174.101</p>
+  <p class="value">{{ info().ip }}</p>
 </div>
 
 <div>
   <p class="title">Location</p>
-  <p class="value">Brooklyn, NY 10001</p>
+  <p class="value">{{ info().location.region }}</p>
 </div>
 
 <div>
   <p class="title">TIMEZONE</p>
-  <p class="value">UTC-05:00</p>
+  <p class="value">{{ info().location.timezone }}</p>
 </div>
 
 <div>
   <p class="title">ISP</p>
-  <p class="value">SpaceX Starlink</p>
+  <p class="value">{{ info().isp }}</p>
 </div>
