@@ -1,0 +1,61 @@
+:host {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  border-radius: 12px;
+  width: 350px;
+  overflow: hidden;
+
+  &:has(input.ng-invalid.ng-touched) {
+    outline: 1px solid red;
+  }
+}
+
+input {
+  padding: 10px 12px;
+  width: 100%;
+
+  &::placeholder {
+    color: var(--dark-gray);
+  }
+}
+
+input,
+button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+button {
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 40px;
+
+  &:hover {
+    background-color: var(--very-dark-gray);
+  }
+
+  img {
+    scale: 0.8;
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  :host {
+    width: 90%;
+    margin-inline: auto;
+  }
+
+  input {
+    padding-block: 0.8rem;
+  }
+
+  button {
+    width: 60px;
+  }
+}

@@ -1,0 +1,46 @@
+:host {
+  display: grid;
+  justify-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("/images/pattern-bg-desktop.png");
+  position: relative;
+}
+
+h1 {
+  color: white;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  width: 100%;
+}
+
+app-search-input {
+  margin-bottom: 2.5rem;
+}
+
+app-address-info {
+  position: absolute;
+  bottom: 0;
+  translate: 0 50%;
+}
+
+@media only screen and (max-width: 650px) {
+  :host {
+    background-image: url("/images/pattern-bg-mobile.png");
+    padding-bottom: 9rem;
+  }
+
+  h1 {
+    font-size: 1.2rem;
+  }
+
+  app-address-info {
+    width: 90%;
+    margin-inline: auto;
+  }
+}

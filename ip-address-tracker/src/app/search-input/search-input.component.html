@@ -1,0 +1,10 @@
+<input
+  pattern="^([0-9]{1,3}\.){3}[0-9]{1,3}$"
+  [formControl]="ipControl"
+  maxlength="15"
+  type="text"
+  placeholder="Search for any IP address or domain"
+/>
+<button (click)="onSubmit()">
+  <img src="images/icon-arrow.svg" alt="Submit Icon" />
+</button>

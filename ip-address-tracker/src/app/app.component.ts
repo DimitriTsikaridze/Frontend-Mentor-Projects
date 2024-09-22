@@ -1,12 +1,17 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from "@angular/core";
+import { SearchInputComponent } from "./search-input/search-input.component";
+import { AddressInfoComponent } from "./address-info/address-info.component";
 
 @Component({
-  selector: 'app-root',
+  selector: "app-root",
   standalone: true,
-  imports: [],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  templateUrl: "./app.component.html",
+  styleUrl: "./app.component.scss",
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [SearchInputComponent, AddressInfoComponent],
 })
 export class AppComponent {
-  title = 'ip-address-tracker';
+  onSubmitIp(ip: string) {
+    console.log(ip);
+  }
 }
