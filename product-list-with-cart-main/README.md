@@ -28,7 +28,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 # Frontend Mentor - Product list with cart
 
-![Design preview for the Product list with cart coding challenge](./preview.jpg)
+![Design preview for the Product list with cart coding challenge](./design/preview.jpg)
 
 ## Welcome! 👋
 
