@@ -1,4 +1,4 @@
-import { provideHttpClient } from "@angular/common/http";
+import { provideHttpClient, withFetch } from "@angular/common/http";
 import {
   ApplicationConfig,
   provideExperimentalZonelessChangeDetection,
@@ -7,7 +7,7 @@ import { provideClientHydration } from "@angular/platform-browser";
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideHttpClient(),
+    provideHttpClient(withFetch()),
     provideClientHydration(),
     provideExperimentalZonelessChangeDetection(),
   ],

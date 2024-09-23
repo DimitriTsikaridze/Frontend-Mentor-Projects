@@ -1,5 +1,11 @@
 :host {
   display: grid;
+  grid-template-rows: auto 1fr;
+  min-height: 100vh;
+}
+
+.container {
+  display: grid;
   justify-items: center;
   gap: 2rem;
   padding: 2rem;
@@ -7,6 +13,7 @@
   background-size: cover;
   background-image: url("/images/pattern-bg-desktop.png");
   position: relative;
+  z-index: 500;
 }
 
 h1 {

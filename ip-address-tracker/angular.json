@@ -51,10 +51,14 @@
                 "input": "public"
               }
             ],
-            "styles": ["src/styles.scss"],
+            "styles": [
+              "src/styles.scss",
+              "./node_modules/leaflet/dist/leaflet.css"
+            ],
             "scripts": [],
             "server": "src/main.server.ts",
-            "prerender": false
+            "allowedCommonJsDependencies": ["leaflet"],
+            "prerender": true
           },
           "configurations": {
             "production": {
