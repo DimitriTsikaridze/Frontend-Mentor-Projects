@@ -1,6 +1,6 @@
 export interface IPAddressInfo {
   ip: string;
-  location: Location;
+  location: Partial<Location>;
   domains: string[];
   as: As;
   isp: string;

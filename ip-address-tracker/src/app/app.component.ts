@@ -2,6 +2,7 @@ import {
   ChangeDetectionStrategy,
   Component,
   PLATFORM_ID,
+  computed,
   inject,
 } from "@angular/core";
 import { SearchInputComponent } from "./search-input/search-input.component";
@@ -21,13 +22,15 @@ import { isPlatformBrowser } from "@angular/common";
 export class AppComponent {
   private ipAddressService = inject(IpAddressService);
   isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
-  defaultInfo = this.ipAddressService.defaultInfo;
-  coordinates = {
-    lat: this.defaultInfo.location.lat,
-    lng: this.defaultInfo.location.lng,
-  };
+  ipInfo = this.ipAddressService.ipInfo;
+  coordinates = computed(() => {
+    return {
+      lat: this.ipInfo().location.lat!,
+      lng: this.ipInfo().location.lng!,
+    };
+  });
 
   onSubmitIp(ip: string) {
-    console.log(ip);
+    this.ipAddressService.setIpInfo(ip).subscribe();
   }
 }

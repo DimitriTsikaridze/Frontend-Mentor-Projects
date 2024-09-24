@@ -28,7 +28,9 @@ export class SearchInputComponent {
   submitIp = output<string>();
 
   onSubmit() {
-    if (this.ipControl.invalid) return;
+    if (this.ipControl.invalid) {
+      return this.ipControl.markAsTouched();
+    }
     this.submitIp.emit(this.ipControl.value);
   }
 

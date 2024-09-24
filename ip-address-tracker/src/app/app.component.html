@@ -1,9 +1,9 @@
 <div class="container">
   <h1>IP Address Tracker</h1>
   <app-search-input (submitIp)="onSubmitIp($event)" />
-  <app-address-info [info]="defaultInfo" />
+  <app-address-info [info]="ipInfo()" />
 </div>
 
 @defer (when isBrowser) {
-<app-map [coordinates]="coordinates" />
+<app-map [coordinates]="coordinates()" />
 }

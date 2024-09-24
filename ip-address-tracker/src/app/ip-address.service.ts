@@ -1,5 +1,7 @@
 import { HttpClient } from "@angular/common/http";
-import { Injectable, inject } from "@angular/core";
+import { Injectable, inject, signal } from "@angular/core";
+import { tap } from "rxjs";
+import { IPAddressInfo } from "./ip-address.model";
 
 @Injectable({
   providedIn: "root",
@@ -7,7 +9,7 @@ import { Injectable, inject } from "@angular/core";
 export class IpAddressService {
   private http = inject(HttpClient);
 
-  defaultInfo = {
+  ipInfo = signal<IPAddressInfo>({
     ip: "8.8.8.8",
     location: {
       country: "US",
@@ -34,11 +36,13 @@ export class IpAddressService {
       type: "Content",
     },
     isp: "Google LLC",
-  };
+  });
 
-  getIpInfo(ip: string) {
-    return this.http.get(
-      `https://geo.ipify.org/api/v2/country?apiKey=at_1oodhldrUPlKKSSveMLfrEM9tqQzF&ipAddress=${ip}`
-    );
+  setIpInfo(ip: string) {
+    return this.http
+      .get<IPAddressInfo>(
+        `https://geo.ipify.org/api/v2/country,city?apiKey=at_1oodhldrUPlKKSSveMLfrEM9tqQzF&ipAddress=${ip}`
+      )
+      .pipe(tap((info) => this.ipInfo.set(info)));
   }
 }
