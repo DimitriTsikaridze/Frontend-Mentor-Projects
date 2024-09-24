@@ -6,7 +6,7 @@ import {
   DragDropModule,
   moveItemInArray,
 } from "@angular/cdk/drag-drop";
-import { Todo } from "./models/todo";
+import { Todo, TodoFilter } from "./models/todo";
 
 @Component({
   selector: "app-todo-list",
@@ -30,7 +30,19 @@ export class TodoListComponent {
     moveItemInArray(this.todos(), e.previousIndex, e.currentIndex);
   }
 
-  handleChange(e: boolean) {
+  onCheckedChange(e: boolean) {
     console.log(e);
+  }
+
+  onFilterTypeChange(todoFilter: TodoFilter) {
+    console.log(todoFilter);
+  }
+
+  onClearCompleted() {
+    console.log("clear all");
+  }
+
+  onDeleteTodo(title: string) {
+    console.log(title);
   }
 }

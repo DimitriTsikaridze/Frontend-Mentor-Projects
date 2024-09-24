@@ -1,14 +1,22 @@
 <app-todo-item editable title="Create New Todo..." />
 
-<div class="container" cdkDropList (cdkDropListDropped)="drop($event)">
-  @for (todo of todos(); track $index) {
-  <app-todo-item
-    cdkDrag
-    (checkedChange)="handleChange($event)"
-    [title]="todo.title"
+<div class="container">
+  <div class="todo-list" cdkDropList (cdkDropListDropped)="drop($event)">
+    @for (todo of todos(); track $index) {
+    <app-todo-item
+      cdkDrag
+      (checkedChange)="onCheckedChange($event)"
+      (deleteTodo)="onDeleteTodo($event)"
+      [title]="todo.title"
+    />
+    }
+  </div>
+
+  <app-todo-filters
+    (filterTypeChange)="onFilterTypeChange($event)"
+    (clearCompleted)="onClearCompleted()"
+    [itemsLeft]="5"
   />
-  }
-  <app-todo-filters [itemsLeft]="5" />
 
   <p>Drag and drop to reorder list</p>
 </div>
