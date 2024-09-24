@@ -6,7 +6,10 @@
   background-color: var(--very-dark-desaturated-blue);
   border-radius: 6px;
   color: var(--dark-grayish-blue);
-  cursor: move;
+
+  &:not(.editable) {
+    cursor: move;
+  }
 
   input,
   p {
@@ -16,6 +19,11 @@
 
   input {
     caret-color: var(--bright-blue);
+  }
+
+  p.done {
+    color: var(--very-dark-grayish-blue);
+    text-decoration: line-through;
   }
 
   .gradient-outline {

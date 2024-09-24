@@ -34,7 +34,7 @@
 @if (editable()) {
 <input type="text" [placeholder]="title()" />
 } @else {
-<p>{{ title() }}</p>
+<p [class.done]="checked()">{{ title() }}</p>
 <button (click)="deleteTodo.emit(title())" class="delete">
   <img src="images/icon-cross.svg" alt="Delete" />
 </button>

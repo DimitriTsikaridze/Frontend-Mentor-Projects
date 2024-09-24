@@ -16,6 +16,10 @@
     background-color: transparent;
     font-size: 14px;
     color: #5b5e7e;
+    transition: color 200ms;
+    &:hover {
+      color: #fff;
+    }
   }
 
   .filter-types {

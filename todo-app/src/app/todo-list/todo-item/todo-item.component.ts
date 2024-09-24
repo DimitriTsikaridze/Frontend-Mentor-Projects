@@ -14,9 +14,13 @@ import {
   templateUrl: "./todo-item.component.html",
   styleUrl: "./todo-item.component.scss",
   changeDetection: ChangeDetectionStrategy.OnPush,
+  host: {
+    "[class.editable]": "editable()",
+  },
 })
 export class TodoItemComponent {
   editable = input(false, { transform: booleanAttribute });
+
   title = input.required<string>();
   checked = model<boolean>(false);
   checkedChange = output<boolean>();

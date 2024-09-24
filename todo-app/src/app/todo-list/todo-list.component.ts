@@ -18,7 +18,7 @@ import { Todo, TodoFilter } from "./models/todo";
 })
 export class TodoListComponent {
   todos = signal<Todo[]>([
-    { title: "Complete online JavaScript course", completed: false },
+    { title: "Complete online JavaScript course", completed: true },
     { title: "Jog around the park 3x", completed: false },
     { title: "10 minutes meditation", completed: false },
     { title: "Read for 1 hour", completed: false },
