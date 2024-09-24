@@ -1,0 +1,13 @@
+{
+  "hosting": {
+    "site": "ip-address-tracker-fe",
+    "public": "dist/ip-address-tracker/browser",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
