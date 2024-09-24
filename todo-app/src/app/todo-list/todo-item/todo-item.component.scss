@@ -6,6 +6,7 @@
   background-color: var(--very-dark-desaturated-blue);
   border-radius: 6px;
   color: var(--dark-grayish-blue);
+  cursor: move;
 
   input,
   p {
@@ -17,16 +18,48 @@
     caret-color: var(--bright-blue);
   }
 
-  button {
+  .gradient-outline {
+    opacity: 0;
+    transition: opacity 300ms;
+    position: absolute;
+    top: -1px;
+    left: -0.5px;
+  }
+
+  button:not(.delete) {
     width: 24px;
     height: 24px;
-    outline: 1px solid var(--very-dark-grayish-blue);
     border-radius: 50%;
+    border: 1px solid var(--very-dark-grayish-blue); // fallback
+    position: relative;
+
     &.checked {
       display: flex;
       justify-content: center;
       align-items: center;
       background-image: var(--check-background);
+    }
+
+    &:hover:not(.editable):not(.checked) {
+      border-color: transparent;
+      .gradient-outline {
+        opacity: 1;
+      }
+    }
+  }
+
+  .delete {
+    opacity: 0;
+    transition: opacity 200ms;
+  }
+
+  .delete {
+    margin-left: auto;
+  }
+
+  &:hover {
+    .delete {
+      opacity: 1;
     }
   }
 }

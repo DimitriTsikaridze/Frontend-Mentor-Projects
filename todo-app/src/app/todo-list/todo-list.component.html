@@ -1,31 +1,13 @@
 <app-todo-item editable title="Create New Todo..." />
 
-<div class="container">
+<div class="container" cdkDropList (cdkDropListDropped)="drop($event)">
+  @for (todo of todos(); track $index) {
   <app-todo-item
+    cdkDrag
     (checkedChange)="handleChange($event)"
-    title="Complete online JavaScript course"
+    [title]="todo.title"
   />
-  <app-todo-item
-    (checkedChange)="handleChange($event)"
-    title="Jog around the park 3x"
-  />
-  <app-todo-item
-    (checkedChange)="handleChange($event)"
-    title="10 minutes meditation"
-  />
-  <app-todo-item
-    (checkedChange)="handleChange($event)"
-    title="Read for 1 hour"
-  />
-  <app-todo-item
-    (checkedChange)="handleChange($event)"
-    title="Pick up groceries"
-  />
-  <app-todo-item
-    (checkedChange)="handleChange($event)"
-    title="Complete Todo App on Frontend Mentor"
-  />
-
+  }
   <app-todo-filters [itemsLeft]="5" />
 
   <p>Drag and drop to reorder list</p>

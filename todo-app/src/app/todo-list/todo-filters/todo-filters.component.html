@@ -1,9 +1,24 @@
 <p>{{ itemsLeft() }} items left</p>
 
 <div class="filter-types">
-  <button (click)="filterType.emit('all')" class="active">All</button>
-  <button (click)="filterType.emit('active')">Active</button>
-  <button (click)="filterType.emit('completed')">Completed</button>
+  <button
+    [class.active]="filterType() === 'all'"
+    (click)="filterType.set('all'); filterTypeChange.emit('all')"
+  >
+    All
+  </button>
+  <button
+    [class.active]="filterType() === 'active'"
+    (click)="filterType.set('active'); filterTypeChange.emit('active')"
+  >
+    Active
+  </button>
+  <button
+    [class.active]="filterType() === 'completed'"
+    (click)="filterType.set('completed'); filterTypeChange.emit('completed')"
+  >
+    Completed
+  </button>
 </div>
 
 <button class="clear-btn" (click)="clearCompleted.emit()">

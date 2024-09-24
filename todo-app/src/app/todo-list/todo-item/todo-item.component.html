@@ -1,6 +1,33 @@
-<button [class.checked]="!editable() && checked()" (click)="toggleTodo()">
+<button
+  [class.editable]="editable()"
+  [class.checked]="!editable() && checked()"
+  (click)="toggleTodo()"
+>
+  <svg
+    class="gradient-outline"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <circle cx="12" cy="12" r="11.5" stroke="url(#paint0_linear_0_156)" />
+    <defs>
+      <linearGradient
+        id="paint0_linear_0_156"
+        x1="-12"
+        y1="12"
+        x2="12"
+        y2="36"
+        gradientUnits="userSpaceOnUse"
+      >
+        <stop stop-color="#55DDFF" />
+        <stop offset="1" stop-color="#C058F3" />
+      </linearGradient>
+    </defs>
+  </svg>
   @if (!editable() && checked()) {
-  <img src="images/icon-check.svg" alt="Check " />
+  <img src="images/icon-check.svg" alt="Check" />
   }
 </button>
 
@@ -8,4 +35,8 @@
 <input type="text" [placeholder]="title()" />
 } @else {
 <p>{{ title() }}</p>
+<button (click)="deleteTodo.emit(title())" class="delete">
+  <img src="images/icon-cross.svg" alt="Delete" />
+</button>
+
 }

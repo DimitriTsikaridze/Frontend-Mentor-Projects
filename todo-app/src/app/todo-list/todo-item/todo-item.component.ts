@@ -20,6 +20,7 @@ export class TodoItemComponent {
   title = input.required<string>();
   checked = model<boolean>(false);
   checkedChange = output<boolean>();
+  deleteTodo = output<string>();
 
   toggleTodo() {
     this.checked.set(!this.checked());

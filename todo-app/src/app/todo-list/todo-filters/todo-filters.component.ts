@@ -2,8 +2,10 @@ import {
   ChangeDetectionStrategy,
   Component,
   input,
+  model,
   output,
 } from "@angular/core";
+import { TodoFilter } from "../models/todo";
 
 @Component({
   selector: "app-todo-filters",
@@ -15,7 +17,7 @@ import {
 })
 export class TodoFiltersComponent {
   itemsLeft = input.required<number>();
-
-  filterType = output<"all" | "active" | "completed">();
+  filterType = model<TodoFilter>("all");
+  filterTypeChange = output<TodoFilter>();
   clearCompleted = output();
 }
