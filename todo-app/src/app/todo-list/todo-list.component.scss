@@ -1,0 +1,19 @@
+:host {
+  .container {
+    margin-top: 24px;
+    border-radius: 6px;
+    overflow: hidden;
+
+    app-todo-item {
+      border-radius: unset;
+      border-bottom: 1px solid var(--very-dark-grayish-blue);
+    }
+
+    p {
+      margin-top: 49px;
+      text-align: center;
+      font-size: 14px;
+      color: #5b5e7e;
+    }
+  }
+}

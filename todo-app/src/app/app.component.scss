@@ -1,0 +1,24 @@
+:host {
+  display: grid;
+  justify-items: center;
+
+  & > * {
+    grid-row: 1 / -1;
+    grid-column: 1 / -1;
+  }
+
+  img {
+    width: 100%;
+    object-fit: cover;
+    max-height: 300px;
+  }
+
+  main {
+    max-width: 540px;
+    width: 100%;
+  }
+
+  app-header {
+    margin-block: 70px 48px;
+  }
+}

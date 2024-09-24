@@ -1,0 +1,32 @@
+:host {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 20px 24px;
+  background-color: var(--very-dark-desaturated-blue);
+  color: var(--dark-grayish-blue);
+
+  p,
+  .clear-btn {
+    font-size: 14px;
+  }
+
+  button {
+    background-color: transparent;
+    font-size: 14px;
+    color: #5b5e7e;
+  }
+
+  .filter-types {
+    display: flex;
+    gap: 18px;
+
+    button {
+      font-weight: 800;
+      &.active {
+        color: var(--bright-blue);
+      }
+    }
+  }
+}

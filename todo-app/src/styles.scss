@@ -1,1 +1,61 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,400;0,700&display=swap");
+
+/* Global styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 18px;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+/* CSS Variables */
+:root {
+  /* Primary Colors */
+  --bright-blue: #3a7bfd;
+  --check-background: linear-gradient(#57ddff, #c058f3);
+
+  /* Neutral Colors - Light Theme */
+
+  --very-light-gray: #fafafa;
+  --very-light-grayish-blue: #e4e5f1;
+  --light-grayish-blue: #d2d3db;
+  --dark-grayish-blue: #9394a5;
+  --very-dark-grayish-blue: #484b6a;
+
+  /* Neutral Colors - Dark Theme */
+  --very-dark-blue: #161722;
+  --very-dark-desaturated-blue: #25273c;
+  --light-grayish-blue: #cacde8;
+  --light-grayish-blue: #e4e5f1;
+  --dark-grayish-blue: #777a92;
+  --very-dark-grayish-blue: #4d5066;
+  --very-dark-grayish-blue: #393a4c;
+}
+
+body {
+  background-color: var(--very-dark-blue);
+  color: var(--dark-text-primary);
+}
+
+body.light {
+  background-color: var(--light-bg);
+  color: var(--light-text-primary);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button,
+input {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  font-family: inherit;
+  cursor: pointer;
+}

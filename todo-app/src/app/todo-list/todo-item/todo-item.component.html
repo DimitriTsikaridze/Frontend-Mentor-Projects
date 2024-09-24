@@ -1,0 +1,11 @@
+<button [class.checked]="!editable() && checked()" (click)="toggleTodo()">
+  @if (!editable() && checked()) {
+  <img src="images/icon-check.svg" alt="Check " />
+  }
+</button>
+
+@if (editable()) {
+<input type="text" [placeholder]="title()" />
+} @else {
+<p>{{ title() }}</p>
+}
