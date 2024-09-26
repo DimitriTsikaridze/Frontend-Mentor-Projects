@@ -22,14 +22,12 @@ html {
 
   --very-light-gray: #fafafa;
   --very-light-grayish-blue: #e4e5f1;
-  --light-grayish-blue: #d2d3db;
   --dark-grayish-blue: #9394a5;
   --very-dark-grayish-blue: #484b6a;
 
   /* Neutral Colors - Dark Theme */
   --very-dark-blue: #161722;
   --very-dark-desaturated-blue: #25273c;
-  --light-grayish-blue: #cacde8;
   --light-grayish-blue: #e4e5f1;
   --dark-grayish-blue: #777a92;
   --very-dark-grayish-blue: #4d5066;
@@ -39,11 +37,13 @@ html {
 body {
   background-color: var(--very-dark-blue);
   color: var(--dark-text-primary);
+  transition: 200ms ease-in;
 }
 
 body.light {
-  background-color: var(--light-bg);
+  background-color: #e3e4f1;
   color: var(--light-text-primary);
+  --very-dark-desaturated-blue: #fff;
 }
 
 img {

@@ -1,17 +1,4 @@
 :host {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  padding: 20px 24px;
-  background-color: var(--very-dark-desaturated-blue);
-  color: var(--dark-grayish-blue);
-
-  p,
-  .clear-btn {
-    font-size: 14px;
-  }
-
   button {
     background-color: transparent;
     font-size: 14px;
@@ -31,6 +18,15 @@
       &.active {
         color: var(--bright-blue);
       }
+    }
+  }
+}
+
+:host-context(body.light) {
+  button {
+    color: #9495a5;
+    &:hover {
+      color: #494c6b;
     }
   }
 }

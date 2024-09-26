@@ -13,11 +13,24 @@
     }
   </div>
 
-  <app-todo-filters
-    (filterTypeChange)="onFilterTypeChange($event)"
-    (clearCompleted)="onClearCompleted()"
-    [itemsLeft]="5"
-  />
+  <div class="filter-types">
+    <p>{{ 5 }} items left</p>
 
-  <p>Drag and drop to reorder list</p>
+    <app-todo-filters
+      class="desktop"
+      (filterTypeChange)="onFilterTypeChange($event)"
+    />
+
+    <button class="clear-btn" (click)="onClearCompleted()">
+      Clear Completed
+    </button>
+  </div>
+
+  <div class="mobile">
+    <app-todo-filters (filterTypeChange)="onFilterTypeChange($event)" />
+  </div>
+
+  <ng-container *ngComponentOutlet=""></ng-container>
+
+  <p class="info">Drag and drop to reorder list</p>
 </div>

@@ -11,6 +11,7 @@
     width: 100%;
     object-fit: cover;
     max-height: 300px;
+    min-height: 200px;
   }
 
   main {
@@ -20,5 +21,31 @@
 
   app-header {
     margin-block: 70px 48px;
+  }
+
+  @media only screen and (max-width: 800px) {
+    app-header {
+      margin-block: 48px 40px;
+    }
+  }
+}
+
+.light {
+  display: none;
+}
+
+:host-context(body.light) {
+  .dark {
+    display: none;
+  }
+
+  .light {
+    display: block;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  main {
+    padding-inline: 24px;
   }
 }

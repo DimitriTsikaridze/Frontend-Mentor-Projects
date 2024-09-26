@@ -1,7 +1,6 @@
 import {
   ChangeDetectionStrategy,
   Component,
-  input,
   model,
   output,
 } from "@angular/core";
@@ -16,8 +15,6 @@ import { TodoFilter } from "../models/todo";
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TodoFiltersComponent {
-  itemsLeft = input.required<number>();
   filterType = model<TodoFilter>("all");
   filterTypeChange = output<TodoFilter>();
-  clearCompleted = output();
 }

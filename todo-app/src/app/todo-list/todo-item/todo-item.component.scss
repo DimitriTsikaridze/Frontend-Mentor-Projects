@@ -7,6 +7,10 @@
   border-radius: 6px;
   color: var(--dark-grayish-blue);
 
+  @media only screen and (max-width: 800px) {
+    padding: 14px 20px;
+  }
+
   &:not(.editable) {
     cursor: move;
   }
@@ -35,6 +39,7 @@
   }
 
   button:not(.delete) {
+    flex-shrink: 0;
     width: 24px;
     height: 24px;
     border-radius: 50%;
@@ -68,6 +73,32 @@
   &:hover {
     .delete {
       opacity: 1;
+    }
+  }
+}
+
+:host-context(body.light) {
+  p {
+    color: var(--very-dark-grayish-blue);
+
+    &.done {
+      color: var(--light-grayish-blue);
+    }
+  }
+
+  input {
+    color: #393a4b;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  :host {
+    p {
+      font-size: 12px;
+    }
+    button:not(.delete) {
+      width: 20px;
+      height: 20px;
     }
   }
 }
