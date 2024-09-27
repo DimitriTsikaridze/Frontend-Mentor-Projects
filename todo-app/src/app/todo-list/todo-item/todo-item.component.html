@@ -32,10 +32,15 @@
 </button>
 
 @if (editable()) {
-<input type="text" [placeholder]="title()" />
+<input
+  (keydown.enter)="addTodo(todoInput.value); todoInput.value = ''"
+  #todoInput
+  type="text"
+  [placeholder]="title()"
+/>
 } @else {
 <p [class.done]="checked()">{{ title() }}</p>
-<button (click)="deleteTodo.emit(title())" class="delete">
+<button (click)="deleteTodo.emit(todoId()!)" class="delete">
   <img src="images/icon-cross.svg" alt="Delete" />
 </button>
 }

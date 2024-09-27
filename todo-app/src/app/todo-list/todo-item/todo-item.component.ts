@@ -6,6 +6,7 @@ import {
   model,
   output,
 } from "@angular/core";
+import { Todo } from "../models/todo";
 
 @Component({
   selector: "app-todo-item",
@@ -21,13 +22,20 @@ import {
 export class TodoItemComponent {
   editable = input(false, { transform: booleanAttribute });
 
+  submitTodo = output<Omit<Todo, "id" | "order">>();
   title = input.required<string>();
+  todoId = input<number>();
   checked = model<boolean>(false);
   checkedChange = output<boolean>();
-  deleteTodo = output<string>();
+  deleteTodo = output<number>();
 
   toggleTodo() {
     this.checked.set(!this.checked());
     this.checkedChange.emit(this.checked());
+  }
+
+  addTodo(title: string) {
+    if (!title) return;
+    this.submitTodo.emit({ title, completed: false });
   }
 }

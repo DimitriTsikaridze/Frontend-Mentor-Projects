@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, signal } from "@angular/core";
+import { ChangeDetectionStrategy, Component, inject } from "@angular/core";
 import { TodoItemComponent } from "./todo-item/todo-item.component";
 import { TodoFiltersComponent } from "./todo-filters/todo-filters.component";
 import {
@@ -7,6 +7,7 @@ import {
   moveItemInArray,
 } from "@angular/cdk/drag-drop";
 import { Todo, TodoFilter } from "./models/todo";
+import { TodoService } from "./todo.service";
 
 @Component({
   selector: "app-todo-list",
@@ -17,17 +18,15 @@ import { Todo, TodoFilter } from "./models/todo";
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TodoListComponent {
-  todos = signal<Todo[]>([
-    { title: "Complete online JavaScript course", completed: true },
-    { title: "Jog around the park 3x", completed: false },
-    { title: "10 minutes meditation", completed: false },
-    { title: "Read for 1 hour", completed: false },
-    { title: "Pick up groceries", completed: false },
-    { title: "Complete Todo App on Frontend Mentor", completed: false },
-  ]);
+  private todoService = inject(TodoService);
+  todos = this.todoService.todos;
 
   drop(e: CdkDragDrop<string[]>) {
     moveItemInArray(this.todos(), e.previousIndex, e.currentIndex);
+  }
+
+  onSubmitTodo(todo: Omit<Todo, "id" | "order">) {
+    this.todoService.addTodo(todo);
   }
 
   onCheckedChange(e: boolean) {
@@ -42,7 +41,7 @@ export class TodoListComponent {
     console.log("clear all");
   }
 
-  onDeleteTodo(title: string) {
-    console.log(title);
+  onDeleteTodo(id: number) {
+    this.todoService.deleteTodo(id);
   }
 }

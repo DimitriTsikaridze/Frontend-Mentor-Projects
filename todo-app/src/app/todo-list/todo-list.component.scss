@@ -74,6 +74,10 @@
       color: #494c6b;
     }
   }
+
+  .empty {
+    color: var(--very-dark-grayish-blue);
+  }
 }
 
 .mobile {
@@ -93,4 +97,9 @@
     background-color: var(--very-dark-desaturated-blue);
     margin-top: 16px;
   }
+}
+
+.empty {
+  color: var(--light-grayish-blue);
+  padding: 15px;
 }

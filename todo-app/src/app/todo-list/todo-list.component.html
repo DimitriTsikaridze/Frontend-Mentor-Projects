@@ -1,4 +1,8 @@
-<app-todo-item editable title="Create New Todo..." />
+<app-todo-item
+  (submitTodo)="onSubmitTodo($event)"
+  editable
+  title="Create New Todo..."
+/>
 
 <div class="container">
   <div class="todo-list" cdkDropList (cdkDropListDropped)="drop($event)">
@@ -6,15 +10,18 @@
     <app-todo-item
       cdkDrag
       [checked]="todo.completed"
+      [todoId]="todo.id"
       (checkedChange)="onCheckedChange($event)"
       (deleteTodo)="onDeleteTodo($event)"
       [title]="todo.title"
     />
+    } @empty {
+    <p class="empty">No Todos added</p>
     }
   </div>
 
   <div class="filter-types">
-    <p>{{ 5 }} items left</p>
+    <p>{{ todos().length }} items left</p>
 
     <app-todo-filters
       class="desktop"
