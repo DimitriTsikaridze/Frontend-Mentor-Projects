@@ -3,7 +3,7 @@ import { Todo, TodoFilter } from "./models/todo";
 
 @Injectable({ providedIn: "root" })
 export class TodoService {
-  todos = signal<Todo[]>([
+  private todos = signal<Todo[]>([
     {
       order: 0,
       id: 1,
@@ -22,7 +22,17 @@ export class TodoService {
     },
   ]);
 
-  filterTodos(filter: TodoFilter) {}
+  filteredTodos = signal<Todo[]>(this.todos());
+
+  filterTodos(filter: TodoFilter) {
+    if (filter === "active") {
+      this.filteredTodos.set(this.todos().filter((todo) => !todo.completed));
+    } else if (filter === "completed") {
+      this.filteredTodos.set(this.todos().filter((todo) => todo.completed));
+    } else {
+      this.filteredTodos.set(this.todos());
+    }
+  }
 
   addTodo(newTodo: Omit<Todo, "id" | "order">) {
     const updatedTodos = [
@@ -33,11 +43,30 @@ export class TodoService {
         order: this.todos().length,
       },
     ];
+
+    this.todos.set(updatedTodos);
+    this.filteredTodos.set(this.todos());
+  }
+
+  updateTodo(id: number, completed: boolean) {
+    const updatedTodos = this.todos().map((todo) => {
+      if (todo.id === id) {
+        todo.completed = completed;
+      }
+      return todo;
+    });
+
     this.todos.set(updatedTodos);
   }
 
   deleteTodo(id: number) {
     const updatedTodos = this.todos().filter((todo) => todo.id !== id);
     this.todos.set(updatedTodos);
+  }
+
+  clearCompleted() {
+    const updatedTodos = this.todos().filter((todo) => !todo.completed);
+    this.todos.set(updatedTodos);
+    this.filteredTodos.set(this.todos());
   }
 }

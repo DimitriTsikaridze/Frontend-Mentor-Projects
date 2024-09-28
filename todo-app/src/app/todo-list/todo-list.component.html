@@ -6,22 +6,21 @@
 
 <div class="container">
   <div class="todo-list" cdkDropList (cdkDropListDropped)="drop($event)">
-    @for (todo of todos(); track todo) {
+    @for (todo of filteredTodos(); track todo) {
     <app-todo-item
       cdkDrag
       [checked]="todo.completed"
-      [todoId]="todo.id"
-      (checkedChange)="onCheckedChange($event)"
+      (checkedChange)="onCheckedChange($event, todo.id)"
       (deleteTodo)="onDeleteTodo($event)"
       [title]="todo.title"
     />
     } @empty {
-    <p class="empty">No Todos added</p>
+    <p class="empty">No Todos</p>
     }
   </div>
 
   <div class="filter-types">
-    <p>{{ todos().length }} items left</p>
+    <p>{{ filteredTodos().length }} items left</p>
 
     <app-todo-filters
       class="desktop"

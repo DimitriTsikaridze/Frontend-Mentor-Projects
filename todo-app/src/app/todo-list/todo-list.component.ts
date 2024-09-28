@@ -19,26 +19,26 @@ import { TodoService } from "./todo.service";
 })
 export class TodoListComponent {
   private todoService = inject(TodoService);
-  todos = this.todoService.todos;
+  filteredTodos = this.todoService.filteredTodos;
 
   drop(e: CdkDragDrop<string[]>) {
-    moveItemInArray(this.todos(), e.previousIndex, e.currentIndex);
+    moveItemInArray(this.filteredTodos(), e.previousIndex, e.currentIndex);
   }
 
   onSubmitTodo(todo: Omit<Todo, "id" | "order">) {
     this.todoService.addTodo(todo);
   }
 
-  onCheckedChange(e: boolean) {
-    console.log(e);
+  onCheckedChange(completed: boolean, id: number) {
+    this.todoService.updateTodo(id, completed);
   }
 
   onFilterTypeChange(todoFilter: TodoFilter) {
-    console.log(todoFilter);
+    this.todoService.filterTodos(todoFilter);
   }
 
   onClearCompleted() {
-    console.log("clear all");
+    this.todoService.clearCompleted();
   }
 
   onDeleteTodo(id: number) {
