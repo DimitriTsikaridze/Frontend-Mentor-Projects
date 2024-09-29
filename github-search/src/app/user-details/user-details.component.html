@@ -3,7 +3,9 @@
   <header>
     <div>
       <h2 class="user-name">{{ user().name }}</h2>
-      <h3 class="user-login">&#64; {{ user().login }}</h3>
+      <h3 class="user-login">
+        <a target="_blank" [href]="user().html_url">&#64; {{ user().login }}</a>
+      </h3>
     </div>
 
     <h3 class="created-at">

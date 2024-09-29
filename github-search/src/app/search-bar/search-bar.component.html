@@ -8,7 +8,7 @@
   #inputRef
   placeholder="Search GitHub username..."
 />
-@if (usersService.notFound) {
+@if (usersService.notFound()) {
 <p class="error-text">No Results</p>
 }
 <button class="search-button" (click)="handleSearch(inputRef.value)">

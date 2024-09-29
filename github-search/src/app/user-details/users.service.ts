@@ -1,13 +1,6 @@
-import { Injectable, inject } from "@angular/core";
-import { HttpClient, HttpErrorResponse } from "@angular/common/http";
-import {
-  BehaviorSubject,
-  catchError,
-  Observable,
-  switchMap,
-  of,
-  tap,
-} from "rxjs";
+import { Injectable, inject, signal } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+import { BehaviorSubject, Observable, switchMap, tap } from "rxjs";
 import { GithubUser } from "./user.model";
 
 @Injectable({
@@ -18,7 +11,7 @@ export class UsersService {
 
   searchTerm = new BehaviorSubject<string>("octocat");
 
-  notFound: boolean;
+  notFound = signal(false);
 
   getUser(): Observable<GithubUser> {
     return this.searchTerm.pipe(
@@ -33,10 +26,9 @@ export class UsersService {
       .get<GithubUser>(`https://api.github.com/users/${userName}`)
       .pipe(
         tap({
-          next: () => (this.notFound = false),
-          error: () => (this.notFound = true),
-        }),
-        catchError((err: HttpErrorResponse) => of())
+          next: () => this.notFound.set(false),
+          error: () => this.notFound.set(true),
+        })
       );
   }
 }

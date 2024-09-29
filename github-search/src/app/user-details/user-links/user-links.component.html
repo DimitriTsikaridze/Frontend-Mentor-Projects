@@ -32,11 +32,7 @@
 </div>
 <div class="company">
   @if (links().company) {
-  <h3>
-    <a target="_blank" href="https://github.com/{{ links().company }}">{{
-      links().company
-    }}</a>
-  </h3>
+  <h3>{{ links().company }}</h3>
   } @else {
   <h3 class="not-available">Not Available</h3>
   }
