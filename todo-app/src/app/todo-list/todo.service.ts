@@ -1,4 +1,4 @@
-import { Injectable, signal } from "@angular/core";
+import { Injectable, signal, computed } from "@angular/core";
 import { Todo, TodoFilter } from "./models/todo";
 
 @Injectable({ providedIn: "root" })
@@ -22,16 +22,20 @@ export class TodoService {
     },
   ]);
 
-  filteredTodos = signal<Todo[]>(this.todos());
+  private currentFilter = signal<TodoFilter>("all");
+
+  filteredTodos = computed(() => {
+    if (this.currentFilter() === "active") {
+      return this.todos().filter((todo) => !todo.completed);
+    } else if (this.currentFilter() === "completed") {
+      return this.todos().filter((todo) => todo.completed);
+    } else {
+      return this.todos();
+    }
+  });
 
   filterTodos(filter: TodoFilter) {
-    if (filter === "active") {
-      this.filteredTodos.set(this.todos().filter((todo) => !todo.completed));
-    } else if (filter === "completed") {
-      this.filteredTodos.set(this.todos().filter((todo) => todo.completed));
-    } else {
-      this.filteredTodos.set(this.todos());
-    }
+    this.currentFilter.set(filter);
   }
 
   addTodo(newTodo: Omit<Todo, "id" | "order">) {
@@ -45,28 +49,21 @@ export class TodoService {
     ];
 
     this.todos.set(updatedTodos);
-    this.filteredTodos.set(this.todos());
   }
 
   updateTodo(id: number, completed: boolean) {
     const updatedTodos = this.todos().map((todo) => {
-      if (todo.id === id) {
-        todo.completed = completed;
-      }
-      return todo;
+      return todo.id === id ? { ...todo, completed } : todo;
     });
 
     this.todos.set(updatedTodos);
   }
 
   deleteTodo(id: number) {
-    const updatedTodos = this.todos().filter((todo) => todo.id !== id);
-    this.todos.set(updatedTodos);
+    this.todos.set(this.todos().filter((todo) => todo.id !== id));
   }
 
   clearCompleted() {
-    const updatedTodos = this.todos().filter((todo) => !todo.completed);
-    this.todos.set(updatedTodos);
-    this.filteredTodos.set(this.todos());
+    this.todos.set(this.todos().filter((todo) => !todo.completed));
   }
 }

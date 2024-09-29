@@ -40,7 +40,7 @@
 />
 } @else {
 <p [class.done]="checked()">{{ title() }}</p>
-<button (click)="deleteTodo.emit(todoId()!)" class="delete">
+<button (click)="deleteTodo.emit()" class="delete">
   <img src="images/icon-cross.svg" alt="Delete" />
 </button>
 }

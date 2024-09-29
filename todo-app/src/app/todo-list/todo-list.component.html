@@ -11,7 +11,7 @@
       cdkDrag
       [checked]="todo.completed"
       (checkedChange)="onCheckedChange($event, todo.id)"
-      (deleteTodo)="onDeleteTodo($event)"
+      (deleteTodo)="onDeleteTodo(todo.id)"
       [title]="todo.title"
     />
     } @empty {

@@ -24,10 +24,9 @@ export class TodoItemComponent {
 
   submitTodo = output<Omit<Todo, "id" | "order">>();
   title = input.required<string>();
-  todoId = input<number>();
   checked = model<boolean>(false);
   checkedChange = output<boolean>();
-  deleteTodo = output<number>();
+  deleteTodo = output();
 
   toggleTodo() {
     this.checked.set(!this.checked());
