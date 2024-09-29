@@ -3,3 +3,4 @@
 *.xd
 .DS_Store
 .prettierignore
+.firebase

@@ -2,6 +2,6 @@
 
 @if (theme() === 'light') {
 <img (click)="setTheme('dark')" src="/images/icon-moon.svg" alt="Sun Icon" />
-} @else if(theme() === 'dark') {
+} @else {
 <img (click)="setTheme('light')" src="/images/icon-sun.svg" alt="Sun Icon" />
 }
