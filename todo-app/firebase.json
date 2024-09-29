@@ -1,0 +1,13 @@
+{
+  "hosting": {
+    "site": "todo-app-frontend-mentor",
+    "public": "dist/todo-app/browser",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
