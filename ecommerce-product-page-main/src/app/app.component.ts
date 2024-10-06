@@ -1,10 +1,12 @@
-import { Component } from "@angular/core";
+import { Component, ChangeDetectionStrategy } from "@angular/core";
+import { HeaderComponent } from "./header/header.component";
+import { YourCartComponent } from "./your-cart/your-cart.component";
 
 @Component({
   selector: "app-root",
   standalone: true,
-  imports: [],
   templateUrl: "./app.component.html",
-  styleUrl: "./app.component.scss",
+  changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [HeaderComponent, YourCartComponent],
 })
 export class AppComponent {}

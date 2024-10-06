@@ -1,0 +1,31 @@
+:host {
+  display: block;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius: 10px;
+  margin: 100px;
+  inline-size: 360px;
+  min-block-size: 256px;
+}
+
+h2,
+div {
+  padding-inline: 24px;
+}
+
+h2 {
+  padding-block: 24px;
+}
+
+hr {
+  border-color: #e4e9f2;
+}
+
+.empty {
+  background-color: red;
+  min-height: 100%;
+  p {
+    color: #69707d;
+    font-size: 26px;
+    font-weight: 700;
+  }
+}

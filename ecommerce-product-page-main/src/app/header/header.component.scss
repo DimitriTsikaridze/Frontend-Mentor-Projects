@@ -1,0 +1,79 @@
+:host {
+  display: block;
+  padding-block: 28px 34px;
+  border-bottom: 1px solid #e4e9f2;
+}
+
+header {
+  max-inline-size: 1100px;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+}
+
+h1 {
+  color: #1d2026;
+  margin-right: 52px;
+}
+
+ul {
+  display: flex;
+  gap: 32px;
+
+  li {
+    position: relative;
+    color: #69707d;
+
+    &::after {
+      opacity: 0;
+      position: absolute;
+      inset-inline-start: 0;
+      inset-block-end: -49px;
+      content: "";
+      inline-size: 0;
+      block-size: 4px;
+      background-color: #ff7e1b;
+      transition: 0.2s;
+    }
+
+    &:hover {
+      cursor: pointer;
+      color: #1d2026;
+
+      &::after {
+        opacity: 1;
+        inline-size: 100%;
+      }
+    }
+  }
+}
+
+.profile {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 46px;
+
+  .cart {
+    transition: 0.2s;
+
+    &:hover {
+      cursor: pointer;
+      path {
+        fill: #1d2026;
+      }
+    }
+  }
+
+  img[alt="Avatar"] {
+    inline-size: 50px;
+    border-radius: 50%;
+    transition: 0.2s;
+    outline: 2px solid transparent;
+
+    &:hover {
+      outline-color: #ff7e1b;
+      cursor: pointer;
+    }
+  }
+}
