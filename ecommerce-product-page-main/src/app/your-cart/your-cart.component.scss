@@ -2,9 +2,7 @@
   display: block;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   border-radius: 10px;
-  margin: 100px;
   inline-size: 360px;
-  min-block-size: 256px;
 }
 
 h2,
@@ -21,11 +19,13 @@ hr {
 }
 
 .empty {
-  background-color: red;
-  min-height: 100%;
+  display: grid;
+  place-items: center;
+  min-block-size: 256px;
+
   p {
     color: #69707d;
-    font-size: 26px;
+    font-size: 16px;
     font-weight: 700;
   }
 }

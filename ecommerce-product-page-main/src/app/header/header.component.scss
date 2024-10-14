@@ -49,6 +49,7 @@ ul {
 }
 
 .profile {
+  position: relative;
   margin-left: auto;
   display: flex;
   align-items: center;
@@ -76,4 +77,9 @@ ul {
       cursor: pointer;
     }
   }
+}
+
+app-your-cart {
+  position: absolute;
+  top: 0;
 }
