@@ -41,7 +41,7 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
-            "outputPath": "dist/github-users-search-app/browser",
+            "outputPath": "dist/github-users-search-app",
             "index": "src/index.html",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
