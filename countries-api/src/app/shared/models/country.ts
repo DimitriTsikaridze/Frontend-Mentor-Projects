@@ -1,4 +1,5 @@
 export interface Country {
+  priority?: boolean
   name: string
   topLevelDomain: string[]
   alpha2Code: string

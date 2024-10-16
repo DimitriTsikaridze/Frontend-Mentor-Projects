@@ -2,7 +2,13 @@
 <section>
   @for (country of countries$ | async; track country) {
   <a [routerLink]="country.name">
-    <img [ngSrc]="country.flag" width="300" height="200" [alt]="country.name" />
+    <img
+      [priority]="country.priority"
+      [ngSrc]="country.flag"
+      width="300"
+      height="200"
+      [alt]="country.name"
+    />
     <div class="description">
       <h2>{{ country.name }}</h2>
       <p><span>Population:</span> {{ country.population }}</p>

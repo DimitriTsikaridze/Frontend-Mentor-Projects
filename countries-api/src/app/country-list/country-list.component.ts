@@ -32,7 +32,10 @@ export class CountryListComponent {
             return filteredByTerm.filter((c) => c.region === region)
           }
 
-          return filteredByTerm
+          // add fetch priority option to first 5 countries
+          return filteredByTerm.map((country, idx) =>
+            idx < 5 ? { ...country, priority: true } : country
+          )
         })
       )
     )

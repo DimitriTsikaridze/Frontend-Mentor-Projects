@@ -46,11 +46,11 @@
         "build": {
           "builder": "@angular/build:application",
           "options": {
-            "outputPath": "dist/countries-api/browser",
+            "outputPath": "dist/countries-api",
             "index": "src/index.html",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": ["src/favicon.ico", "src/assets"],
+            "assets": ["src/favicon.ico", "src/assets", "src/robots.txt"],
             "styles": ["src/styles.scss"],
             "scripts": [],
             "browser": "src/main.ts",
