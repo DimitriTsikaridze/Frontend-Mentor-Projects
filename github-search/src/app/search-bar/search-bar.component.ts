@@ -13,6 +13,6 @@ export class SearchBarComponent {
   usersService = inject(UsersService);
 
   handleSearch(searchTerm: string) {
-    this.usersService.searchTerm.next(searchTerm);
+    this.usersService.searchTerm.set(searchTerm);
   }
 }

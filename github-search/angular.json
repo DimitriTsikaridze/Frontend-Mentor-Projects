@@ -45,7 +45,7 @@
             "index": "src/index.html",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": ["src/assets"],
+            "assets": ["src/assets", "src/robots.txt"],
             "styles": ["src/styles.scss"],
             "scripts": [],
             "browser": "src/main.ts",

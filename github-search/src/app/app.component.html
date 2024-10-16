@@ -1,4 +1,4 @@
-@if (user$ | async; as user) {
+@if (user(); as user) {
 <app-header />
 <app-search-bar />
 <app-user-details [user]="user" />

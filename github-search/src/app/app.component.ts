@@ -1,9 +1,6 @@
 import { Component, inject } from "@angular/core";
-import { Observable } from "rxjs";
 import { MetaService } from "./meta.service";
-import { GithubUser } from "./user-details/user.model";
 import { UsersService } from "./user-details/users.service";
-import { AsyncPipe } from "@angular/common";
 import { HeaderComponent } from "./header/header.component";
 import { SearchBarComponent } from "./search-bar/search-bar.component";
 import { UserDetailsComponent } from "./user-details/user-details.component";
@@ -19,21 +16,15 @@ import { LoadingComponent } from "./loading/loading.component";
     SearchBarComponent,
     UserDetailsComponent,
     LoadingComponent,
-    AsyncPipe,
   ],
 })
 export class AppComponent {
   private usersService = inject(UsersService);
   private metaService = inject(MetaService);
 
-  user$: Observable<GithubUser>;
+  user = this.usersService.user;
 
-  ngOnInit(): void {
-    this.user$ = this.usersService.getUser();
-    this.generateTags();
-  }
-
-  generateTags() {
+  constructor() {
     this.metaService.generateTags({
       title: "Github Users Search App",
       description:

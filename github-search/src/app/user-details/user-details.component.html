@@ -1,4 +1,11 @@
-<img [src]="user().avatar_url" alt="User Avatar" class="avatar" />
+<img
+  width="117"
+  height="117"
+  priority
+  [ngSrc]="user().avatar_url"
+  alt="User Avatar"
+  class="avatar"
+/>
 <article>
   <header>
     <div>
@@ -9,7 +16,7 @@
     </div>
 
     <h3 class="created-at">
-      JoinJoined {{ user().created_at | date | createdAt }}
+      Joined {{ user().created_at | date | createdAt }}
     </h3>
   </header>
 

@@ -14,6 +14,10 @@ export class MetaService {
 
     this.meta.updateTag({ name: "og:title", content: title });
     this.meta.updateTag({
+      name: "description",
+      content: description,
+    });
+    this.meta.updateTag({
       name: "og:description",
       content: description,
     });

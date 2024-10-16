@@ -1,9 +1,9 @@
-import { ChangeDetectionStrategy, Component, input } from "@angular/core";
-import { GithubUser } from "./user.model";
-import { UserStatsComponent } from "./user-stats/user-stats.component";
-import { UserLinksComponent } from "./user-links/user-links.component";
-import { DatePipe } from "@angular/common";
-import { CreatedAtPipe } from "./created-at.pipe";
+import { ChangeDetectionStrategy, Component, input } from "@angular/core"
+import { GithubUser } from "./user.model"
+import { UserStatsComponent } from "./user-stats/user-stats.component"
+import { UserLinksComponent } from "./user-links/user-links.component"
+import { DatePipe, NgOptimizedImage } from "@angular/common"
+import { CreatedAtPipe } from "./created-at.pipe"
 
 @Component({
   selector: "app-user-details",
@@ -11,8 +11,14 @@ import { CreatedAtPipe } from "./created-at.pipe";
   styleUrls: ["./user-details.component.scss"],
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [UserStatsComponent, UserLinksComponent, DatePipe, CreatedAtPipe],
+  imports: [
+    UserStatsComponent,
+    UserLinksComponent,
+    DatePipe,
+    CreatedAtPipe,
+    NgOptimizedImage,
+  ],
 })
 export class UserDetailsComponent {
-  user = input.required<GithubUser>();
+  user = input.required<GithubUser>()
 }
