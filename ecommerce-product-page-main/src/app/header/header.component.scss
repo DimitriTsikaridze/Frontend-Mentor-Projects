@@ -57,6 +57,7 @@ ul {
 
   .cart {
     transition: 0.2s;
+    position: relative;
 
     &:hover {
       cursor: pointer;
@@ -81,5 +82,7 @@ ul {
 
 app-your-cart {
   position: absolute;
-  top: 0;
+  top: 66px;
+  right: -76px;
+  background-color: #fff;
 }

@@ -1,0 +1,19 @@
+<picture>
+  <source
+    media="(max-width: 865px)"
+    srcset="/assets/images/bg-sidebar-mobile.svg"
+  />
+  <img src="/assets/images/bg-sidebar-desktop.svg" alt="Sidebar" />
+</picture>
+
+<ol>
+  @for (step of steps; track step.stepNumber) {
+  <li>
+    <p [class.active]="activeStep() === step.stepNumber" class="step-number">
+      {{ step.stepNumber }}
+    </p>
+    <p class="step-title">{{ step.stepTitle }}</p>
+    <p class="step-description">{{ step.stepDescription }}</p>
+  </li>
+  }
+</ol>

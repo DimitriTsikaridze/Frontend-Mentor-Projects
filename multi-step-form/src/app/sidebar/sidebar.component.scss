@@ -1,0 +1,46 @@
+:host {
+  display: block;
+  position: relative;
+}
+
+ol {
+  list-style: none;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  display: grid;
+  gap: 2rem;
+  justify-items: flex-start;
+}
+
+li {
+  display: grid;
+  align-items: center;
+  color: var(--white);
+  column-gap: 1rem;
+
+  .step-number {
+    grid-row: span 2;
+    border: 1px solid var(--white);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    &.active {
+      background-color: var(--light-blue);
+      color: var(--marine-blue);
+    }
+  }
+
+  .step-title {
+    color: var(--light-gray);
+    grid-column: 2;
+  }
+
+  .step-description {
+    font-weight: 700;
+  }
+}
