@@ -1,11 +1,12 @@
 import { ChangeDetectionStrategy, Component, signal } from "@angular/core"
 import { YourCartComponent } from "../your-cart/your-cart.component"
 import { animate, style, transition, trigger } from "@angular/animations"
+import { HamburgerMenuComponent } from "./hamburger-menu/hamburger-menu.component"
 
 @Component({
   selector: "app-header",
   standalone: true,
-  imports: [YourCartComponent],
+  imports: [YourCartComponent, HamburgerMenuComponent],
   templateUrl: "./header.component.html",
   styleUrl: "./header.component.scss",
   changeDetection: ChangeDetectionStrategy.OnPush,

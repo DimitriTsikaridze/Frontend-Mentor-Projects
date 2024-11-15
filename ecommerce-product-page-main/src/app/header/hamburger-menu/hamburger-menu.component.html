@@ -1,0 +1,47 @@
+<svg
+  (click)="toggleSidebar()"
+  class="hamburger-menu"
+  width="16"
+  height="15"
+  viewBox="0 0 16 15"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <g id="Combined Shape 2">
+    <path
+      id="Combined Shape"
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      d="M0 0H16V3H0V0ZM0 6H16V9H0V6ZM16 12H0V15H16V12Z"
+      fill="#69707D"
+    />
+  </g>
+</svg>
+
+<div class="sidebar" [class.open]="showSidebar()">
+  <svg
+    (click)="toggleSidebar()"
+    width="14"
+    height="15"
+    viewBox="0 0 14 15"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      id="Combined Shape"
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      d="M6.99998 5.37868L2.40379 0.782486L0.282471 2.90381L4.87866 7.5L0.282471 12.0962L2.40379 14.2175L6.99999 9.62132L11.5962 14.2175L13.7175 12.0962L9.12131 7.5L13.7175 2.90381L11.5962 0.782486L6.99998 5.37868Z"
+      fill="#69707D"
+    />
+  </svg>
+
+  <ul>
+    @for(link of ['Collections', 'Men','Women' ,'About' ,'Contact']; track
+    $index) {
+    <li>
+      <a href="#">{{ link }}</a>
+    </li>
+    }
+  </ul>
+</div>

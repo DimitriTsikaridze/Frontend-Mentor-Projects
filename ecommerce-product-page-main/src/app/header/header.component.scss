@@ -1,6 +1,6 @@
 :host {
   display: block;
-  padding-block: 28px 34px;
+  padding: 28px 24px 34px 24px;
   border-bottom: 1px solid #e4e9f2;
 }
 
@@ -11,8 +11,7 @@ header {
   align-items: center;
 }
 
-h1 {
-  color: #1d2026;
+.logo {
   margin-right: 52px;
 }
 
@@ -85,4 +84,34 @@ app-your-cart {
   top: 66px;
   right: -76px;
   background-color: #fff;
+}
+
+app-hamburger-menu {
+  display: none;
+}
+
+@media only screen and (max-width: 800px) {
+  :host {
+    padding: 24px 25px;
+  }
+  .profile {
+    gap: 22px;
+
+    img[alt="Avatar"] {
+      inline-size: 24px;
+    }
+  }
+
+  ul {
+    display: none;
+  }
+
+  app-hamburger-menu {
+    display: block;
+    margin-right: 16px;
+  }
+
+  .logo {
+    margin-right: unset;
+  }
 }

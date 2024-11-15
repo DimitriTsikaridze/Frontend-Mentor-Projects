@@ -6,9 +6,15 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  height: 100%;
+}
+
 body {
   font-family: "Kumbh Sans";
   color: #1d2026;
+  transition: 0.2s;
 }
 
 a {
