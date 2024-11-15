@@ -1,0 +1,38 @@
+{
+  "name": "url-shortening-api",
+  "version": "0.0.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "serve:ssr:url-shortening-api": "node dist/url-shortening-api/server/server.mjs"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "^19.0.0-next.0",
+    "@angular/common": "^19.0.0-next.0",
+    "@angular/compiler": "^19.0.0-next.0",
+    "@angular/core": "^19.0.0-next.0",
+    "@angular/forms": "^19.0.0-next.0",
+    "@angular/platform-browser": "^19.0.0-next.0",
+    "@angular/platform-browser-dynamic": "^19.0.0-next.0",
+    "@angular/platform-server": "^19.0.0-next.0",
+    "@angular/router": "^19.0.0-next.0",
+    "@angular/ssr": "^19.0.0-rc.2",
+    "express": "^4.18.2",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "^19.0.0-rc.2",
+    "@angular/cli": "^19.0.0-rc.2",
+    "@angular/compiler-cli": "^19.0.0-next.0",
+    "@types/express": "^4.17.17",
+    "@types/node": "^18.18.0",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.15",
+    "typescript": "~5.6.2"
+  }
+}
