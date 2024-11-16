@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "site": "url-shortening-api-fe",
+    "site": "url-shortening-api",
     "public": "dist/url-shortening-api/browser",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "rewrites": [
