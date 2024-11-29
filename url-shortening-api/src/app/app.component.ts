@@ -1,26 +1,23 @@
-import { isPlatformBrowser } from "@angular/common"
-import {
-  ChangeDetectionStrategy,
-  Component,
-  PLATFORM_ID,
-  inject,
-} from "@angular/core"
+import { HttpClient } from '@angular/common/http'
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core'
+import { Observable } from 'rxjs'
+
+interface ShortUrl {
+  data: {
+    destination_url: string
+    short_url: string
+  }
+}
 
 @Component({
-  selector: "app-root",
-  templateUrl: "./app.component.html",
+  selector: 'app-root',
+  templateUrl: './app.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AppComponent {
-  constructor() {
-    if (!isPlatformBrowser(inject(PLATFORM_ID))) return
-    fetch("https://cleanuri.com/api/v1/shorten", {
-      method: "POST",
-      body: JSON.stringify({
-        url: encodeURI("http://google.com/"),
-      }),
-    })
-      .then((res) => res.json())
-      .then(console.log)
+  private http = inject(HttpClient)
+
+  shortenUrl(url: string): Observable<ShortUrl> {
+    return this.http.post<ShortUrl>('https://smolurl.com/api/links', { url })
   }
 }
