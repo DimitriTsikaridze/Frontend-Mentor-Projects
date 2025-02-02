@@ -1,0 +1,13 @@
+{
+  "hosting": {
+    "site": "interactive-comment-section-fm",
+    "public": "dist/interactive-comment-section/browser",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
