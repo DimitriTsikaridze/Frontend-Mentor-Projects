@@ -21,3 +21,12 @@ body.light {
   --red-500: hsl(3, 71%, 56%);
   --red-700: hsl(3, 77%, 44%);
 }
+
+@media screen and (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    transition-delay: 0s !important;
+  }
+}

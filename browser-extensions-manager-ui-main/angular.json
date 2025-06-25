@@ -10,6 +10,7 @@
           "inlineTemplate": true,
           "inlineStyle": true,
           "skipTests": true,
+          "flat": true,
           "changeDetection": "OnPush"
         },
         "@schematics/angular:class": {

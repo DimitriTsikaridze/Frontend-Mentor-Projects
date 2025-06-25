@@ -1,7 +1,10 @@
-import { NgOptimizedImage } from '@angular/common';
 import { httpResource } from '@angular/common/http';
 import { ChangeDetectionStrategy, Component, computed, signal } from '@angular/core';
 import * as z from 'zod/v4-mini';
+import { Header } from './header';
+import { ExtensionsFilter } from './extensions-filter';
+import { ExtensionItem } from './extension-item';
+import { RouterLinkActive } from '@angular/router';
 
 const Extensions = z.array(
   z.object({
@@ -14,43 +17,19 @@ const Extensions = z.array(
 
 @Component({
   selector: 'app-root',
-  imports: [NgOptimizedImage],
+  imports: [RouterLinkActive, Header, ExtensionsFilter, ExtensionItem],
   template: `
-    <header class="flex justify-between bg-neutral-700">
-      <img width="179" height="41" ngSrc="images/logo.svg" priority alt="Logo" />
-      <button>
-        <img width="22" height="22" ngSrc="images/icon-sun.svg" alt="Light Mode" />
-      </button>
-      <!-- <button >
-        <img width="22" height="22" ngSrc="images/icon-moon.svg" alt="Dark Mode" />
-      </button> -->
-    </header>
+    <app-header routerLinkActive="text" />
     <main>
-      <div class="flex justify-between">
-        <h1>Extensions List</h1>
-        <div class="flex gap-2">
-          <button class="cursor-pointer" (click)="query.set('all')">All</button>
-          <button class="cursor-pointer" (click)="query.set('active')">Active</button>
-          <button class="cursor-pointer" (click)="query.set('inactive')">Inactive</button>
-        </div>
-      </div>
-
+      <app-extensions-filter (queryChange)="query.set($event)" />
       <div class="grid grid-cols-3 gap-2">
-        @for (extension of filteredExtensions(); track extension.name) {
-        <div>
-          <img width="60" height="60" [ngSrc]="extension.logo" [alt]="extension.name" />
-          <p>{{ extension.name }}</p>
-          <p>{{ extension.description }}</p>
-
-          <div class="flex justify-between">
-            <button (click)="removeExtension(extension.name)">Remove</button>
-            <input
-              (change)="toggleExtension(extension.name, $any($event.target).checked)"
-              [checked]="extension.isActive"
-              type="checkbox"
-            />
-          </div>
-        </div>
+        @for (extension of filteredExtensions(); track $index) {
+        <app-extension-item
+          (remove)="removeExtension($event)"
+          (toggle)="toggleExtension($event)"
+          [extension]="extension"
+          [index]="$index"
+        />
         }
       </div>
     </main>
@@ -78,7 +57,7 @@ export class App {
     }
   });
 
-  toggleExtension(name: string, isActive: boolean) {
+  toggleExtension({ name, isActive }: { name: string; isActive: boolean }) {
     this.extensionsResource.update((extensions) => {
       return extensions.map((extension) => {
         if (extension.name === name) {
