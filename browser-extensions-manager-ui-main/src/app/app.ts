@@ -43,8 +43,12 @@ const Extensions = z.array(
           <p>{{ extension.description }}</p>
 
           <div class="flex justify-between">
-            <button>Remove</button>
-            <input [checked]="extension.isActive" type="checkbox" />
+            <button (click)="removeExtension(extension.name)">Remove</button>
+            <input
+              (change)="toggleExtension(extension.name, $any($event.target).checked)"
+              [checked]="extension.isActive"
+              type="checkbox"
+            />
           </div>
         </div>
         }
@@ -55,10 +59,12 @@ const Extensions = z.array(
 })
 export class App {
   query = signal<Query>('all');
+
   extensionsResource = httpResource(() => 'data.json', {
     defaultValue: [],
     parse: Extensions.parse,
   });
+
   filteredExtensions = computed(() => {
     const extensions = this.extensionsResource.value();
     const query = this.query();
@@ -71,6 +77,23 @@ export class App {
         return extensions;
     }
   });
+
+  toggleExtension(name: string, isActive: boolean) {
+    this.extensionsResource.update((extensions) => {
+      return extensions.map((extension) => {
+        if (extension.name === name) {
+          return { ...extension, isActive };
+        }
+        return extension;
+      });
+    });
+  }
+
+  removeExtension(name: string) {
+    this.extensionsResource.update((extensions) => {
+      return extensions.filter((extension) => extension.name !== name);
+    });
+  }
 }
 
 export interface Extension {

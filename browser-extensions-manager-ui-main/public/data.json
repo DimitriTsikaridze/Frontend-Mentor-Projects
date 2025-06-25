@@ -9,7 +9,7 @@
     "logo": "./images/logo-style-spy.svg",
     "name": "StyleSpy",
     "description": "Instantly analyze and copy CSS from any webpage element.",
-    "isActive": true
+    "isActive": false
   },
   {
     "logo": "./images/logo-speed-boost.svg",
@@ -21,13 +21,13 @@
     "logo": "./images/logo-json-wizard.svg",
     "name": "JSONWizard",
     "description": "Formats, validates, and prettifies JSON responses in-browser.",
-    "isActive": true
+    "isActive": false
   },
   {
     "logo": "./images/logo-tab-master-pro.svg",
     "name": "TabMaster Pro",
     "description": "Organizes browser tabs into groups and sessions.",
-    "isActive": true
+    "isActive": false
   },
   {
     "logo": "./images/logo-viewport-buddy.svg",
@@ -39,7 +39,7 @@
     "logo": "./images/logo-markup-notes.svg",
     "name": "Markup Notes",
     "description": "Enables annotation and notes directly onto webpages for collaborative debugging.",
-    "isActive": true
+    "isActive": false
   },
   {
     "logo": "./images/logo-grid-guides.svg",
@@ -51,13 +51,13 @@
     "logo": "./images/logo-palette-picker.svg",
     "name": "Palette Picker",
     "description": "Instantly extracts color palettes from any webpage.",
-    "isActive": true
+    "isActive": false
   },
   {
     "logo": "./images/logo-link-checker.svg",
     "name": "LinkChecker",
     "description": "Scans and highlights broken links on any page.",
-    "isActive": true
+    "isActive": false
   },
   {
     "logo": "./images/logo-dom-snapshot.svg",
@@ -69,6 +69,6 @@
     "logo": "./images/logo-console-plus.svg",
     "name": "ConsolePlus",
     "description": "Enhanced developer console with advanced filtering and logging.",
-    "isActive": true
+    "isActive": false
   }
 ]
