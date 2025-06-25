@@ -1,1 +1,23 @@
 @import 'tailwindcss';
+
+body.dark {
+  background: linear-gradient(180deg, #040918 0%, #091540 100%) no-repeat fixed;
+}
+body.light {
+  background: linear-gradient(180deg, #ebf2fc 0%, #eef8f9 100%) no-repeat fixed;
+}
+
+@theme {
+  --max-width-8xl: 1440px;
+  --neutral-900: hsl(227, 75%, 14%);
+  --neutral-800: hsl(226, 25%, 17%);
+  --neutral-700: hsl(225, 23%, 24%);
+  --neutral-600: hsl(226, 11%, 37%);
+  --neutral-300: hsl(0, 0%, 78%);
+  --neutral-200: hsl(217, 61%, 90%);
+  --neutral-100: hsl(0, 0%, 93%);
+  --neutral-0: hsl(200, 60%, 99%);
+  --red-400: hsl(3, 86%, 64%);
+  --red-500: hsl(3, 71%, 56%);
+  --red-700: hsl(3, 77%, 44%);
+}

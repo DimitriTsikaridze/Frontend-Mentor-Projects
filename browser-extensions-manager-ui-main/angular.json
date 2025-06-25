@@ -51,10 +51,8 @@
             ],
             "styles": ["src/styles.css"],
             "server": "src/main.server.ts",
-            "outputMode": "static",
-            "ssr": {
-              "entry": "src/server.ts"
-            }
+            "ssr": false,
+            "prerender": true
           },
           "configurations": {
             "production": {
