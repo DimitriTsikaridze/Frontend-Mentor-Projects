@@ -90,6 +90,7 @@
               "buildTarget": "kanban-task-management:build:production"
             },
             "development": {
+              "hmr": false,
               "buildTarget": "kanban-task-management:build:development"
             }
           },

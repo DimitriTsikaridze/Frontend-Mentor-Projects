@@ -9,6 +9,7 @@
     "serve:ssr:kanban-task-management": "node dist/kanban-task-management/server/server.mjs"
   },
   "prettier": {
+    "printWidth": 100,
     "overrides": [
       {
         "files": "*.html",
@@ -38,6 +39,7 @@
     "@angular/compiler-cli": "^20.1.0",
     "@types/express": "^5.0.1",
     "@types/node": "^20.17.19",
+    "pocketbase": "^0.26.1",
     "prettier": "^3.6.2",
     "typescript": "~5.8.2"
   }

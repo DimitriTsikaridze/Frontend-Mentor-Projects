@@ -1,2 +1,24 @@
-<h1>app componennt</h1>
-<router-outlet></router-outlet>
+<aside class="boards">
+  @for (board of boards.value(); track board.id) {
+    <button (click)="boardId.set(board.id)">{{ board.name }}</button>
+  }
+</aside>
+
+<main class="columns">
+  @for (column of columns.value(); track column.id) {
+    <div class="column">
+      <p>{{ column.name }}</p>
+      @for (task of tasks.value(); track task.id) {
+        <div class="task">
+          <p>{{ task.title }}</p>
+        </div>
+      }
+    </div>
+  }
+  <!-- @empty {
+    <div class="empty">
+      <p>This board is empty. Create a new column to get started.</p>
+      <button>+ Add New Column</button>
+    </div>
+  } -->
+</main>

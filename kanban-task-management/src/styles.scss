@@ -1,1 +1,35 @@
-/* You can add global styles to this file, and also import other style files */
+// Primary Colors
+$color-primary: #635fc7;
+$color-primary-light: #a8a4ff;
+
+// Neutral / Background Colors
+$color-darkest: #000112;
+$color-dark: #20212c;
+$color-dark-alt: #2b2c37;
+$color-grey-dark: #3e3f4e;
+$color-grey: #828fa3;
+$color-grey-light: #e4ebfa;
+
+// Light / White Colors
+$color-lightest: #f4f7fd;
+$color-white: #ffffff;
+
+// Accent Colors
+$color-red: #ea5555;
+$color-red-light: #ff9898;
+
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $color-dark;
+  color: $color-white;
+}
+
+button {
+  cursor: pointer;
+}
