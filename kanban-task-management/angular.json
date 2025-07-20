@@ -7,9 +7,11 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "scss",
           "skipTests": true,
-          "type": "component"
+          "type": "component",
+          "changeDetection": "OnPush",
+          "viewEncapsulation": "None",
+          "inlineStyle": true
         },
         "@schematics/angular:class": {
           "skipTests": true
@@ -48,14 +50,13 @@
           "options": {
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
-            "inlineStyleLanguage": "scss",
             "assets": [
               {
                 "glob": "**/*",
                 "input": "public"
               }
             ],
-            "styles": ["src/styles.scss"],
+            "styles": ["src/styles.css"],
             "server": "src/main.server.ts",
             "outputMode": "static"
           },

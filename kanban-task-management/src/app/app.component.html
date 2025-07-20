@@ -1,24 +1,25 @@
-<aside class="boards">
-  @for (board of boards.value(); track board.id) {
-    <button (click)="boardId.set(board.id)">{{ board.name }}</button>
-  }
-</aside>
+<div class="flex gap-8">
+  <aside class="flex mt-2 items-start gap-2 flex-col max-w-max">
+    @for (board of boards.value(); track board.id) {
+      <button class="outline" (click)="boardId.set(board.id)">{{ board.name }}</button>
+    }
+  </aside>
 
-<main class="columns">
-  @for (column of columns.value(); track column.id) {
-    <div class="column">
-      <p>{{ column.name }}</p>
-      @for (task of tasks.value(); track task.id) {
-        <div class="task">
-          <p>{{ task.title }}</p>
-        </div>
-      }
-    </div>
-  }
-  <!-- @empty {
-    <div class="empty">
-      <p>This board is empty. Create a new column to get started.</p>
-      <button>+ Add New Column</button>
-    </div>
-  } -->
-</main>
+  <main class="flex m-2 gap-4">
+    @for (column of columns.value(); track column.id) {
+      <div class="flex flex-col gap-4">
+        <p>{{ column.name }}</p>
+        @for (task of tasksByColumn()(column.id); track task.id) {
+          <div class="cursor-pointer outline p-2 rounded-sm">
+            <p>{{ task.title }}</p>
+          </div>
+        }
+      </div>
+    } @empty {
+      <div class="empty">
+        <p>This board is empty. Create a new column to get started.</p>
+        <button>+ Add New Column</button>
+      </div>
+    }
+  </main>
+</div>

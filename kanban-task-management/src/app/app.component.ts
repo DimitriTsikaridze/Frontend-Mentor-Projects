@@ -1,11 +1,22 @@
-import { Component, linkedSignal, inject, resource, computed } from "@angular/core";
+import {
+  Component,
+  linkedSignal,
+  inject,
+  resource,
+  computed,
+  ViewEncapsulation,
+  ChangeDetectionStrategy,
+} from "@angular/core";
 import { pocketbase } from "./app.config";
 import { BoardsRecord, ColumnsRecord, TasksRecord } from "../pocketbase-types";
+import { DragDropModule } from "@angular/cdk/drag-drop";
 
 @Component({
   selector: "app-root",
   templateUrl: "./app.component.html",
-  styleUrl: "./app.component.scss",
+  imports: [DragDropModule],
+  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class App {
   #pb = inject(pocketbase);
@@ -32,5 +43,10 @@ export class App {
         .join(" || ");
       return this.#pb.collection("tasks").getFullList({ filter });
     },
+  });
+
+  tasksByColumn = computed(() => {
+    const allTasks = this.tasks.value() ?? [];
+    return (columnId: string) => allTasks.filter((task) => task.column === columnId);
   });
 }

@@ -1,0 +1,21 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-primary: #635fc7;
+    --color-primary-light: #a8a4ff;
+    --color-dark: #20212c;
+    --color-dark-alt: #2b2c37;
+    --color-grey-dark: #3e3f4e;
+    --color-grey: #828fa3;
+    --color-grey-light: #e4ebfa;
+    --color-lightest: #f4f7fd;
+    --color-white: #ffffff;
+    --color-red: #ea5555;
+    --color-red-light: #ff9898;
+  }
+}
+
+button {
+  cursor: pointer;
+}
