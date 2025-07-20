@@ -40,17 +40,3 @@ testem.log
 # System files
 .DS_Store
 Thumbs.db
-
-
-*.sketch
-*.fig
-
-# Avoid accidental XD upload if you convert the design file
-###############################################
-## Please do not remove line 12 - thanks! 🙂 ##
-###############################################
-*.xd
-
-# Avoid your project being littered with annoying .DS_Store files!
-.DS_Store
-.prettierignore
