@@ -6,10 +6,13 @@ import {
   computed,
   ViewEncapsulation,
   ChangeDetectionStrategy,
+  signal,
 } from "@angular/core";
 import { pocketbase } from "./app.config";
 import { BoardsRecord, ColumnsRecord, TasksRecord } from "../pocketbase-types";
 import { DragDropModule } from "@angular/cdk/drag-drop";
+import { Dialog } from "@angular/cdk/dialog";
+import { TaskDetailsComponent } from "./task-details/task-details.component";
 
 @Component({
   selector: "app-root",
@@ -20,11 +23,13 @@ import { DragDropModule } from "@angular/cdk/drag-drop";
 })
 export class App {
   #pb = inject(pocketbase);
+  #dialog = inject(Dialog);
+
   boards = resource<BoardsRecord[], unknown>({
     loader: () => this.#pb.collection("boards").getFullList(),
   });
 
-  boardId = linkedSignal(() => this.boards.value()?.[0]?.id);
+  boardId = linkedSignal(() => this.boards.value()?.[2]?.id);
 
   columns = resource<ColumnsRecord[], unknown>({
     params: this.boardId,
@@ -49,4 +54,8 @@ export class App {
     const allTasks = this.tasks.value() ?? [];
     return (columnId: string) => allTasks.filter((task) => task.column === columnId);
   });
+
+  openTaskDetails(task: TasksRecord) {
+    this.#dialog.open(TaskDetailsComponent, { data: task, width: "480px" });
+  }
 }

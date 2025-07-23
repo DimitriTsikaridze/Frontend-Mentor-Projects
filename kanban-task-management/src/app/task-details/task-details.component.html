@@ -1,0 +1,23 @@
+<p class="text-2xl font-bold">{{ task.title }}</p>
+<p class="my-6">{{ task.description }}</p>
+@if (subtasks.hasValue()) {
+  <p class="font-bold mb-4">
+    Substasks ({{ completedSubtasks() }} out of {{ subtasks.value().length }})
+  </p>
+  <div class="grid gap-2">
+    @for (subtask of subtasks.value(); track subtask.id) {
+      <div class="flex items-center">
+        <input type="checkbox" [checked]="subtask.isCompleted" id="subtask-{{ subtask.id }}" />
+        <label for="subtask-{{ subtask.id }}">{{ subtask.title }}</label>
+      </div>
+    }
+  </div>
+}
+
+<label for="status">Current status</label>
+<select name="status" id="status" [value]="task.status">
+  <option value=""></option>
+  <option value="Doing">Doing</option>
+  <option value="Done">Done</option>
+  <option value="Todo">Todo</option>
+</select>
