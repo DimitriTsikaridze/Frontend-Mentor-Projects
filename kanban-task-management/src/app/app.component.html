@@ -1,7 +1,9 @@
 <app-header />
-<div class="flex">
-  <app-sidebar class="w-[300px]" />
-  <router-outlet />
+<div style="display: grid; grid-template-columns: 300px 1fr">
+  <app-sidebar />
+  <main>
+    <router-outlet />
+  </main>
 </div>
 <!-- <main class="flex m-2 gap-4">
     @for (column of columns.value(); track column.id) {

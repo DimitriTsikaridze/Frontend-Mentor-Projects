@@ -1,1 +1,36 @@
-<p>board-view works! {{ id() }}</p>
+@if (columnIds()?.length !== 0) {
+  <div class="grid grid-flow-col auto-cols-[280px] p-6 gap-6">
+    @for (column of columns.value(); track column.id) {
+      <div>
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-[15px] h-[15px] bg-[{{ colors[$index] }}] rounded-full"></div>
+          <p class="heading-s text-kb-medium-grey uppercase">{{ column.name }} (count)</p>
+        </div>
+        @for (task of tasks.value(); track task.id) {
+          @if (task.column === column.id) {
+            <button class="w-full py-6 px-4 bg-kb-dark-grey rounded-lg mb-5">
+              <p class="text-kb-white heading-m mb-2">{{ task.title }}</p>
+              <p>0 of 3 substasks</p>
+            </button>
+          }
+        }
+      </div>
+    }
+    <button
+      class="mt-[39px] rounded-lg flex items-center justify-center heading-xl bg-gradient-to-b from-[#2b2c3775] to-[#2b2c3721]"
+    >
+      + New Column
+    </button>
+  </div>
+} @else {
+  <div class="h-full flex items-center justify-center">
+    <div class="grid justify-items-center">
+      <p class="heading-l mb-8 text-white">
+        This board is empty. Create a new column to get started.
+      </p>
+      <button class="heading-m text-white bg-kb-purple rounded-full py-4 px-6">
+        + Add New Column
+      </button>
+    </div>
+  </div>
+}

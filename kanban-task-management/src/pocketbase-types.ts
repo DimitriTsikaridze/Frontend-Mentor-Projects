@@ -47,121 +47,96 @@ export type AuthSystemFields<T = unknown> = {
 
 export type AuthoriginsRecord = {
   collectionRef: string;
-  created?: IsoDateString;
   fingerprint: string;
   id: string;
   recordRef: string;
-  updated?: IsoDateString;
 };
 
 export type ExternalauthsRecord = {
   collectionRef: string;
-  created?: IsoDateString;
   id: string;
   provider: string;
   providerId: string;
   recordRef: string;
-  updated?: IsoDateString;
 };
 
 export type MfasRecord = {
   collectionRef: string;
-  created?: IsoDateString;
   id: string;
   method: string;
   recordRef: string;
-  updated?: IsoDateString;
 };
 
 export type OtpsRecord = {
   collectionRef: string;
-  created?: IsoDateString;
   id: string;
   password: string;
   recordRef: string;
   sentTo?: string;
-  updated?: IsoDateString;
 };
 
 export type SuperusersRecord = {
-  created?: IsoDateString;
   email: string;
   emailVisibility?: boolean;
   id: string;
   password: string;
   tokenKey: string;
-  updated?: IsoDateString;
   verified?: boolean;
 };
 
 export type BoardsRecord = {
-  created?: IsoDateString;
   id: string;
   name?: string;
-  updated?: IsoDateString;
 };
 
 export type ColumnsRecord = {
   board?: RecordIdString;
-  created?: IsoDateString;
   id: string;
   name?: string;
-  updated?: IsoDateString;
 };
 
 export type SubtasksRecord = {
-  created?: IsoDateString;
   id: string;
   isCompleted?: boolean;
   task?: RecordIdString;
   title?: string;
-  updated?: IsoDateString;
 };
 
 export type TasksRecord = {
   column?: RecordIdString;
-  created?: IsoDateString;
   description?: string;
   id: string;
   status?: string;
   title?: string;
-  updated?: IsoDateString;
 };
 
 export type UsersRecord = {
   avatar?: string;
-  created?: IsoDateString;
   email: string;
   emailVisibility?: boolean;
   id: string;
   name?: string;
   password: string;
   tokenKey: string;
-  updated?: IsoDateString;
   verified?: boolean;
 };
 
 // Response types include system fields and match responses from the PocketBase API
-export type AuthoriginsResponse<Texpand = unknown> =
-  Required<AuthoriginsRecord> & BaseSystemFields<Texpand>;
-export type ExternalauthsResponse<Texpand = unknown> =
-  Required<ExternalauthsRecord> & BaseSystemFields<Texpand>;
-export type MfasResponse<Texpand = unknown> = Required<MfasRecord> &
+export type AuthoriginsResponse<Texpand = unknown> = Required<AuthoriginsRecord> &
   BaseSystemFields<Texpand>;
-export type OtpsResponse<Texpand = unknown> = Required<OtpsRecord> &
+export type ExternalauthsResponse<Texpand = unknown> = Required<ExternalauthsRecord> &
   BaseSystemFields<Texpand>;
+export type MfasResponse<Texpand = unknown> = Required<MfasRecord> & BaseSystemFields<Texpand>;
+export type OtpsResponse<Texpand = unknown> = Required<OtpsRecord> & BaseSystemFields<Texpand>;
 export type SuperusersResponse<Texpand = unknown> = Required<SuperusersRecord> &
   AuthSystemFields<Texpand>;
-export type BoardsResponse<Texpand = unknown> = Required<BoardsRecord> &
-  BaseSystemFields<Texpand>;
+export type BoardsResponse<Texpand = unknown> = Required<BoardsRecord> & BaseSystemFields<Texpand>;
 export type ColumnsResponse<Texpand = unknown> = Required<ColumnsRecord> &
   BaseSystemFields<Texpand>;
 export type SubtasksResponse<Texpand = unknown> = Required<SubtasksRecord> &
   BaseSystemFields<Texpand>;
-export type TasksResponse<Texpand = unknown> = Required<TasksRecord> &
-  BaseSystemFields<Texpand>;
-export type UsersResponse<Texpand = unknown> = Required<UsersRecord> &
-  AuthSystemFields<Texpand>;
+export type TasksResponse<Texpand = unknown> = Required<TasksRecord> & BaseSystemFields<Texpand>;
+export type UsersResponse<Texpand = unknown> = Required<UsersRecord> & AuthSystemFields<Texpand>;
 
 // Types containing all Records and Responses, useful for creating typing helper functions
 
