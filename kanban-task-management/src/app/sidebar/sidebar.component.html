@@ -1,8 +1,4 @@
-<a class="inline-block pl-8" routerLink="/">
-  <img src="logo-light.svg" alt="Logo" />
-</a>
-
-<p class="pl-8 pb-5 pt-14">ALL BOARDS ({{ kanbanService.boards.value()?.length }})</p>
+<p class="pl-8 pb-5">ALL BOARDS ({{ kanbanService.boards.value()?.length }})</p>
 
 @for (board of kanbanService.boards.value(); track board.id) {
   <a

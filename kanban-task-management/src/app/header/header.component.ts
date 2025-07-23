@@ -3,7 +3,7 @@ import { ChangeDetectionStrategy, Component, ViewEncapsulation } from "@angular/
 @Component({
   selector: "app-header",
   imports: [],
-  host: { class: "border-b border-r-kb-lines-dark w-full" },
+  host: { class: "border-b border-b-kb-lines-dark w-full bg-kb-dark-grey flex items-center h-24" },
   templateUrl: "./header.component.html",
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
