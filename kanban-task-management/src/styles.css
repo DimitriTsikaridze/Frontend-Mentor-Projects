@@ -1,20 +1,82 @@
 @import "tailwindcss";
 
-@layer base {
-  :root {
-    --color-primary: #635fc7;
-    --color-primary-light: #a8a4ff;
-    --color-dark: #20212c;
-    --color-dark-alt: #2b2c37;
-    --color-grey-dark: #3e3f4e;
-    --color-grey: #828fa3;
-    --color-grey-light: #e4ebfa;
-    --color-lightest: #f4f7fd;
-    --color-white: #ffffff;
-    --color-red: #ea5555;
-    --color-red-light: #ff9898;
-  }
+@theme {
+  --color-kb-black: #000112;
+  --color-kb-dark-bg: #20212c;
+  --color-kb-dark-grey: #2b2c37;
+  --color-kb-lines-dark: #3e3f4e;
+  --color-kb-medium-grey: #828fa3;
+  --color-kb-lines-light: #e4ebfa;
+  --color-kb-light-bg: #f4f7fd;
+  --color-kb-white: #ffffff;
+  --color-kb-purple: #635fc7;
+  --color-kb-purple-hover: #a8a4ff;
+  --color-kb-red: #ea5555;
+  --color-kb-red-hover: #ff9898;
+
+  /* Typography - Font Sizes */
+  --font-size-heading-xl: 24px;
+  --font-size-heading-l: 18px;
+  --font-size-heading-m: 15px;
+  --font-size-heading-s: 12px;
+  --font-size-body-l: 13px;
+  --font-size-body-m: 12px;
+
+  /* Typography - Line Heights */
+  --line-height-heading-xl: 30px;
+  --line-height-heading-l: 23px;
+  --line-height-heading-m: 19px;
+  --line-height-heading-s: 15px;
+  --line-height-body-l: 23px;
+  --line-height-body-m: 15px;
+
+  /* Typography - Letter Spacing */
+  --letter-spacing-heading-s: 2.4px;
 }
+.heading-xl {
+  font-family: var(--font-family-jakarta);
+  font-size: var(--font-size-heading-xl);
+  line-height: var(--line-height-heading-xl);
+  font-weight: 700; /* Bold */
+}
+
+.heading-l {
+  font-family: var(--font-family-jakarta);
+  font-size: var(--font-size-heading-l);
+  line-height: var(--line-height-heading-l);
+  font-weight: 700; /* Bold */
+}
+
+.heading-m {
+  font-family: var(--font-family-jakarta);
+  font-size: var(--font-size-heading-m);
+  line-height: var(--line-height-heading-m);
+  font-weight: 700; /* Bold */
+}
+
+.heading-s {
+  font-family: var(--font-family-jakarta);
+  font-size: var(--font-size-heading-s);
+  line-height: var(--line-height-heading-s);
+  font-weight: 700; /* Bold */
+  letter-spacing: var(--letter-spacing-heading-s);
+}
+
+.body-l {
+  font-family: var(--font-family-jakarta);
+  font-size: var(--font-size-body-l);
+  line-height: var(--line-height-body-l);
+  font-weight: 500; /* Medium */
+}
+
+.body-m {
+  font-family: var(--font-family-jakarta);
+  font-size: var(--font-size-body-m);
+  line-height: var(--line-height-body-m);
+  font-weight: 700; /* Bold */
+}
+
+/* Typography Classes */
 
 button {
   cursor: pointer;

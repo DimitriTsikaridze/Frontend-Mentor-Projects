@@ -5,7 +5,7 @@ import {
   provideZonelessChangeDetection,
 } from "@angular/core";
 import { provideClientHydration, withEventReplay } from "@angular/platform-browser";
-import { provideRouter } from "@angular/router";
+import { provideRouter, withComponentInputBinding } from "@angular/router";
 import { routes } from "./app.routes";
 import { provideHttpClient, withFetch } from "@angular/common/http";
 import Pocketbase from "pocketbase";
@@ -21,6 +21,6 @@ export const appConfig: ApplicationConfig = {
     provideZonelessChangeDetection(),
     provideClientHydration(withEventReplay()),
     provideHttpClient(withFetch()),
-    provideRouter(routes),
+    provideRouter(routes, withComponentInputBinding()),
   ],
 };

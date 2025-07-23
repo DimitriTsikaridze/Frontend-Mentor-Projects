@@ -1,18 +1,7 @@
 <div class="flex gap-8">
-  <aside class="flex mt-2 items-start gap-2 flex-col max-w-max">
-    @for (board of boards.value(); track board.id) {
-      <button
-        [class.bg-blue-400]="boardId() === board.id"
-        class="outline bg-blue-400"
-        (click)="boardId.set(board.id)"
-      >
-        {{ board.name }}
-      </button>
-    }
-    <button>+ Create New Board</button>
-  </aside>
-
-  <main class="flex m-2 gap-4">
+  <app-sidebar />
+  <router-outlet />
+  <!-- <main class="flex m-2 gap-4">
     @for (column of columns.value(); track column.id) {
       <div class="flex flex-col gap-4">
         <p>{{ column.name }}</p>
@@ -33,5 +22,5 @@
         <button>+ New Column</button>
       </div>
     }
-  </main>
+  </main> -->
 </div>
