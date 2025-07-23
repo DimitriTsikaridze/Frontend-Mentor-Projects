@@ -9,6 +9,7 @@ import {
 } from "@angular/core";
 import { pocketbase } from "../app.config";
 import { SubtasksRecord, TasksRecord } from "../../pocketbase-types";
+import { CheckboxComponent } from "../board-view/checkbox/checkbox.component";
 
 @Component({
   selector: "app-task-details",
@@ -16,6 +17,7 @@ import { SubtasksRecord, TasksRecord } from "../../pocketbase-types";
   encapsulation: ViewEncapsulation.None,
   host: { class: "" },
   changeDetection: ChangeDetectionStrategy.OnPush,
+  imports: [CheckboxComponent],
 })
 export class TaskDetailsComponent {
   #pb = inject(pocketbase);
@@ -27,4 +29,8 @@ export class TaskDetailsComponent {
   });
 
   completedSubtasks = computed(() => this.subtasks.value()?.filter((t) => t.isCompleted).length);
+
+  updateSubtask(isCompleted: boolean, subtaskId: string) {
+    this.#pb.collection("subtasks").update(subtaskId, { isCompleted });
+  }
 }

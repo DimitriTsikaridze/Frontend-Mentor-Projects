@@ -1,16 +1,15 @@
-import { inject } from "@angular/core";
 import { RenderMode, ServerRoute } from "@angular/ssr";
-import { KanbanService } from "./kanban.service";
 
 export const serverRoutes: ServerRoute[] = [
   {
-    path: "**",
-    renderMode: RenderMode.Client,
-    // getPrerenderParams: async () => {
-    //   const kanbanService = inject(KanbanService);
-    //   const boardIds = kanbanService.boards.value();
-    //   if (!boardIds) return [];
-    //   return boardIds.map((board) => ({ id: board.id.toString() }));
-    // },
+    path: "board/:userId",
+    renderMode: RenderMode.Prerender,
+    getPrerenderParams: async () => {
+      return Promise.resolve([
+        { id: "pbc_3304927325" },
+        { id: "v6f6t0xvcjynxyu" },
+        { id: "ynq90l2kvqjbsla" },
+      ]);
+    },
   },
 ];

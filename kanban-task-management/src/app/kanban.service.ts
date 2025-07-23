@@ -12,5 +12,5 @@ export class KanbanService {
     loader: () => this.#pb.collection("boards").getFullList(),
   });
 
-  activeBoardId = linkedSignal(() => this.boards.value()?.[2]?.id);
+  activeBoard = linkedSignal(() => this.boards.value()?.[2]);
 }

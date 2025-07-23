@@ -1,23 +1,41 @@
-<p class="text-2xl font-bold">{{ task.title }}</p>
+<div class="flex items-center justify-between gap-6">
+  <p class="text-white heading-l">{{ task.title }}</p>
+  <button>
+    <img src="icon-vertical-ellipsis.svg" alt="More Button" />
+  </button>
+</div>
 <p class="my-6">{{ task.description }}</p>
 @if (subtasks.hasValue()) {
-  <p class="font-bold mb-4">
+  <p class="text-white mb-4">
     Substasks ({{ completedSubtasks() }} out of {{ subtasks.value().length }})
   </p>
   <div class="grid gap-2">
     @for (subtask of subtasks.value(); track subtask.id) {
-      <div class="flex items-center">
-        <input type="checkbox" [checked]="subtask.isCompleted" id="subtask-{{ subtask.id }}" />
-        <label for="subtask-{{ subtask.id }}">{{ subtask.title }}</label>
+      <div class="flex gap-4 items-center bg-kb-dark-bg p-3 rounded-md">
+        <app-checkbox
+          [checked]="subtask.isCompleted"
+          (checkedChange)="updateSubtask($event, subtask.id); subtask.isCompleted = $event"
+          id="subtask-{{ subtask.id }}"
+        />
+
+        <label
+          class="text-white w-full cursor-pointer"
+          for="subtask-{{ subtask.id }}"
+          [class]="subtask.isCompleted ? 'line-through opacity-50' : ''"
+        >
+          {{ subtask.title }}
+        </label>
       </div>
     }
   </div>
 }
 
-<label for="status">Current status</label>
-<select name="status" id="status" [value]="task.status">
-  <option value=""></option>
-  <option value="Doing">Doing</option>
-  <option value="Done">Done</option>
-  <option value="Todo">Todo</option>
-</select>
+<div class="flex flex-col mt-6">
+  <label for="status" class="text-white">Current status</label>
+  <select name="status" id="status" [value]="task.status">
+    <option value=""></option>
+    <option value="Doing">Doing</option>
+    <option value="Done">Done</option>
+    <option value="Todo">Todo</option>
+  </select>
+</div>

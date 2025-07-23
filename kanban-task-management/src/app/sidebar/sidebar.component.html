@@ -5,7 +5,7 @@
     [routerLink]="['board', board.id]"
     routerLinkActive="bg-kb-purple text-kb-white"
     class="py-3.5 cursor-pointer flex items-center gap-4 heading-m w-full rounded-r-full pl-8"
-    (click)="kanbanService.activeBoardId.set(board.id)"
+    (click)="kanbanService.activeBoard.set(board)"
   >
     <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg" class="fill-current">
       <path

@@ -2,7 +2,6 @@ import {
   ChangeDetectionStrategy,
   Component,
   computed,
-  effect,
   inject,
   input,
   resource,
@@ -10,10 +9,11 @@ import {
 } from "@angular/core";
 import { ColumnsRecord, TasksRecord } from "../../pocketbase-types";
 import { pocketbase } from "../app.config";
+import { Dialog } from "@angular/cdk/dialog";
+import { TaskDetailsComponent } from "../task-details/task-details.component";
 
 @Component({
   selector: "app-board-view",
-  imports: [],
   templateUrl: "./board-view.component.html",
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -21,6 +21,8 @@ import { pocketbase } from "../app.config";
 export default class BoardViewComponent {
   colors = ["#49C4E5", "#8471F2", "#67E2AE"];
   #pb = inject(pocketbase);
+  #dialog = inject(Dialog);
+
   id = input.required<string>();
   columns = resource<ColumnsRecord[], unknown>({
     params: this.id,
@@ -40,7 +42,12 @@ export default class BoardViewComponent {
     },
   });
 
-  constructor() {
-    effect(() => console.log(this.tasks.value()));
+  openTaskDetails(task: TasksRecord) {
+    this.#dialog.open(TaskDetailsComponent, {
+      data: task,
+      width: "480px",
+      autoFocus: false,
+      panelClass: ["bg-kb-dark-grey", "rounded-lg", "p-8"],
+    });
   }
 }
