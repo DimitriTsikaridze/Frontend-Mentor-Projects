@@ -1,4 +1,10 @@
-import { ChangeDetectionStrategy, Component, inject, ViewEncapsulation } from "@angular/core";
+import {
+  ChangeDetectionStrategy,
+  Component,
+  inject,
+  output,
+  ViewEncapsulation,
+} from "@angular/core";
 import { KanbanService } from "../kanban.service";
 import { RouterLink, RouterLinkActive } from "@angular/router";
 
@@ -15,4 +21,5 @@ import { RouterLink, RouterLinkActive } from "@angular/router";
 })
 export class SidebarComponent {
   kanbanService = inject(KanbanService);
+  showSidebar = output<boolean>();
 }

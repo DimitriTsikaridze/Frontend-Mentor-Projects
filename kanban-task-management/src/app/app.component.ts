@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation, ChangeDetectionStrategy } from "@angular/core";
+import { Component, ViewEncapsulation, ChangeDetectionStrategy, signal } from "@angular/core";
 import { SidebarComponent } from "./sidebar/sidebar.component";
 import { RouterOutlet } from "@angular/router";
 import { HeaderComponent } from "./header/header.component";
@@ -10,4 +10,6 @@ import { HeaderComponent } from "./header/header.component";
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class App {}
+export class App {
+  showSidebar = signal<boolean>(true);
+}

@@ -1,7 +1,21 @@
 <app-header />
-<div style="display: grid; grid-template-columns: 300px 1fr">
-  <app-sidebar />
+<div
+  class="grid transition-all duration-300 ease-in-out"
+  [style.grid-template-columns]="showSidebar() ? '300px 1fr' : '0px 1fr'"
+>
+  <div class="overflow-hidden text-nowrap shadow-[0px_-1px_0_0_#2b2c37]">
+    <app-sidebar (showSidebar)="showSidebar.set($event)" />
+  </div>
+
   <main>
     <router-outlet />
   </main>
 </div>
+@if (!showSidebar()) {
+  <button
+    (click)="showSidebar.set(true)"
+    class="z-1 rounded-r-full bg-kb-purple flex items-center justify-center h-14 w-12 absolute bottom-8 left-0"
+  >
+    <img src="icon-show-sidebar.svg" alt="Show Sidebar" />
+  </button>
+}
