@@ -3,6 +3,7 @@ import {
   ChangeDetectionStrategy,
   Component,
   computed,
+  effect,
   inject,
   resource,
   ViewEncapsulation,
@@ -31,6 +32,11 @@ export class TaskDetailsComponent {
   completedSubtasks = computed(() => this.subtasks.value()?.filter((t) => t.isCompleted).length);
 
   updateSubtask(isCompleted: boolean, subtaskId: string) {
+    this.subtasks.value.update((subtasks) => {
+      return subtasks.map((subtask) =>
+        subtask.id === subtaskId ? { ...subtask, isCompleted } : subtask,
+      );
+    });
     this.#pb.collection("subtasks").update(subtaskId, { isCompleted });
   }
 }

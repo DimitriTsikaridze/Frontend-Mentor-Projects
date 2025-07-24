@@ -11,10 +11,12 @@ import { ColumnsRecord, TasksRecord } from "../../pocketbase-types";
 import { pocketbase } from "../app.config";
 import { Dialog } from "@angular/cdk/dialog";
 import { TaskDetailsComponent } from "../task-details/task-details.component";
+import { CdkDragDrop, DragDropModule, moveItemInArray } from "@angular/cdk/drag-drop";
 
 @Component({
   selector: "app-board-view",
   templateUrl: "./board-view.component.html",
+  imports: [DragDropModule],
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
@@ -42,6 +44,15 @@ export default class BoardViewComponent {
     },
   });
 
+  taskCounts = computed(() => {
+    const counts = new Map<string, number>();
+    for (const task of this.tasks.value() ?? []) {
+      const col = task.column;
+      counts.set(col, (counts.get(col) ?? 0) + 1);
+    }
+    return counts;
+  });
+
   openTaskDetails(task: TasksRecord) {
     this.#dialog.open(TaskDetailsComponent, {
       data: task,
@@ -49,5 +60,15 @@ export default class BoardViewComponent {
       autoFocus: false,
       panelClass: ["bg-kb-dark-grey", "rounded-lg", "p-8"],
     });
+  }
+
+  drop(event: CdkDragDrop<string>) {
+    const tasksByColumn = this.tasks.value().filter((task) => task.column === event.container.data);
+    console.log(tasksByColumn);
+    if (event.previousContainer === event.container) {
+      moveItemInArray(tasksByColumn, event.previousIndex, event.currentIndex);
+    } else {
+      moveItemInArray(tasksByColumn, event.previousIndex, event.currentIndex);
+    }
   }
 }

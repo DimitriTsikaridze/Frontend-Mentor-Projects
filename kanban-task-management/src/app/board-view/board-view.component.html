@@ -1,17 +1,20 @@
 @if (columnIds()?.length !== 0) {
-  <div class="grid grid-flow-col auto-cols-[280px] p-6 gap-6">
+  <div cdkDropListGroup class="grid grid-flow-col auto-cols-[280px] p-6 gap-6">
     @for (column of columns.value(); track column.id) {
-      <div>
+      <div cdkDropList (cdkDropListDropped)="drop($event)" [cdkDropListData]="column.id">
         <div class="flex items-center gap-3 mb-6">
           <div
             [style.background-color]="colors[$index]"
             class="w-[15px] h-[15px] rounded-full"
           ></div>
-          <p class="heading-s text-kb-medium-grey uppercase">{{ column.name }} (count)</p>
+          <p class="heading-s text-kb-medium-grey uppercase">
+            {{ column.name }} ({{ taskCounts().get(column.id) ?? 0 }})
+          </p>
         </div>
         @for (task of tasks.value(); track task.id) {
           @if (task.column === column.id) {
             <button
+              cdkDrag
               (click)="openTaskDetails(task)"
               class="w-full py-6 px-4 bg-kb-dark-grey rounded-lg mb-5"
             >
