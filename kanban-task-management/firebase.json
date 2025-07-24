@@ -1,0 +1,13 @@
+{
+  "hosting": {
+    "site": "kanban-task-management-fe",
+    "public": "dist/kanban-task-management/browser/",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.csr.html"
+      }
+    ]
+  }
+}
