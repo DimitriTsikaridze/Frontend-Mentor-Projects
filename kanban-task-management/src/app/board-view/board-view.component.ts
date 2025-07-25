@@ -17,7 +17,34 @@ import { CdkDragDrop, DragDropModule, moveItemInArray } from "@angular/cdk/drag-
   selector: "app-board-view",
   templateUrl: "./board-view.component.html",
   imports: [DragDropModule],
-  encapsulation: ViewEncapsulation.None,
+  styles: `
+    .cdk-drag-preview {
+      background-color: var(--color-kb-dark-grey);
+      padding-inline: 16px;
+      box-shadow:
+        0 5px 5px -3px rgba(0, 0, 0, 0.2),
+        0 8px 10px 1px rgba(0, 0, 0, 0.14),
+        0 3px 14px 2px rgba(0, 0, 0, 0.12);
+    }
+
+    .cdk-drag-placeholder {
+      opacity: 0;
+    }
+
+    .cdk-drag-animating {
+      transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+    }
+    .example-box:last-child {
+      border: none;
+    }
+
+    .cdk-drop-list-dragging .example-box:not(.cdk-drag-placeholder) {
+      transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+    }
+    .cdk-drag-placeholder {
+    }
+  `,
+  encapsulation: ViewEncapsulation.Emulated,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export default class BoardViewComponent {
@@ -62,13 +89,12 @@ export default class BoardViewComponent {
     });
   }
 
-  drop(event: CdkDragDrop<string>) {
-    const tasksByColumn = this.tasks.value().filter((task) => task.column === event.container.data);
-    console.log(tasksByColumn);
-    if (event.previousContainer === event.container) {
-      moveItemInArray(tasksByColumn, event.previousIndex, event.currentIndex);
-    } else {
-      moveItemInArray(tasksByColumn, event.previousIndex, event.currentIndex);
+  drop(e: CdkDragDrop<string>) {
+    if (e.previousContainer === e.container) {
+      const allTasks = [...(this.tasks.value() || [])];
+      const columnTasks = allTasks.filter((task) => task.column === e.container.data);
+      moveItemInArray(columnTasks, e.previousIndex, e.currentIndex);
+      this.tasks.set(allTasks);
     }
   }
 }
