@@ -1,38 +1,34 @@
 <div class="flex items-center justify-between gap-6">
-  <p class="text-white heading-l">{{ task.title }}</p>
+  <p class="text-white heading-l">{{ dialogData.task.title }}</p>
   <button>
     <img src="icon-vertical-ellipsis.svg" alt="More Button" />
   </button>
 </div>
-<p class="my-6">{{ task.description }}</p>
-@if (subtasks.hasValue()) {
-  <p class="text-white mb-4">
-    Substasks ({{ completedSubtasks() }} out of {{ subtasks.value().length }})
-  </p>
-  <div class="grid gap-2">
-    @for (subtask of subtasks.value(); track subtask.id) {
-      <div class="flex gap-4 items-center bg-kb-dark-bg p-3 rounded-md">
-        <app-checkbox
-          [checked]="subtask.isCompleted"
-          (checkedChange)="updateSubtask($event, subtask.id); subtask.isCompleted = $event"
-          id="subtask-{{ subtask.id }}"
-        />
+<p class="my-6">{{ dialogData.task.description }}</p>
+<p class="text-white mb-4">Substasks ({{ completedSubtask() }} out of {{ subtasks().length }})</p>
+<div class="grid gap-2">
+  @for (subtask of dialogData.subtasks; track subtask.id) {
+    <div class="focus-within:outline-1 flex gap-4 items-center bg-kb-dark-bg p-3 rounded-md">
+      <app-checkbox
+        [checked]="subtask.isCompleted"
+        (checkedChange)="updateSubtask($event, subtask.id); subtask.isCompleted = $event"
+        id="subtask-{{ subtask.id }}"
+      />
 
-        <label
-          class="text-white w-full cursor-pointer"
-          for="subtask-{{ subtask.id }}"
-          [class]="subtask.isCompleted ? 'line-through opacity-50' : ''"
-        >
-          {{ subtask.title }}
-        </label>
-      </div>
-    }
-  </div>
-}
+      <label
+        class="text-white w-full cursor-pointer"
+        for="subtask-{{ subtask.id }}"
+        [class]="subtask.isCompleted ? 'line-through opacity-50' : ''"
+      >
+        {{ subtask.title }}
+      </label>
+    </div>
+  }
+</div>
 
 <div class="flex flex-col mt-6">
   <label for="status" class="text-white">Current status</label>
-  <select name="status" id="status" [value]="task.status">
+  <select name="status" id="status" [value]="dialogData.task.status">
     <option value=""></option>
     <option value="Doing">Doing</option>
     <option value="Done">Done</option>

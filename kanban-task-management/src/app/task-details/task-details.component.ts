@@ -3,9 +3,9 @@ import {
   ChangeDetectionStrategy,
   Component,
   computed,
-  effect,
   inject,
-  resource,
+  output,
+  signal,
   ViewEncapsulation,
 } from "@angular/core";
 import { pocketbase } from "../app.config";
@@ -16,27 +16,28 @@ import { CheckboxComponent } from "../board-view/checkbox/checkbox.component";
   selector: "app-task-details",
   templateUrl: "./task-details.component.html",
   encapsulation: ViewEncapsulation.None,
-  host: { class: "" },
   changeDetection: ChangeDetectionStrategy.OnPush,
   imports: [CheckboxComponent],
 })
 export class TaskDetailsComponent {
   #pb = inject(pocketbase);
-  task: TasksRecord = inject(DIALOG_DATA);
-
-  subtasks = resource<SubtasksRecord[], unknown>({
-    loader: () =>
-      this.#pb.collection("subtasks").getFullList({ filter: `task = "${this.task.id}"` }),
-  });
-
-  completedSubtasks = computed(() => this.subtasks.value()?.filter((t) => t.isCompleted).length);
+  dialogData: { task: TasksRecord; subtasks: SubtasksRecord[] } = inject(DIALOG_DATA);
+  update = output<{ subtaskId: string; isCompleted: boolean }>();
+  subtasks = signal(this.dialogData.subtasks);
+  completedSubtask = computed(
+    () => this.subtasks().filter(({ isCompleted }) => isCompleted).length,
+  );
 
   updateSubtask(isCompleted: boolean, subtaskId: string) {
-    this.subtasks.value.update((subtasks) => {
+    this.subtasks.update((subtasks) => {
       return subtasks.map((subtask) =>
         subtask.id === subtaskId ? { ...subtask, isCompleted } : subtask,
       );
     });
-    this.#pb.collection("subtasks").update(subtaskId, { isCompleted });
+
+    this.#pb
+      .collection("subtasks")
+      .update(subtaskId, { isCompleted })
+      .then(() => this.update.emit({ subtaskId, isCompleted }));
   }
 }

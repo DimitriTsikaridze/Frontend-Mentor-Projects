@@ -19,7 +19,9 @@
               class="example-box w-full text-start py-6 px-4 bg-kb-dark-grey rounded-lg mb-5"
             >
               <p class="text-kb-white heading-m mb-2">{{ task.title }}</p>
-              <p>0 of 3 substasks</p>
+              @if (subtasksCount()?.get(task.id); as subtaskStats) {
+                <p>{{ subtaskStats.completed }} of {{ subtaskStats.subtaskCount }} substasks</p>
+              }
             </button>
           }
         }
