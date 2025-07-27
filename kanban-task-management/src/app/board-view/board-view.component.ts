@@ -56,6 +56,11 @@ export default class BoardViewComponent {
       this.#pb.collection<ColumnsRecord>("columns").getFullList({ filter: `board = "${params}"` }),
   });
 
+  columnNames = computed(() => {
+    if (!this.columns.hasValue()) return undefined;
+    return this.columns.value().map((column) => column.name);
+  });
+
   columnIds = computed(() =>
     this.columns.hasValue() ? this.columns.value().map(({ id }) => id) : undefined,
   );
@@ -109,9 +114,8 @@ export default class BoardViewComponent {
   openTaskDetails(task: TasksRecord) {
     if (!this.subtasks.hasValue()) return;
     const subtasks = this.subtasks.value().filter((subtask) => subtask.task === task.id);
-
     const dialogRef = this.#dialog.open(TaskDetailsComponent, {
-      data: { task, subtasks },
+      data: { task, subtasks, columnNames: this.columnNames() },
       width: "480px",
       autoFocus: false,
       panelClass: ["bg-kb-dark-grey", "rounded-lg", "p-8"],

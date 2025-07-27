@@ -14,7 +14,7 @@
     >
       <app-checkbox
         [checked]="subtask.isCompleted"
-        (checkedChange)="updateSubtask($event, subtask.id)"
+        (checkedChange)="toggleCompleted($event, subtask.id)"
         id="subtask-{{ subtask.id }}"
       />
 
@@ -28,4 +28,9 @@
   }
 </div>
 
-<app-dropdown selectedOption="Todo" label="Current Status" [options]="['Todo', 'Doing', 'Done']" />
+<app-dropdown
+  (selectedOptionChange)="updateStatus($event)"
+  [selectedOption]="dialogData.task.status"
+  label="Current Status"
+  [options]="dialogData.columnNames"
+/>

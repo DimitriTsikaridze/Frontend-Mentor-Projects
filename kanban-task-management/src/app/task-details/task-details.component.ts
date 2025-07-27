@@ -22,14 +22,15 @@ import { DropdownComponent } from "../board-view/dropdown/dropdown.component";
 })
 export class TaskDetailsComponent {
   #pb = inject(pocketbase);
-  dialogData: { task: TasksRecord; subtasks: SubtasksRecord[] } = inject(DIALOG_DATA);
+  dialogData: { task: TasksRecord; subtasks: SubtasksRecord[]; columnNames: string[] } =
+    inject(DIALOG_DATA);
   update = output<{ subtaskId: string; isCompleted: boolean }>();
   subtasks = signal(this.dialogData.subtasks);
   completedSubtask = computed(
     () => this.subtasks().filter(({ isCompleted }) => isCompleted).length,
   );
 
-  updateSubtask(isCompleted: boolean, subtaskId: string) {
+  toggleCompleted(isCompleted: boolean, subtaskId: string) {
     this.subtasks.update((subtasks) => {
       return subtasks.map((subtask) =>
         subtask.id === subtaskId ? { ...subtask, isCompleted } : subtask,
@@ -40,5 +41,9 @@ export class TaskDetailsComponent {
       .collection("subtasks")
       .update(subtaskId, { isCompleted })
       .then(() => this.update.emit({ subtaskId, isCompleted }));
+  }
+
+  updateStatus(status: string) {
+    this.#pb.collection("tasks").update(this.dialogData.task.id, {});
   }
 }
