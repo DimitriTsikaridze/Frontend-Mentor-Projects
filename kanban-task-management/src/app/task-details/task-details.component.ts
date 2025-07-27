@@ -11,13 +11,14 @@ import {
 import { pocketbase } from "../app.config";
 import { SubtasksRecord, TasksRecord } from "../../pocketbase-types";
 import { CheckboxComponent } from "../board-view/checkbox/checkbox.component";
+import { DropdownComponent } from "../board-view/dropdown/dropdown.component";
 
 @Component({
   selector: "app-task-details",
   templateUrl: "./task-details.component.html",
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [CheckboxComponent],
+  imports: [CheckboxComponent, DropdownComponent],
 })
 export class TaskDetailsComponent {
   #pb = inject(pocketbase);

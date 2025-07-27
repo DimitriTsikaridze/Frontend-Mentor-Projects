@@ -107,6 +107,7 @@ export default class BoardViewComponent {
   });
 
   openTaskDetails(task: TasksRecord) {
+    if (!this.subtasks.hasValue()) return;
     const subtasks = this.subtasks.value().filter((subtask) => subtask.task === task.id);
 
     const dialogRef = this.#dialog.open(TaskDetailsComponent, {

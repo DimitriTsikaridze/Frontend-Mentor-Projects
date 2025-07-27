@@ -6,32 +6,26 @@
 </div>
 <p class="my-6">{{ dialogData.task.description }}</p>
 <p class="text-white mb-4">Substasks ({{ completedSubtask() }} out of {{ subtasks().length }})</p>
-<div class="grid gap-2">
+<div class="grid gap-2 mb-6">
   @for (subtask of dialogData.subtasks; track subtask.id) {
-    <div class="focus-within:outline-1 flex gap-4 items-center bg-kb-dark-bg p-3 rounded-md">
+    <label
+      class="hover:bg-kb-purple/25 transition-all duration-200 ease-in focus-within:outline-1 flex gap-4 items-center bg-kb-dark-bg p-3 rounded-md cursor-pointer"
+      for="subtask-{{ subtask.id }}"
+    >
       <app-checkbox
         [checked]="subtask.isCompleted"
-        (checkedChange)="updateSubtask($event, subtask.id); subtask.isCompleted = $event"
+        (checkedChange)="updateSubtask($event, subtask.id)"
         id="subtask-{{ subtask.id }}"
       />
 
-      <label
-        class="text-white w-full cursor-pointer"
-        for="subtask-{{ subtask.id }}"
+      <span
+        class="text-white w-full"
         [class]="subtask.isCompleted ? 'line-through opacity-50' : ''"
       >
         {{ subtask.title }}
-      </label>
-    </div>
+      </span>
+    </label>
   }
 </div>
 
-<div class="flex flex-col mt-6">
-  <label for="status" class="text-white">Current status</label>
-  <select name="status" id="status" [value]="dialogData.task.status">
-    <option value=""></option>
-    <option value="Doing">Doing</option>
-    <option value="Done">Done</option>
-    <option value="Todo">Todo</option>
-  </select>
-</div>
+<app-dropdown selectedOption="Todo" label="Current Status" [options]="['Todo', 'Doing', 'Done']" />

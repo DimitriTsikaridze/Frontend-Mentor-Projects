@@ -1,0 +1,25 @@
+<p class="text-white mb-2">{{ label() }}</p>
+<button
+  class="flex mb-2 items-center w-full py-2 px-4 border border-kb-medium-grey/25 rounded-sm"
+  [class.border-kb-purple]="isOpen()"
+  (click)="isOpen.set(!isOpen())"
+>
+  {{ selectedOption() }}
+  <img class="ml-auto" src="icon-chevron-{{ isOpen() ? 'up' : 'down' }}.svg" alt="Chevron Icon" />
+</button>
+
+@if (isOpen()) {
+  <div
+    (clickOutside)="this.isOpen.set(false)"
+    class="absolute top-[60px] w-full bg-kb-dark-bg rounded-lg flex flex-col gap-2 py-2"
+  >
+    @for (option of options(); track $index) {
+      <button
+        (click)="selectedOption.set(option); isOpen.set(false)"
+        class="hover:bg-kb-dark-grey px-4 py-2 text-left outline-kb-lines-dark"
+      >
+        {{ option }}
+      </button>
+    }
+  </div>
+}
