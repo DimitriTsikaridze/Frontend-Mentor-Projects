@@ -11,7 +11,7 @@ import { ColumnsRecord, SubtasksRecord, TasksRecord } from "../../pocketbase-typ
 import { pocketbase } from "../app.config";
 import { Dialog } from "@angular/cdk/dialog";
 import { TaskDetailsComponent } from "../task-details/task-details.component";
-import { CdkDragDrop, DragDropModule } from "@angular/cdk/drag-drop";
+import { CdkDragDrop, DragDropModule, transferArrayItem } from "@angular/cdk/drag-drop";
 
 @Component({
   selector: "app-board-view",
@@ -54,11 +54,6 @@ export default class BoardViewComponent {
     params: this.id,
     loader: ({ params }) =>
       this.#pb.collection<ColumnsRecord>("columns").getFullList({ filter: `board = "${params}"` }),
-  });
-
-  columnNames = computed(() => {
-    if (!this.columns.hasValue()) return undefined;
-    return this.columns.value().map((column) => column.name);
   });
 
   columnIds = computed(() =>
@@ -111,23 +106,44 @@ export default class BoardViewComponent {
     return subtasksMap;
   });
 
+  taskStatuses = computed(() => {
+    const statusMap = new Map<string, string>();
+    this.columns.value()?.forEach((column) => {
+      statusMap.set(column.id, column.name);
+    });
+    return statusMap;
+  });
+
   openTaskDetails(task: TasksRecord) {
     if (!this.subtasks.hasValue()) return;
     const subtasks = this.subtasks.value().filter((subtask) => subtask.task === task.id);
     const dialogRef = this.#dialog.open(TaskDetailsComponent, {
-      data: { task, subtasks, columnNames: this.columnNames() },
+      data: {
+        task,
+        subtasks,
+        columns: this.columns.value(),
+        taskStatus: this.taskStatuses().get(task.column),
+      },
       width: "480px",
       autoFocus: false,
       panelClass: ["bg-kb-dark-grey", "rounded-lg", "p-8"],
     });
-    dialogRef.componentInstance.update.subscribe(({ subtaskId, isCompleted }) => {
+    dialogRef.componentInstance.toggleSubtask.subscribe(({ subtaskId, isCompleted }) => {
       this.subtasks.update((subtasks) => {
         return subtasks.map((subtask) => {
           return subtask.id === subtaskId ? { ...subtask, isCompleted } : subtask;
         });
       });
     });
+
+    dialogRef.componentInstance.updateTaskStatus.subscribe(({ taskId, column }) => {
+      this.tasks.update((tasks) => {
+        return tasks.map((task) => {
+          return task.id === taskId ? { ...task, column } : task;
+        });
+      });
+    });
   }
 
-  drop(e: CdkDragDrop<string>) {}
+  drop(e: CdkDragDrop<string>, columnId: string) {}
 }

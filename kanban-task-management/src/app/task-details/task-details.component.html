@@ -30,7 +30,7 @@
 
 <app-dropdown
   (selectedOptionChange)="updateStatus($event)"
-  [selectedOption]="dialogData.task.status"
+  [selectedOption]="dialogData.taskStatus"
   label="Current Status"
-  [options]="dialogData.columnNames"
+  [options]="columnNames()"
 />

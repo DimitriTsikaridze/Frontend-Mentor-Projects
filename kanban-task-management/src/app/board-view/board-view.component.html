@@ -1,7 +1,7 @@
 @if (columnIds()?.length !== 0) {
   <div cdkDropListGroup class="grid grid-flow-col auto-cols-[280px] p-6 gap-6">
     @for (column of columns.value(); track column.id) {
-      <div cdkDropList (cdkDropListDropped)="drop($event)" [cdkDropListData]="column.id">
+      <div cdkDropList (cdkDropListDropped)="drop($event, column.id)" [cdkDropListData]="column.id">
         <div class="flex items-center gap-3 mb-6">
           <div
             [style.background-color]="colors[$index]"

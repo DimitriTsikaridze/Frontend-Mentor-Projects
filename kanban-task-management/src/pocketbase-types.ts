@@ -106,7 +106,6 @@ export type TasksRecord = {
   column?: RecordIdString;
   description?: string;
   id: string;
-  status?: string;
   title?: string;
 };
 
