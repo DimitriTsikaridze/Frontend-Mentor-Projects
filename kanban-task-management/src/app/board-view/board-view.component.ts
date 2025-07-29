@@ -11,7 +11,7 @@ import { ColumnsRecord, SubtasksRecord, TasksRecord } from "../../pocketbase-typ
 import { pocketbase } from "../app.config";
 import { Dialog } from "@angular/cdk/dialog";
 import { TaskDetailsComponent } from "../task-details/task-details.component";
-import { CdkDragDrop, DragDropModule, transferArrayItem } from "@angular/cdk/drag-drop";
+import { CdkDragDrop, DragDropModule, moveItemInArray } from "@angular/cdk/drag-drop";
 
 @Component({
   selector: "app-board-view",
@@ -64,7 +64,10 @@ export default class BoardViewComponent {
     params: this.columnIds,
     loader: ({ params }) => {
       const filter = params.map((id) => `column = "${id}"`).join(" || ");
-      return this.#pb.collection<TasksRecord>("tasks").getFullList({ filter });
+      return this.#pb.collection<TasksRecord>("tasks").getFullList({
+        filter,
+        sort: "order",
+      });
     },
   });
 
@@ -77,14 +80,22 @@ export default class BoardViewComponent {
     return counts;
   });
 
-  taskIds = computed(() =>
-    this.tasks.hasValue() ? this.tasks.value().map(({ id }) => id) : undefined,
-  );
+  taskIds = computed(() => {
+    if (!this.tasks.hasValue()) return undefined;
+    // Create a stable array - only changes when task IDs actually change
+    const ids = this.tasks
+      .value()
+      .map(({ id }) => id)
+      .sort();
+    return ids.join(","); // Convert to string to make it even more stable
+  });
 
   subtasks = resource({
     params: this.taskIds,
     loader: ({ params }) => {
-      const filter = params.map((taskId) => `task = "${taskId}"`).join(" || ");
+      if (!params) return Promise.resolve([]);
+      const taskIds = params.split(",");
+      const filter = taskIds.map((taskId) => `task = "${taskId}"`).join(" || ");
       return this.#pb.collection<SubtasksRecord>("subtasks").getFullList({ filter });
     },
   });
@@ -112,6 +123,27 @@ export default class BoardViewComponent {
       statusMap.set(column.id, column.name);
     });
     return statusMap;
+  });
+
+  tasksInColumn = computed(() => {
+    if (!this.tasks.hasValue()) return new Map<string, TasksRecord[]>();
+
+    const tasksByColumn = new Map<string, TasksRecord[]>();
+
+    // Group tasks by column
+    this.tasks.value().forEach((task) => {
+      if (!tasksByColumn.has(task.column!)) {
+        tasksByColumn.set(task.column!, []);
+      }
+      tasksByColumn.get(task.column!)!.push(task);
+    });
+
+    // Sort tasks by order within each column
+    tasksByColumn.forEach((tasks) => {
+      tasks.sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
+    });
+
+    return tasksByColumn;
   });
 
   openTaskDetails(task: TasksRecord) {
@@ -145,5 +177,104 @@ export default class BoardViewComponent {
     });
   }
 
-  drop(e: CdkDragDrop<string>, columnId: string) {}
+  async drop(e: CdkDragDrop<string>) {
+    const currentTask = e.item.data as TasksRecord;
+    const targetColumnId = e.container.data;
+    const sourceColumnId = e.previousContainer.data;
+
+    if (sourceColumnId === targetColumnId) {
+      this.#reorderInSameColumn(currentTask, targetColumnId, e.previousIndex, e.currentIndex);
+    } else {
+      await this.#moveToNewColumn(currentTask, sourceColumnId, targetColumnId, e.currentIndex);
+    }
+  }
+
+  #reorderInSameColumn(task: TasksRecord, columnId: string, fromIndex: number, toIndex: number) {
+    // Simple approach: just renumber all tasks in the column sequentially
+    this.tasks.update((tasks) => {
+      const columnTasks = tasks.filter((t) => t.column === columnId);
+      columnTasks.sort((a, b) => (a.order ?? 0) - (b.order ?? 0));
+
+      // Remove the moved task and insert it at new position
+      const movedTaskIndex = columnTasks.findIndex((t) => t.id === task.id);
+      const [movedTask] = columnTasks.splice(movedTaskIndex, 1);
+      columnTasks.splice(toIndex, 0, movedTask);
+
+      // Update all tasks with new sequential orders
+      return tasks.map((t) => {
+        if (t.column === columnId) {
+          const newIndex = columnTasks.findIndex((ct) => ct.id === t.id);
+          return { ...t, order: newIndex };
+        }
+        return t;
+      });
+    });
+
+    this.#saveColumnOrder(columnId);
+  }
+
+  async #moveToNewColumn(
+    task: TasksRecord,
+    sourceColumnId: string,
+    targetColumnId: string,
+    toIndex: number,
+  ) {
+    const targetTasks = this.tasksInColumn().get(targetColumnId) ?? [];
+    const targetPosition = Math.min(toIndex, targetTasks.length);
+
+    // Simple approach: renumber both columns sequentially
+    this.tasks.update((tasks) => {
+      return tasks.map((t) => {
+        if (t.id === task.id) {
+          // Move task to new column
+          return { ...t, column: targetColumnId, order: targetPosition };
+        } else if (t.column === targetColumnId && (t.order ?? 0) >= targetPosition) {
+          // Shift existing tasks in target column
+          return { ...t, order: (t.order ?? 0) + 1 };
+        } else if (t.column === sourceColumnId && (t.order ?? 0) > (task.order ?? 0)) {
+          // Shift remaining tasks in source column
+          return { ...t, order: (t.order ?? 0) - 1 };
+        }
+        return t;
+      });
+    });
+
+    await this.#saveBothColumnsOrder(sourceColumnId, targetColumnId);
+  }
+
+  async #saveColumnOrder(columnId: string) {
+    try {
+      const tasks = this.tasksInColumn().get(columnId) ?? [];
+      const batch = this.#pb.createBatch();
+
+      tasks.forEach((task, index) => {
+        batch.collection("tasks").update(task.id, { order: index });
+      });
+
+      await batch.send();
+    } catch (error) {
+      console.error("Failed to update task order:", error);
+    }
+  }
+
+  async #saveBothColumnsOrder(sourceColumnId: string, targetColumnId: string) {
+    try {
+      const batch = this.#pb.createBatch();
+
+      // Renumber both columns to ensure sequential ordering (0, 1, 2...)
+      [sourceColumnId, targetColumnId].forEach((columnId) => {
+        const tasks = this.tasksInColumn().get(columnId) ?? [];
+        tasks.forEach((task, index) => {
+          batch.collection("tasks").update(task.id, {
+            column: columnId,
+            order: index,
+          });
+        });
+      });
+
+      await batch.send();
+    } catch (error) {
+      console.error("Failed to update task order:", error);
+    }
+  }
 }
