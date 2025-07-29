@@ -105,6 +105,7 @@ export type SubtasksRecord = {
 export type TasksRecord = {
   column?: RecordIdString;
   description?: string;
+  order?: number;
   id: string;
   title?: string;
 };
