@@ -1,0 +1,48 @@
+{
+  "name": "weather-app-main",
+  "version": "0.0.0",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "serve:ssr:weather-app-main": "node dist/weather-app-main/server/server.mjs"
+  },
+  "prettier": {
+    "printWidth": 100,
+    "singleQuote": true,
+    "overrides": [
+      {
+        "files": "*.html",
+        "options": {
+          "parser": "angular"
+        }
+      }
+    ]
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/common": "^20.3.0",
+    "@angular/compiler": "^20.3.0",
+    "@angular/core": "^20.3.0",
+    "@angular/forms": "^20.3.0",
+    "@angular/platform-browser": "^20.3.0",
+    "@angular/platform-server": "^20.3.0",
+    "@angular/router": "^20.3.0",
+    "@angular/ssr": "^20.3.6",
+    "@tailwindcss/postcss": "^4.1.14",
+    "express": "^5.1.0",
+    "postcss": "^8.5.6",
+    "rxjs": "~7.8.0",
+    "tailwindcss": "^4.1.14",
+    "tslib": "^2.3.0"
+  },
+  "devDependencies": {
+    "@angular/build": "^20.3.6",
+    "@angular/cli": "^20.3.6",
+    "@angular/compiler-cli": "^20.3.0",
+    "@types/express": "^5.0.1",
+    "@types/node": "^20.17.19",
+    "typescript": "~5.9.2"
+  }
+}
