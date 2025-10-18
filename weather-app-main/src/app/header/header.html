@@ -1,11 +1,38 @@
-<header class="mt-12 mb-4 flex justify-between">
+<header class="relative mt-12 mb-4 flex justify-between">
   <img src="/public/images/logo.svg" alt="Logo" />
 
-  <button class="flex items-center gap-0.5">
-    <img src="/public/images/icon-units.svg" alt="Units" />
+  <button
+    (click)="showUnits.set(!showUnits())"
+    class="flex cursor-pointer items-center gap-2 rounded-sm bg-neutral-700 px-4 outline-offset-1 outline-neutral-200 hover:outline-1"
+  >
+    <img src="/public/images/icon-units.svg" width="14" alt="Units" />
     <p>Units</p>
-    <img src="/public/images/icon-dropdown.svg" />
+    <img src="/public/images/icon-dropdown.svg" width="14" />
   </button>
+  @if (!showUnits()) {
+    <div class="absolute top-12 right-0 min-w-52 rounded-lg bg-neutral-800 p-2 shadow-2xl">
+      <button
+        (click)="isImperial.set(!isImperial())"
+        class="w-full cursor-pointer rounded-sm p-1 text-start text-lg text-white hover:bg-neutral-700"
+      >
+        Switch to {{ isImperial() ? 'Metric' : 'Imperial' }}
+      </button>
+      @for (unit of units(); track $index) {
+        <hr class="my-1 border-neutral-600" />
+        <p class="mb-1 text-sm text-neutral-300">{{ unit.title }}</p>
+        @for (option of unit.options; track $index) {
+          <label
+            class="flex w-full cursor-pointer items-center justify-between rounded-sm p-1 text-start text-lg text-white hover:bg-neutral-700"
+            [for]="option"
+          >
+            {{ option }}
+            <img src="/public/images/icon-checkmark.svg" alt="Checkmark" />
+          </label>
+          <input class="sr-onlyf" [value]="option" [id]="option" [name]="unit.title" type="radio" />
+        }
+      }
+    </div>
+  }
 </header>
 
 <h1 class="mb-6 text-center text-5xl font-bold">How's the sky looking today?</h1>

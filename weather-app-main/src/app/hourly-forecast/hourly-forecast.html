@@ -5,7 +5,7 @@
   </div>
 </h2>
 
-<ol class="flex flex-col gap-2">
+<ul class="flex flex-col gap-2">
   @for (hourlyTime of hourlyForecast().hourly.time.splice(0, 7); track $index) {
     <li class="flex items-center gap-2 rounded-md border border-neutral-600 bg-neutral-700 p-2">
       <app-weather-image [src]="hourlyForecast().daily.weathercode[$index]" />
@@ -16,4 +16,4 @@
       </p>
     </li>
   }
-</ol>
+</ul>
