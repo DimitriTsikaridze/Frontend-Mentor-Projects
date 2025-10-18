@@ -1,81 +1,12 @@
-<header class="my-4 flex justify-between">
-  <img src="/public/images/logo.svg" alt="Logo" />
+<app-header />
 
-  <button class="flex items-center gap-0.5">
-    <img src="/public/images/icon-units.svg" alt="Units" />
-    <p>Units</p>
-    <img src="/public/images/icon-dropdown.svg" />
-  </button>
-</header>
-
-<h1 class="mb-6 text-center text-5xl font-bold">How's the sky looking today?</h1>
-
-<div class="mx-auto mt-12 mb-8 flex max-w-lg items-center gap-2">
-  <div class="flex w-full items-center gap-2 rounded-sm bg-neutral-800 p-3">
-    <img src="/public/images/icon-search.svg" />
-    <input class="w-full" type="text" placeholder="Search for a place..." />
-  </div>
-
-  <button class="rounded-sm bg-blue-500 p-3">Search</button>
-</div>
+<app-search-bar />
 
 <main class="grid grid-flow-col gap-4">
   <div>
-    <section
-      class="rounded-5xl flex items-center justify-between bg-[url(/public/images/bg-today-large.svg)] bg-cover bg-no-repeat px-4 py-12"
-    >
-      <div>
-        <h2 class="text-3xl font-bold">Berlin, Germany</h2>
-        <p>Tuesday, Aug 5, 2025</p>
-      </div>
-      <div class="flex items-center">
-        <img src="/public/images/icon-sunny.webp" width="50" alt="Sunny" />
-        <p class="text-5xl font-bold italic">20°</p>
-      </div>
-    </section>
-    <ol class="mt-6 flex gap-4">
-      @for (stat of stats(); track $index) {
-        <li class="w-full rounded-lg border border-neutral-600 bg-neutral-800 p-4">
-          <p class="mb-2 text-sm">{{ stat.title }}</p>
-          <p class="text-2xl font-bold">{{ stat.value }}</p>
-        </li>
-      }
-    </ol>
-    <div>
-      <h2 class="mt-7 mb-4 text-xl font-bold">Daily forecast</h2>
-      <ol class="flex gap-4">
-        @for (forecast of dailyForecast(); track $index) {
-          <li
-            class="flex w-full flex-col items-center rounded-lg border border-neutral-600 bg-neutral-800 p-2"
-          >
-            <p>{{ forecast.day }}</p>
-            <img width="40" [src]="forecast.image" alt="" />
-            <div class="flex w-full justify-between">
-              <p>{{ forecast.maxTemp }}</p>
-              <p>{{ forecast.minTemp }}</p>
-            </div>
-          </li>
-        }
-      </ol>
-    </div>
+    <app-general-info />
+    <app-weather-stats />
+    <app-daily-forecast />
   </div>
-
-  <aside class="rounded-2xl bg-neutral-800 p-4">
-    <h2 class="mb-3 flex items-center justify-between font-bold">
-      Hourly forecast
-      <div class="flex items-center gap-2 rounded-md bg-neutral-700 p-2">
-        Tuesday <img src="/public/images/icon-dropdown.svg" alt="Dropdown" />
-      </div>
-    </h2>
-
-    <ol class="flex flex-col gap-2">
-      @for (forecast of hourlyForecast(); track $index) {
-        <li class="flex items-center gap-2 rounded-md border border-neutral-600 bg-neutral-700 p-2">
-          <img width="40" [src]="forecast.image" alt="" />
-          <p class="font-bold">{{ forecast.hour }}</p>
-          <p class="ml-auto text-sm">{{ forecast.temp }}</p>
-        </li>
-      }
-    </ol>
-  </aside>
+  <app-hourly-forecast />
 </main>
