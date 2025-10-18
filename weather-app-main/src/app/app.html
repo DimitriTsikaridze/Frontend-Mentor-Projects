@@ -1,12 +1,34 @@
 <app-header />
 
-<app-search-bar />
+<app-search-bar (search)="search($event)" />
 
-<main class="grid grid-flow-col gap-4">
-  <div>
-    <app-general-info />
-    <app-weather-stats />
-    <app-daily-forecast />
-  </div>
-  <app-hourly-forecast />
-</main>
+@if (weatherForecast.hasValue()) {
+  @let forecast = weatherForecast.value();
+  <main class="grid grid-flow-col gap-4">
+    <div>
+      <app-general-info [forecast]="forecast" />
+      <app-weather-stats
+        [stats]="[
+          {
+            title: 'Feels Like',
+            value: `${forecast.current.apparent_temperature} ${forecast.current_units.apparent_temperature.substring(0, 1)}`
+          },
+          {
+            title: 'Humidity',
+            value: `${forecast.current.relative_humidity_2m} ${forecast.current_units.relative_humidity_2m}`
+          },
+          {
+            title: 'Wind',
+            value: `${forecast.current.wind_speed_10m}  ${forecast.current_units.wind_speed_10m}`
+          },
+          {
+            title: 'Precipitation',
+            value: `${forecast.current.precipitation}  ${forecast.current_units.precipitation}`
+          }
+        ]"
+      />
+      <app-daily-forecast [dailyForecast]="forecast" />
+    </div>
+    <app-hourly-forecast [hourlyForecast]="forecast" />
+  </main>
+}

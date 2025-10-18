@@ -1,14 +1,20 @@
 <h2 class="mt-7 mb-4 text-xl font-bold">Daily forecast</h2>
 <ol class="flex gap-4">
-  @for (forecast of dailyForecast(); track $index) {
+  @for (time of dailyForecast().daily.time; track $index) {
     <li
       class="flex w-full flex-col items-center rounded-lg border border-neutral-600 bg-neutral-800 p-2"
     >
-      <p>{{ forecast.day }}</p>
-      <img width="40" [src]="forecast.image" alt="" />
+      <p>{{ time | date: 'EEE' }}</p>
+      <app-weather-image [src]="dailyForecast().daily.weathercode[$index]" />
       <div class="flex w-full justify-between">
-        <p>{{ forecast.maxTemp }}</p>
-        <p>{{ forecast.minTemp }}</p>
+        <p>
+          {{ dailyForecast().daily.temperature_2m_min[$index]
+          }}{{ dailyForecast().daily_units.temperature_2m_min.substring(0, 1) }}
+        </p>
+        <p>
+          {{ dailyForecast().daily.temperature_2m_max[$index]
+          }}{{ dailyForecast().daily_units.temperature_2m_max.substring(0, 1) }}
+        </p>
       </div>
     </li>
   }

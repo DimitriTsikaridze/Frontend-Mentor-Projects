@@ -3,10 +3,13 @@
 >
   <div>
     <h2 class="text-3xl font-bold">Berlin, Germany</h2>
-    <p>Tuesday, Aug 5, 2025</p>
+    <p>{{ forecast().current.time | date: 'fullDate' }}</p>
   </div>
   <div class="flex items-center">
-    <img src="/public/images/icon-sunny.webp" width="50" alt="Sunny" />
-    <p class="text-5xl font-bold italic">20°</p>
+    <app-weather-image [src]="forecast().hourly.weathercode[0]" />
+    <p class="text-5xl font-bold italic">
+      {{ forecast().current.temperature_2m
+      }}{{ forecast().current_units.temperature_2m.substring(0, 1) }}
+    </p>
   </div>
 </section>

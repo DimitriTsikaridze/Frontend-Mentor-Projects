@@ -1,6 +1,19 @@
-<div class="flex w-full items-center gap-2 rounded-sm bg-neutral-800 p-3">
-  <img src="/public/images/icon-search.svg" />
-  <input class="w-full" type="text" placeholder="Search for a place..." />
+<div
+  class="w-full rounded-lg outline-offset-1 focus-within:outline-1 focus-within:outline-neutral-200"
+>
+  <div class="flex w-full items-center gap-2 rounded-lg bg-neutral-800 px-5 py-2">
+    <img width="12" src="/public/images/icon-search.svg" />
+    <input
+      #searchInput
+      class="w-full outline-none"
+      type="text"
+      placeholder="Search for a place..."
+    />
+  </div>
 </div>
-
-<button class="rounded-sm bg-blue-500 p-3">Search</button>
+<button
+  (click)="search.emit(searchInput.value)"
+  class="cursor-pointer rounded-lg bg-blue-500 px-5 py-2 hover:outline hover:outline-offset-2 hover:outline-blue-500"
+>
+  Search
+</button>

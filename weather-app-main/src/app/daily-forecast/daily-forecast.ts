@@ -1,19 +1,14 @@
 import { ChangeDetectionStrategy, Component, input } from '@angular/core';
+import { Forecast } from '../forecast';
+import { DatePipe } from '@angular/common';
+import { WeatherImage } from '../weather-image/weather-image';
 
 @Component({
   selector: 'app-daily-forecast',
-  imports: [],
+  imports: [DatePipe, WeatherImage],
   templateUrl: './daily-forecast.html',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class DailyForecast {
-  dailyForecast = input<{ day: string; maxTemp: string; minTemp: string; image: string }[]>([
-    { image: '/public/images/icon-overcast.webp', day: 'Tue', minTemp: '14°', maxTemp: '20°' },
-    { image: '/public/images/icon-overcast.webp', day: 'Tue', minTemp: '14°', maxTemp: '20°' },
-    { image: '/public/images/icon-overcast.webp', day: 'Tue', minTemp: '14°', maxTemp: '20°' },
-    { image: '/public/images/icon-overcast.webp', day: 'Tue', minTemp: '14°', maxTemp: '20°' },
-    { image: '/public/images/icon-overcast.webp', day: 'Tue', minTemp: '14°', maxTemp: '20°' },
-    { image: '/public/images/icon-overcast.webp', day: 'Tue', minTemp: '14°', maxTemp: '20°' },
-    { image: '/public/images/icon-overcast.webp', day: 'Tue', minTemp: '14°', maxTemp: '20°' }
-  ]);
+  dailyForecast = input.required<Forecast>();
 }

@@ -1,15 +1,3 @@
-import { httpResource } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-
-@Injectable({
-  providedIn: 'root'
-})
-export class OpenMeteo {
-  private readonly url =
-    'https://api.open-meteo.com/v1/forecast?latitude=52.52&longitude=13.41&current=temperature_2m,apparent_temperature,precipitation,wind_speed_10m,relative_humidity_2m&hourly=temperature_2m,weathercode&daily=temperature_2m_max,temperature_2m_min,weathercode&timezone=auto';
-  weatherForecast = httpResource<Forecast>(() => this.url);
-}
-
 export interface Forecast {
   latitude: number;
   longitude: number;
@@ -47,7 +35,7 @@ export interface CurrentUnits {
 }
 
 export interface Daily {
-  time: Date[];
+  time: string[];
   temperature_2m_max: number[];
   temperature_2m_min: number[];
   weathercode: number[];
