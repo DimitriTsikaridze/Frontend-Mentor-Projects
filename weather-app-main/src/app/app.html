@@ -1,12 +1,14 @@
 <app-header />
 
-<app-search-bar (search)="search($event)" />
+<app-search-bar (search)="query.set($event)" />
 
 @if (weatherForecast.hasValue()) {
   @let forecast = weatherForecast.value();
   <main class="grid grid-flow-col gap-4">
     <div>
-      <app-general-info [forecast]="forecast" />
+      @if (locations.hasValue()) {
+        <app-general-info [location]="locations.value()[0]" [forecast]="forecast" />
+      }
       <app-weather-stats
         [stats]="[
           {

@@ -11,4 +11,5 @@ import { DatePipe } from '@angular/common';
 })
 export class GeneralInfo {
   forecast = input.required<Forecast>();
+  location = input.required<{ name: string; country: string }>();
 }

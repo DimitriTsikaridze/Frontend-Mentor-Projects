@@ -2,7 +2,7 @@
   class="rounded-5xl flex items-center justify-between bg-[url(/public/images/bg-today-large.svg)] bg-cover bg-no-repeat px-4 py-12"
 >
   <div>
-    <h2 class="text-3xl font-bold">Berlin, Germany</h2>
+    <h2 class="text-3xl font-bold">{{ location().name }}, {{ location().country }}</h2>
     <p>{{ forecast().current.time | date: 'fullDate' }}</p>
   </div>
   <div class="flex items-center">

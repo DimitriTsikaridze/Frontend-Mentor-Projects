@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, model, output, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, output } from '@angular/core';
 
 @Component({
   selector: 'app-search-bar',

@@ -7,32 +7,53 @@
   >
     <img src="/public/images/icon-units.svg" width="14" alt="Units" />
     <p>Units</p>
-    <img src="/public/images/icon-dropdown.svg" width="14" />
+    <img
+      [class.rotate-180]="showUnits()"
+      class="transition"
+      alt="Dropdown Icon"
+      src="/public/images/icon-dropdown.svg"
+      width="14"
+    />
   </button>
-  @if (!showUnits()) {
-    <div class="absolute top-12 right-0 min-w-52 rounded-lg bg-neutral-800 p-2 shadow-2xl">
-      <button
-        (click)="isImperial.set(!isImperial())"
-        class="w-full cursor-pointer rounded-sm p-1 text-start text-lg text-white hover:bg-neutral-700"
-      >
-        Switch to {{ isImperial() ? 'Metric' : 'Imperial' }}
-      </button>
-      @for (unit of units(); track $index) {
-        <hr class="my-1 border-neutral-600" />
-        <p class="mb-1 text-sm text-neutral-300">{{ unit.title }}</p>
-        @for (option of unit.options; track $index) {
-          <label
-            class="flex w-full cursor-pointer items-center justify-between rounded-sm p-1 text-start text-lg text-white hover:bg-neutral-700"
-            [for]="option"
-          >
-            {{ option }}
+  <form
+    [class.hidden]="!showUnits()"
+    animate.enter="fade-in"
+    animate.leave="fade-out"
+    [formGroup]="unitForm"
+    class="absolute top-12 right-0 min-w-52 rounded-lg bg-neutral-800 p-2 shadow-2xl"
+  >
+    <button
+      (click)="toggleUnits()"
+      class="w-full cursor-pointer rounded-sm p-1 text-start text-lg text-white hover:bg-neutral-700"
+    >
+      Switch to {{ isImperial() ? 'Metric' : 'Imperial' }}
+    </button>
+    @for (unit of units(); track $index) {
+      <hr class="my-1 border-neutral-600" />
+      <p class="mb-1 text-sm text-neutral-300">{{ unit.title }}</p>
+      @for (option of unit.options; track $index) {
+        <label
+          [class.bg-neutral-700]="input.checked"
+          class="flex w-full cursor-pointer items-center justify-between rounded-sm p-1 text-start text-lg text-white hover:bg-neutral-700"
+          [for]="option"
+        >
+          {{ option }}
+          @if (input.checked) {
             <img src="/public/images/icon-checkmark.svg" alt="Checkmark" />
-          </label>
-          <input class="sr-onlyf" [value]="option" [id]="option" [name]="unit.title" type="radio" />
-        }
+          }
+        </label>
+        <input
+          #input
+          [formControlName]="unit.title"
+          class="sr-only"
+          [value]="option"
+          [id]="option"
+          [name]="unit.title"
+          type="radio"
+        />
       }
-    </div>
-  }
+    }
+  </form>
 </header>
 
 <h1 class="mb-6 text-center text-5xl font-bold">How's the sky looking today?</h1>
