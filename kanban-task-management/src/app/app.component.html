@@ -4,7 +4,7 @@
   [style.grid-template-columns]="showSidebar() ? '300px 1fr' : '0px 1fr'"
 >
   <div class="overflow-hidden text-nowrap shadow-[0px_-1px_0_0_#2b2c37]">
-    <app-sidebar (showSidebar)="showSidebar.set($event)" />
+    <app-sidebar [boards]="boards.value()" (showSidebar)="showSidebar.set($event)" />
   </div>
 
   <main>

@@ -1,10 +1,29 @@
-import { ChangeDetectionStrategy, Component, input, ViewEncapsulation } from "@angular/core";
-import { CdkDragDrop, DragDropModule } from "@angular/cdk/drag-drop";
+import {
+  ChangeDetectionStrategy,
+  Component,
+  effect,
+  inject,
+  input,
+  ViewEncapsulation,
+  ChangeDetectorRef,
+  computed,
+} from "@angular/core";
+import {
+  CdkDragDrop,
+  DragDropModule,
+  moveItemInArray,
+  transferArrayItem,
+} from "@angular/cdk/drag-drop";
+import { KanbanService } from "../kanban.service";
+import { Dialog } from "@angular/cdk/dialog";
+import { CompletedSubtasksPipe } from "./completed-subtasks.pipe";
+import { Task } from "../boars.model";
+import { TaskDetailsComponent } from "../task-details/task-details.component";
 
 @Component({
   selector: "app-board-view",
   templateUrl: "./board-view.component.html",
-  imports: [DragDropModule],
+  imports: [DragDropModule, CompletedSubtasksPipe],
   styles: `
     .cdk-drag-preview {
       background-color: var(--color-kb-dark-grey);
@@ -33,13 +52,32 @@ import { CdkDragDrop, DragDropModule } from "@angular/cdk/drag-drop";
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export default class BoardViewComponent {
+  private boards = inject(KanbanService).boards;
+  private dialog = inject(Dialog);
   colors = ["#49C4E5", "#8471F2", "#67E2AE"];
+  idx = input.required<number>();
+  board = computed(() => this.boards.value()[this.idx()]);
 
-  id = input.required<string>();
+  cd = inject(ChangeDetectorRef);
+  openTaskDetails(task: Task) {
+    const dialogRef = this.dialog.open(TaskDetailsComponent, {
+      data: task,
+      width: "480px",
+      autoFocus: false,
+      panelClass: ["bg-kb-dark-grey", "rounded-lg", "p-8"],
+    });
+  }
 
-  openTaskDetails() {}
-
-  async drop(e: CdkDragDrop<string>) {
-    console.log(e);
+  drop(event: CdkDragDrop<Task[]>) {
+    if (event.previousContainer === event.container) {
+      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
+    } else {
+      transferArrayItem(
+        event.previousContainer.data,
+        event.container.data,
+        event.previousIndex,
+        event.currentIndex,
+      );
+    }
   }
 }

@@ -1,24 +1,25 @@
-@if (true) {
+@if (board()?.columns.length) {
   <div cdkDropListGroup class="grid grid-flow-col auto-cols-[280px] p-6 gap-6">
-    @for (column of [1, 2, 3]; track $index) {
-      <div cdkDropList (cdkDropListDropped)="drop($event)">
+    @for (column of board().columns; track $index) {
+      <div cdkDropList [cdkDropListData]="column.tasks" (cdkDropListDropped)="drop($event)">
         <div class="flex items-center gap-3 mb-6">
           <div
             [style.background-color]="colors[$index]"
             class="w-[15px] h-[15px] rounded-full"
           ></div>
           <p class="heading-s text-kb-medium-grey uppercase">
-            column.name ( taskCounts().get(column.id) ?? 0 )
+            {{ board().columns[$index].name }}
           </p>
         </div>
-        @for (task of [1, 2, 3]; track $index) {
+
+        @for (task of board().columns[$index].tasks; track $index) {
           <button
+            (click)="openTaskDetails(task)"
             cdkDrag
-            [cdkDragData]="task"
             class="example-box w-full text-start py-6 px-4 bg-kb-dark-grey rounded-lg mb-5"
           >
-            <p class="text-kb-white heading-m mb-2">task.title</p>
-            <p>subtaskStats.completed of subtaskStats.subtaskCount substasks</p>
+            <p class="text-kb-white heading-m mb-2">{{ task.title }}</p>
+            <p>{{ task.subtasks | completedSubtasks }} of {{ task.subtasks.length }}</p>
           </button>
         }
       </div>
