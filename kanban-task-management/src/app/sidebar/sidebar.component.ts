@@ -1,11 +1,4 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  inject,
-  output,
-  ViewEncapsulation,
-} from "@angular/core";
-import { KanbanService } from "../kanban.service";
+import { ChangeDetectionStrategy, Component, output, ViewEncapsulation } from "@angular/core";
 import { RouterLink, RouterLinkActive } from "@angular/router";
 
 @Component({
@@ -20,6 +13,5 @@ import { RouterLink, RouterLinkActive } from "@angular/router";
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SidebarComponent {
-  kanbanService = inject(KanbanService);
   showSidebar = output<boolean>();
 }

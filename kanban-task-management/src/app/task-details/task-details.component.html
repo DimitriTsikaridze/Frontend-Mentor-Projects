@@ -1,36 +1,33 @@
 <div class="flex items-center justify-between gap-6">
-  <p class="text-white heading-l">{{ dialogData.task.title }}</p>
+  <p class="text-white heading-l">dialogData.task.title</p>
   <button>
     <img src="icon-vertical-ellipsis.svg" alt="More Button" />
   </button>
 </div>
-<p class="my-6">{{ dialogData.task.description }}</p>
-<p class="text-white mb-4">Substasks ({{ completedSubtask() }} out of {{ subtasks().length }})</p>
+<p class="my-6">dialogData.task.description</p>
+<p class="text-white mb-4">Substasks (completedSubtask() out of subtasks().length)</p>
 <div class="grid gap-2 mb-6">
-  @for (subtask of dialogData.subtasks; track subtask.id) {
+  @for (subtask of [1, 2]; track $index) {
     <label
       class="hover:bg-kb-purple/25 transition-all duration-200 ease-in focus-within:outline-1 flex gap-4 items-center bg-kb-dark-bg p-3 rounded-md cursor-pointer"
-      for="subtask-{{ subtask.id }}"
+      for="subtask-{{ $index }}"
     >
       <app-checkbox
-        [checked]="subtask.isCompleted"
-        (checkedChange)="toggleCompleted($event, subtask.id)"
-        id="subtask-{{ subtask.id }}"
+        [checked]="false"
+        (checkedChange)="toggleCompleted($event)"
+        id="subtask-{{ $index }}"
       />
 
-      <span
-        class="text-white w-full"
-        [class]="subtask.isCompleted ? 'line-through opacity-50' : ''"
-      >
-        {{ subtask.title }}
+      <span class="text-white w-full" [class]="$even ? 'line-through opacity-50' : ''">
+        subtask.title
       </span>
     </label>
   }
 </div>
 
-<app-dropdown
+<!-- <app-dropdown
   (selectedOptionChange)="updateStatus($event)"
   [selectedOption]="dialogData.taskStatus"
   label="Current Status"
   [options]="columnNames()"
-/>
+/> -->

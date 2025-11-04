@@ -1,5 +1,4 @@
-import { ChangeDetectionStrategy, Component, inject, ViewEncapsulation } from "@angular/core";
-import { KanbanService } from "../kanban.service";
+import { ChangeDetectionStrategy, Component, ViewEncapsulation } from "@angular/core";
 
 @Component({
   selector: "app-header",
@@ -8,6 +7,4 @@ import { KanbanService } from "../kanban.service";
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HeaderComponent {
-  kanbanService = inject(KanbanService);
-}
+export class HeaderComponent {}

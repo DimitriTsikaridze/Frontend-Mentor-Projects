@@ -45,7 +45,6 @@
     "@types/express": "^5.0.1",
     "@types/node": "^20.17.19",
     "ngxtension-plugin": "^5.1.0",
-    "pocketbase": "^0.26.1",
     "prettier": "^3.6.2",
     "typescript": "~5.8.2"
   }
