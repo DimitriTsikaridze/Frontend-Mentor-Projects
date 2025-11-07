@@ -56,10 +56,14 @@
                 "input": "public"
               }
             ],
-            "styles": ["src/styles.css"],
+            "styles": [
+              "src/styles.css"
+            ],
             "server": "src/main.server.ts",
             "outputMode": "static",
-            "ssr": { "entry": "src/main.server.ts" }
+            "ssr": {
+              "entry": "src/main.server.ts"
+            }
           },
           "configurations": {
             "production": {
@@ -100,8 +104,22 @@
         },
         "extract-i18n": {
           "builder": "@angular/build:extract-i18n"
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "src/**/*.ts",
+              "src/**/*.html"
+            ]
+          }
         }
       }
     }
+  },
+  "cli": {
+    "schematicCollections": [
+      "angular-eslint"
+    ]
   }
 }

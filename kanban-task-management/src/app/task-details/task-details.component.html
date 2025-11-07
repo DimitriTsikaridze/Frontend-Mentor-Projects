@@ -1,15 +1,16 @@
 <div class="flex items-center justify-between gap-6">
-  <p class="text-white heading-l">{{ task.title }}</p>
+  <p class="text-white heading-l">{{ dialogData.task.title }}</p>
   <button>
     <img src="icon-vertical-ellipsis.svg" alt="More Button" />
   </button>
 </div>
-<p class="my-6">{{ task.description }}</p>
+<p class="my-6">{{ dialogData.task.description }}</p>
 <p class="text-white mb-4">
-  Substasks ({{ task.subtasks | completedSubtasks }} of {{ task.subtasks.length }})
+  Substasks ({{ dialogData.task.subtasks | completedSubtasks }} of
+  {{ dialogData.task.subtasks.length }})
 </p>
 <div class="grid gap-2 mb-6">
-  @for (subtask of task.subtasks; track $index) {
+  @for (subtask of dialogData.task.subtasks; track $index) {
     <label
       class="hover:bg-kb-purple/25 transition-all duration-200 ease-in focus-within:outline-1 flex gap-4 items-center bg-kb-dark-bg p-3 rounded-md cursor-pointer"
       for="subtask-{{ $index }}"
@@ -30,9 +31,9 @@
   }
 </div>
 
-<!-- <app-dropdown
+<app-dropdown
   (selectedOptionChange)="updateStatus($event)"
-  [selectedOption]="dialogData.taskStatus"
+  [selectedOption]="dialogData.task.status"
   label="Current Status"
-  [options]="columnNames()"
-/> -->
+  [options]="dialogData.columns"
+/>

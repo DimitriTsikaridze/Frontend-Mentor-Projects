@@ -13,17 +13,11 @@ export interface Column {
 }
 
 export interface Task {
+  id: string;
   title: string;
   description: string;
-  status: Status;
+  status: string;
   subtasks: Subtask[];
-}
-
-export enum Status {
-  Doing = "Doing",
-  Done = "Done",
-  Empty = "",
-  Todo = "Todo",
 }
 
 export interface Subtask {

@@ -1,13 +1,11 @@
 import {
   ChangeDetectionStrategy,
   Component,
-  inject,
   input,
   output,
   ViewEncapsulation,
 } from "@angular/core";
 import { RouterLink, RouterLinkActive } from "@angular/router";
-import { KanbanService } from "../kanban.service";
 import { Board } from "../boars.model";
 
 @Component({
