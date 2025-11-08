@@ -66,7 +66,6 @@ export default class BoardViewComponent {
     const dialogRef = this.dialog.open(TaskDetailsComponent, {
       data: { task, columns: this.board().columns.map((c) => c.name) },
       width: "480px",
-      autoFocus: false,
       panelClass: ["bg-kb-dark-grey", "rounded-lg", "p-8"],
     });
 

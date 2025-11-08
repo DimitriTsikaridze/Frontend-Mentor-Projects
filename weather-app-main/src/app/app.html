@@ -1,6 +1,6 @@
 <app-header />
 
-<app-search-bar (search)="query.set($event)" />
+<app-search-bar [locations]="locations.value()" />
 
 @if (weatherForecast.hasValue()) {
   @let forecast = weatherForecast.value();

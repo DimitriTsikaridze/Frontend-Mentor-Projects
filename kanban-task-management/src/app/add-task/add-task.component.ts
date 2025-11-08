@@ -7,7 +7,7 @@ import {
 } from "@angular/core";
 import { DropdownComponent } from "../board-view/dropdown/dropdown.component";
 import { FormArray, FormControl, FormGroup, ReactiveFormsModule, Validators } from "@angular/forms";
-import { DIALOG_DATA } from "@angular/cdk/dialog";
+import { DIALOG_DATA, DialogRef } from "@angular/cdk/dialog";
 import { Task } from "../boars.model";
 
 @Component({
@@ -20,6 +20,7 @@ import { Task } from "../boars.model";
 export class AddTaskComponent {
   dialogData = inject<{ columns: string[] }>(DIALOG_DATA);
   submitFormChanged = output<Task>();
+  private dialogRef = inject(DialogRef);
 
   form = new FormGroup({
     title: new FormControl("", Validators.required),
@@ -53,5 +54,6 @@ export class AddTaskComponent {
         .map((subtask) => ({ title: subtask, isCompleted: false })),
     };
     this.submitFormChanged.emit(task);
+    this.dialogRef.close();
   }
 }

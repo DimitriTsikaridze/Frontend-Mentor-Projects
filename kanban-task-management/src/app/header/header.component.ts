@@ -1,4 +1,10 @@
-import { ChangeDetectionStrategy, Component, inject, ViewEncapsulation } from "@angular/core";
+import {
+  ChangeDetectionStrategy,
+  ChangeDetectorRef,
+  Component,
+  inject,
+  ViewEncapsulation,
+} from "@angular/core";
 import { AddTaskComponent } from "../add-task/add-task.component";
 import { Dialog } from "@angular/cdk/dialog";
 import { KanbanService } from "../kanban.service";
@@ -13,7 +19,9 @@ import { Task } from "../boars.model";
 })
 export class HeaderComponent {
   private dialog = inject(Dialog);
-  private currentBoard = inject(KanbanService).currentBoard;
+  private kanbanService = inject(KanbanService);
+  private cd = inject(ChangeDetectorRef);
+  private currentBoard = this.kanbanService.currentBoard;
 
   addNewTask() {
     const dialogRef = this.dialog.open(AddTaskComponent, {
@@ -24,10 +32,17 @@ export class HeaderComponent {
     });
 
     dialogRef.componentInstance.submitFormChanged.subscribe((task: Task) => {
-      this.currentBoard.update((board) => {
-        const col = board.columns.find((c) => c.name === task.status);
-        col.tasks.push(task);
-        return board;
+      const currentBoard = this.currentBoard();
+      this.kanbanService.boards.update((boards) => {
+        return boards.map((board) => {
+          if (board.name !== currentBoard.name) return board;
+          const updatedColumns = board.columns.map((col) => {
+            if (col.name !== task.status) return col;
+            return { ...col, tasks: [...col.tasks, task] };
+          });
+
+          return { ...board, columns: updatedColumns };
+        });
       });
     });
   }

@@ -23,6 +23,8 @@ const LocationsSchema = z
   })
   .transform((data) => data.results);
 
+export type Locations = z.infer<typeof LocationsSchema>;
+
 @Component({
   selector: 'app-root',
   imports: [Header, SearchBar, HourlyForecast, DailyForecast, WeatherStats, GeneralInfo],

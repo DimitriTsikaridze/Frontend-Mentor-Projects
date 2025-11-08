@@ -1,4 +1,5 @@
-import { ChangeDetectionStrategy, Component, output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input, output } from '@angular/core';
+import { Locations } from '../app';
 
 @Component({
   selector: 'app-search-bar',
@@ -11,4 +12,5 @@ import { ChangeDetectionStrategy, Component, output } from '@angular/core';
 })
 export class SearchBar {
   search = output<string>();
+  locations = input.required<Locations | undefined>();
 }
