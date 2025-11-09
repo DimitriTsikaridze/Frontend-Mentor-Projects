@@ -18,6 +18,6 @@ import { KanbanService } from "./kanban.service";
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class App {
-  showSidebar = signal<boolean>(false);
+  showSidebar = signal<boolean>(true);
   boards = inject(KanbanService).boards;
 }

@@ -1,10 +1,4 @@
-import {
-  ChangeDetectionStrategy,
-  ChangeDetectorRef,
-  Component,
-  inject,
-  ViewEncapsulation,
-} from "@angular/core";
+import { ChangeDetectionStrategy, Component, inject, ViewEncapsulation } from "@angular/core";
 import { AddTaskComponent } from "../add-task/add-task.component";
 import { Dialog } from "@angular/cdk/dialog";
 import { KanbanService } from "../kanban.service";
@@ -20,8 +14,7 @@ import { Task } from "../boars.model";
 export class HeaderComponent {
   private dialog = inject(Dialog);
   private kanbanService = inject(KanbanService);
-  private cd = inject(ChangeDetectorRef);
-  private currentBoard = this.kanbanService.currentBoard;
+  currentBoard = this.kanbanService.currentBoard;
 
   addNewTask() {
     const dialogRef = this.dialog.open(AddTaskComponent, {
