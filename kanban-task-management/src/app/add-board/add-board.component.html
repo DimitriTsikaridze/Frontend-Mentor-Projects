@@ -1,0 +1,49 @@
+<form [formGroup]="form">
+  <legend class="text-white heading-l mb-6">Add New Board</legend>
+
+  <fieldset class="flex flex-col gap-2">
+    <label class="text-white" for="boardName">Board Name</label>
+    <input
+      formControlName="name"
+      class="focus:opacity-100 outline-0 placeholder:opacity-25 opacity-25 mb-2 py-2 px-4 border text-white border-kb-medium-grey rounded-sm"
+      placeholder="e.g. Web design"
+      type="text"
+      id="boardName"
+    />
+  </fieldset>
+
+  <fieldset formArrayName="columns" class="flex flex-col gap-2">
+    <p class="text-white">Subtasks</p>
+
+    @for (boardColumn of columns.controls; track $index) {
+      <div class="flex items-center">
+        <input
+          [formControlName]="$index"
+          class="w-full focus:opacity-100 outline-0 placeholder:opacity-25 opacity-25 py-2 px-4 border text-white border-kb-medium-grey rounded-sm"
+          [placeholder]="$odd ? 'Doing' : 'Done'"
+          type="text"
+          id="title"
+        />
+        <button (click)="removeColumn($index)" class="ml-4 shrink-0">
+          <img src="icon-cross.svg" alt="Remove subtask" />
+        </button>
+      </div>
+    }
+  </fieldset>
+  <button
+    (click)="addColumn()"
+    class="w-full mb-6 flex justify-center items-center mt-3 body-l rounded-full bg-kb-white text-kb-purple py-2"
+  >
+    <svg class="scale-[0.8] mr-1" width="12" height="12" xmlns="http://www.w3.org/2000/svg">
+      <path fill="#635fc7" d="M7.368 12V7.344H12V4.632H7.368V0H4.656v4.632H0v2.712h4.656V12z" />
+    </svg>
+    Add New Column
+  </button>
+
+  <button
+    (click)="submitForm()"
+    class="flex justify-center items-center body-l rounded-full text-kb-white bg-kb-purple py-2 w-full"
+  >
+    Create New Board
+  </button>
+</form>
